@@ -1,9 +1,12 @@
-{pkgs, lib, ...}:
+{config, pkgs, ...}:
 {
   programs = {
-    zsh = {
+    zsh.enable = true;
+    oh-my-zsh = {
       enable = true;
     };
+    
     bash.enable = true;
   };
+
 }

@@ -1,12 +1,16 @@
-{pkgs, lib, username, ...}:
 {
- # ============================= User related =============================
+  pkgs,
+  lib,
+  username,
+  ...
+}: {
+  # ============================= User related =============================
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
   };
   # given the users in this list the right to specify additional substituters via:
   #    1. `nixConfig.substituers` in `flake.nix`
@@ -17,7 +21,14 @@
   nix.settings = {
     # enable flakes globally
     experimental-features = ["nix-command" "flakes"];
+
   };
+
+  virtualisation = {
+    docker.enable = true;
+  };
+
+  
 
   # do garbage collection weekly to keep disk usage low
   nix.gc = {
@@ -96,6 +107,7 @@
     neofetch
     xfce.thunar # xfce4's file manager
     nnn # terminal file manager
+    docker-compose
   ];
 
   # Enable sound with pipewire.
