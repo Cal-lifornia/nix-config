@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ../../modules/home-manager/core.nix
+    ../../modules/home/core.nix
   ];
 
   programs.git = {
