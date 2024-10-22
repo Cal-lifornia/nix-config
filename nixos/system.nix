@@ -124,6 +124,11 @@
     xfce.thunar # xfce4's file manager
     nnn # terminal file manager
     docker-compose
+    neovim
+    tmux
+    zsh-powerlevel10k
+    binutils
+    gccgo14
   ];
 
   # Enable sound with pipewire.
@@ -146,8 +151,8 @@
   };
 
 programs = {
-    zsh = {
-      enable = true;
+    zsh.enable = true;
+    bash = {
       interactiveShellInit = ''
         if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
            WLR_NO_HARDWARE_CURSORS=1 Hyprland #prevents cursor disappear when using Nvidia drivers

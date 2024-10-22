@@ -132,14 +132,14 @@ misc {
 
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 # Example windowrule v1
-windowrule = float, ^(kitty)$
-windowrule = float, ^(garuda-assistant)$
-windowrule = float, ^(garuda-boot-options)$
-windowrule = float, ^(garuda-boot-repair)$
-windowrule = float, ^(garuda-gamer)$
-windowrule = float, ^(garuda-network-assistant)$
-windowrule = float, ^(garuda-settings-manager)$
-windowrule = float, ^(garuda-welcome)$
+#windowrule = float, ^(kitty)$
+#windowrule = float, ^(garuda-assistant)$
+#windowrule = float, ^(garuda-boot-options)$
+#windowrule = float, ^(garuda-boot-repair)$
+#windowrule = float, ^(garuda-gamer)$
+#windowrule = float, ^(garuda-network-assistant)$
+#windowrule = float, ^(garuda-settings-manager)$
+#windowrule = float, ^(garuda-welcome)$
 
 # Example windowrule v2
 # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
@@ -155,7 +155,7 @@ bind = $mainMod, Q, killactive,
 bind = $mainMod SHIFT, E, exec, nwgbar
 bind = $mainMod, N, exec, thunar
 bind = $mainMod SHIFT, 65, togglefloating,
-bind = $mainMod, D, exec, wofi
+bind = $mainMod, D, exec, wofi --show drun
 bind = $mainMod SHIFT, D, exec, nwg-drawer -mb 10 -mr 10 -ml 10 -mt 10
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod SHIFT, P, togglesplit, # dwindle
@@ -384,9 +384,9 @@ exec-once = .config/hypr/exec-hyprland
 
 exec-once = [workspace $ws1 silent] alacritty
 exec-once = [workspace $ws2 silent] firefox
-exec-once = [workspace $ws4 silent] flatpak run com.spotify.Client
+#exec-once = [workspace $ws4 silent] flatpak run com.spotify.Client
 #exec-once = [workspace $ws4 silent] flatpak run dev.vencord.Vesktop
-exec-once = [workspace $ws6 silent] flatpak run com.parsecgaming.parsec
+#exec-once = [workspace $ws6 silent] flatpak run com.parsecgaming.parsec
 #exec-once = dbus-update-activation-environment --systemd DISPLAY MOZ_DBUS_REMOTE
 
 debug:disable_logs = false

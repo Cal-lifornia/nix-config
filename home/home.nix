@@ -27,7 +27,6 @@
     insomnia
     _1password-gui
     stow
-   
 
     #misc 
     nano
