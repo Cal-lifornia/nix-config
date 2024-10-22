@@ -51,11 +51,11 @@
             inherit system;
             inherit specialArgs;
           modules = [
-            ./hosts/default/configuration.nix
+            ./hosts/desktop
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
-                home-manager.useUserPkgs = true;
+                home-manager.useUserPackages = true;
 
                 home-manager.extraSpecialArgs = inputs // specialArgs;
                 home-manager.users.${username} = import ./home/home.nix;

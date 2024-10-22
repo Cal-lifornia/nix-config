@@ -22,11 +22,11 @@
     lollypop
     lutris
     openrgb
-    parsec
+    parsec-bin
     obsidian
     insomnia
     _1password-gui
-
+    stow
    
 
     #misc 
@@ -40,7 +40,7 @@
     pamixer
     mpc-cli
     tty-clock
-    exa
+    #exa
     btop
     tokyo-night-gtk
 
@@ -49,7 +49,6 @@
     zenity
     gnome-tweaks
     eog
-    gedit
   ]);
 
 

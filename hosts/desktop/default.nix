@@ -1,14 +1,22 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ 
+    ./hardware-configuration.nix
+    ../../nixos/system.nix 
+  ];
 
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
+  #service.xserver.videoDrivers = [ "amdgpu" ];
+  boot = {
+    #initrd.kernalModules = [ "amdgpu" ];
+    loader = {
+      
+      efi = {
+        canTouchEfiVariables = true;
+#        efiSysMountPoint = "/boot/efi";
+      };
+      systemd-boot.enable = true;
     };
-    systemd-boot.enable = true;
   };
 
   system.stateVersion = "24.05";
@@ -16,5 +24,5 @@
   networking.hostName = "hob-nixos";
 
   networking.networkmanager.enable = true;
-  
+   
 }

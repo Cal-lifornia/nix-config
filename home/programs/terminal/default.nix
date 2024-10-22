@@ -12,6 +12,7 @@
     xflux
     dunst
     pavucontrol
+    lazygit
   ];
   
   programs = {

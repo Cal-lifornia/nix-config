@@ -11,6 +11,7 @@
     isNormalUser = true;
     description = username;
     extraGroups = ["networkmanager" "wheel" "docker"];
+    #shell = pkgs.zsh;
   };
   # given the users in this list the right to specify additional substituters via:
   #    1. `nixConfig.substituers` in `flake.nix`
@@ -42,6 +43,21 @@
 
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_AU.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_AU.UTF-8";
+    LC_IDENTIFICATION = "en_AU.UTF-8";
+    LC_MEASUREMENT = "en_AU.UTF-8";
+    LC_MONETARY = "en_AU.UTF-8";
+    LC_NAME = "en_AU.UTF-8";
+    LC_NUMERIC = "en_AU.UTF-8";
+    LC_PAPER = "en_AU.UTF-8";
+    LC_TELEPHONE = "en_AU.UTF-8";
+    LC_TIME = "en_AU.UTF-8";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -75,7 +91,7 @@
   };
 
   programs.dconf.enable = true;
-
+  #programs.zsh.enable = true;
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
@@ -111,12 +127,39 @@
   ];
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   services.power-profiles-daemon = {
     enable = true;
   };
   security.polkit.enable = true;
+
+  programs.regreet.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = {
+      initial_session = {
+        user = "whobson";
+        command = "$SHELL -l";
+      };
+    };
+  };
+
+programs = {
+    zsh = {
+      enable = true;
+      interactiveShellInit = ''
+        if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+           WLR_NO_HARDWARE_CURSORS=1 Hyprland #prevents cursor disappear when using Nvidia drivers
+        fi
+      '';
+    };
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+};
 
   services = {
     dbus.packages = [pkgs.gcr];
