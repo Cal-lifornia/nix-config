@@ -1,8 +1,17 @@
-{ hyprland, pkgs, username, ...}: {
+{
+  hyprland,
+  pkgs,
+  username,
+  ...
+}:
+{
 
   imports = [
     hyprland.homeManagerModules.default
     ./programs
+    ./themes
+    ./wallpapers
+    ./scripts
   ];
 
   home = {
@@ -10,46 +19,45 @@
     homeDirectory = "/home/${username}";
   };
 
-  home.packages = (with pkgs; [
-    
+  home.packages =
+    (with pkgs; [
 
-    #User Apps
-    celluloid
-    vesktop
-    cool-retro-term
-    bibata-cursors
-    vscode
-    lollypop
-    lutris
-    openrgb
-    parsec-bin
-    obsidian
-    insomnia
-    _1password-gui
-    stow
+      #User Apps
+      celluloid
+      vesktop
+      cool-retro-term
+      bibata-cursors
+      vscode
+      lollypop
+      lutris
+      openrgb
+      parsec-bin
+      obsidian
+      insomnia
+      _1password-gui
+      stow
+      nwg-look
 
-    #misc 
-    nano
-    wofi
-    nitch
-    wget
-    grim
-    slurp
-    wl-clipboard
-    pamixer
-    mpc-cli
-    tty-clock
-    #exa
-    btop
-    tokyo-night-gtk
+      #misc
+      nano
+      wofi
+      nitch
+      wget
+      grim
+      slurp
+      pamixer
+      mpc-cli
+      tty-clock
+      btop
+      tokyo-night-gtk
 
-  ]) ++ (with pkgs.gnome; [ 
-    nautilus
-    zenity
-    gnome-tweaks
-    eog
-  ]);
-
+    ])
+    ++ (with pkgs.gnome; [
+      nautilus
+      zenity
+      gnome-tweaks
+      eog
+    ]);
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -63,7 +71,7 @@
 
   programs = {
     home-manager.enable = true;
-      };
+  };
 
   home.stateVersion = "24.05";
 }
