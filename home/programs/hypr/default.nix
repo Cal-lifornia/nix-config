@@ -6,6 +6,9 @@
 }:
 
 {
+  imports = [ 
+    ./hyprland-environment.nix
+  ];
   home.packages = with pkgs; [
     waybar
     swww
@@ -21,7 +24,7 @@
     systemdIntegration = true;
     xwayland.enable = true;
     extraConfig = ''
-      source ~/.config/hypr/hypr.conf
+      source ~/.config/hyprland/hypr.conf
     '';
 
   };
