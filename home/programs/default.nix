@@ -1,4 +1,4 @@
-let configDir = "../configs";
+let configDir = ../configs;
 in
 {
   imports = [

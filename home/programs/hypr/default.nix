@@ -20,5 +20,9 @@
     enable = true;
     systemdIntegration = true;
     xwayland.enable = true;
+    extraConfig = ''
+      source ~/.config/hypr/hypr.conf
+    '';
+
   };
 }
