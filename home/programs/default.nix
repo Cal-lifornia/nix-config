@@ -8,5 +8,6 @@
     ./terminal
     ./utils
     ./waybar
+    ./configs
   ];
 }

@@ -10,7 +10,6 @@
     hyprland.homeManagerModules.default
     ./programs
     ./themes
-    ./wallpapers
     ./scripts
   ];
 
