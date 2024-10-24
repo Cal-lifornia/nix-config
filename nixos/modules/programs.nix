@@ -87,7 +87,6 @@
         '';
     };
 
-    zsh.enable = true;
 	mtr.enable = true;
  };
 

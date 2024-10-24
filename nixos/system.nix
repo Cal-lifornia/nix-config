@@ -6,6 +6,10 @@
 }: {
   # ============================= User related =============================
 
+  imports = [
+    ./modules
+];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
@@ -161,15 +165,6 @@ programs = {
     };
   };
 
- xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    xdgOpenUsePortal = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
- };
   services = {
     dbus.packages = [pkgs.gcr];
 
