@@ -15,5 +15,6 @@ in
       ".config/hypr".source = "${configDir}/hyprland";
       ".config/wlogout".source = "${configDir}/wlogout";
       ".config/wofi".source = "${configDir}/wofi";
+      ".config/waybar".source = "${configDir}/waybar";
   };
 }
