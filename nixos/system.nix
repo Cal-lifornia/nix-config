@@ -190,4 +190,9 @@ programs = {
 
     udev.packages = with pkgs; [gnome.gnome-settings-daemon];
   };
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.sddm.theme = "where_is_my_sddm_theme";
+
 }

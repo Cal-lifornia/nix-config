@@ -9,11 +9,10 @@ in
     ./shells
     ./terminal
     ./utils
-    ./waybar
   ];
 
   home.file = {
-      ".config/hyprland".source = "${configDir}/hyprland";
+      ".config/hypr".source = "${configDir}/hyprland";
       ".config/wlogout".source = "${configDir}/wlogout";
       ".config/wofi".source = "${configDir}/wofi";
   };
