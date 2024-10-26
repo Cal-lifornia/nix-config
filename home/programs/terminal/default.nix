@@ -14,6 +14,7 @@
     pavucontrol
     lazygit
     ripgrep
+    glow
   ];
 
   programs = {
