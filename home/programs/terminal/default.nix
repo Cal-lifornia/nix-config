@@ -1,7 +1,7 @@
-{pkgs, lib, ...}:
-{
+{ pkgs, lib, ... }: {
+  imports = [ ./alacritty.nix ];
   home.packages = with pkgs; [
-     #utils
+    #utils
     ranger
     git
     rustup
@@ -15,15 +15,14 @@
     lazygit
     ripgrep
   ];
-  
+
   programs = {
     zoxide = {
-      enable= true;
+      enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
-  };
+    };
     bat.enable = true;
     fzf.enable = true;
-    alacritty.enable = true;
   };
 }
