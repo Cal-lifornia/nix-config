@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}:
+{ pkgs, config, ... }:
 # media - control and enjoy audio/video
 {
   # imports = [
@@ -16,19 +12,18 @@
     # images
     imv
     spotify
+    spotifywm
   ];
 
   programs = {
     mpv = {
       enable = true;
-      defaultProfiles = ["gpu-hq"];
+      defaultProfiles = [ "gpu-hq" ];
       #scripts = [pkgs.mpvScripts.mpris];
     };
 
     obs-studio.enable = true;
   };
 
-  services = {
-    playerctld.enable = true;
-  };
+  services = { playerctld.enable = true; };
 }
