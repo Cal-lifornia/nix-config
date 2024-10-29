@@ -1,5 +1,4 @@
-{config, pkgs, ...}:
-{
+{ config, pkgs, ... }: {
 
   programs = {
     zsh = {
@@ -7,7 +6,15 @@
       oh-my-zsh.enable = true;
       initExtraFirst = "source ~/dotfiles/.zshrc";
     };
-    
+
     bash.enable = true;
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    nix-direnv.enable = true;
   };
+
 }
