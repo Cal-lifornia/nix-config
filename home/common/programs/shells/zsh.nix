@@ -7,12 +7,13 @@
       shellAliases = {
         cat = "bat --paging=never";
       };
-      promptInit = ''
+      initExtraFirst = ''
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       '';
       initExtra = ''
         export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
         export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+        [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       '';
       oh-my-zsh = {
         enable = true;
@@ -22,7 +23,6 @@
         ];
         theme = "powerlevel10k";
       };
-      initExtraFirst = "source ~/dotfiles/.zshrc";
       antidote = {
         enable = true;
         plugins = [

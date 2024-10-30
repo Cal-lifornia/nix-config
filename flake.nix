@@ -85,9 +85,13 @@
             specialArgs = {
               inherit username;
             };
+            pkgs = import nixpkgs {
+              config.allowUnfree = true;
+              system = "aarch64-darwin";
+            };
           in
-          home-manager.lib.homeManagerConfigurations {
-            pkgs = nixpkgs.legacyPackages."aarch64-darwin";
+          home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
             extraSpecialArgs = {
               inherit inputs;
               inherit username;

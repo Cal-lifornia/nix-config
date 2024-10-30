@@ -1,10 +1,13 @@
+let
+  scriptsDir = ./scripts;
+in
 { pkgs, ... }:
 {
   home.file.".local/bin/tmux-sessioniser" = {
-    source = "./scripts/tmux-sessioniser";
+    source = "${scriptsDir}/tmux-sessioniser";
     executable = true;
   };
-  home.programs = {
+  programs = {
     tmux = {
       enable = true;
       escapeTime = 0;
@@ -16,7 +19,9 @@
         tmuxPlugins.catppuccin
       ];
 
+      sensibleOnTop = true;
       extraConfig = ''
+        set -g default-command "$SHELL"
         set -g default-terminal "xterm-256color"
         set -ga terminal-overrides ",*256col*:Tc"
         set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
