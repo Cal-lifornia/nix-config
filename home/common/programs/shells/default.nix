@@ -4,16 +4,14 @@
     ./zsh.nix
   ];
 
+  home.packages = with pkgs; [
+    zsh-powerlevel10k
+  ];
+
   programs = {
 
     bash.enable = true;
 
-    direnv = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
-    nix-direnv.enable = true;
   };
 
 }

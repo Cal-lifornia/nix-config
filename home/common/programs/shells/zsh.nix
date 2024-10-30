@@ -7,6 +7,9 @@
       shellAliases = {
         cat = "bat --paging=never";
       };
+      promptInit = ''
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      '';
       initExtra = ''
         export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
         export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
