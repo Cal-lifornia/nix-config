@@ -73,7 +73,7 @@
                 home-manager.useUserPackages = true;
 
                 home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = import ./home/home.nix;
+                home-manager.users.${username} = import ./home/linux;
               }
             ];
           };
@@ -88,6 +88,13 @@
           in
           home-manager.lib.homeManagerConfigurations {
             pkgs = nixpkgs.legacyPackages."aarch64-darwin";
+            extraSpecialArgs = {
+              inherit inputs;
+              inherit username;
+            };
+            modules = [
+              ./home/mac
+            ];
           };
       };
     };

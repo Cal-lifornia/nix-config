@@ -1,11 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
+  imports = [
+    ./zsh.nix
+  ];
 
   programs = {
-    zsh = {
-      enable = true;
-      oh-my-zsh.enable = true;
-      initExtraFirst = "source ~/dotfiles/.zshrc";
-    };
 
     bash.enable = true;
 

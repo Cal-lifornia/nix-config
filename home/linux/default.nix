@@ -9,6 +9,7 @@
     ./programs
     hyprland.homeManagerModules.default
     ./scripts
+    ../home.nix
   ];
   home = {
     username = "${username}";

@@ -1,5 +1,8 @@
 { pkgs, username, ... }:
 {
+  imports = [
+    ../home.nix
+  ];
   home = {
     username = "${username}";
     homeDirectory = "/Users/${username}";
