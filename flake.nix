@@ -79,7 +79,7 @@
           };
       };
       homeConfigurations = {
-        "whobson@traveler" =
+        "whobson@hyperion" =
           let
             username = "whobson";
             specialArgs = {
