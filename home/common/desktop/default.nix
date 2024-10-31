@@ -2,7 +2,7 @@
 {
   imports = [
     ./alacritty
-    ./media
+    #./media
   ];
   home.packages = (
     with pkgs;

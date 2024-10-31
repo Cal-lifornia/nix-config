@@ -156,13 +156,13 @@
 
 programs = {
     zsh.enable = true;
-    bash = {
-      interactiveShellInit = ''
-        if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-           WLR_NO_HARDWARE_CURSORS=1 Hyprland #prevents cursor disappear when using Nvidia drivers
-        fi
-      '';
-    };
+    #bash = {
+    #  interactiveShellInit = ''
+    #    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+    #       WLR_NO_HARDWARE_CURSORS=1 Hyprland #prevents cursor disappear when using Nvidia drivers
+    #    fi
+    #  '';
+    #};
   };
 
   services = {
@@ -186,8 +186,10 @@ programs = {
     udev.packages = with pkgs; [gnome.gnome-settings-daemon];
   };
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.displayManager.sddm.theme = "where_is_my_sddm_theme";
+  services.displayManager.defaultSession = "sddm";
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enableHidpi = true;
+  #services.displayManager.sddm.theme = "where_is_my_sddm_theme";
 
 }

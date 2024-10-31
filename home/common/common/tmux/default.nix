@@ -3,7 +3,7 @@ let
 in
 { pkgs, ... }:
 {
-  home.file.".local/bin/tmux-sessioniser" = {
+  home.file.".local/scripts/tmux-sessioniser" = {
     source = "${scriptsDir}/tmux-sessioniser";
     executable = true;
   };
@@ -29,7 +29,7 @@ in
         set -g prefix C-a
         unbind C-b
         bind-key C-a send-prefix
-        bind-key -r f run-shell "tmux neww ~/.local/bin/tmux-sessioniser"
+        bind-key -r f run-shell "tmux neww ~/.local/scripts/tmux-sessioniser"
         unbind %
         bind | split-window -h
 
