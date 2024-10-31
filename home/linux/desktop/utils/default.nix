@@ -2,6 +2,7 @@
 {
   imports = [
     ./xdg.nix
+    ./cava.nix
   ];
 
   home.packages = with pkgs; [

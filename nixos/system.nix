@@ -153,11 +153,10 @@
     zsh-powerlevel10k
     binutils
     gccgo14
-    catppuccin-sddm.override
-    {
+    (catppuccin-sddm.override {
       flavor = "frappe";
       font = "Noto Sans";
-    }
+    })
   ];
 
   # Enable sound with pipewire.
