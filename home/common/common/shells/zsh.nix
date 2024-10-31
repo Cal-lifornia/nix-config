@@ -21,7 +21,6 @@
           "git"
           "direnv"
         ];
-        theme = "powerlevel10k";
       };
       antidote = {
         enable = true;

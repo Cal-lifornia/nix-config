@@ -79,7 +79,7 @@
           };
       };
       homeConfigurations = {
-        "whobson@hyperion" =
+        "whobson@traveler" =
           let
             username = "whobson";
             specialArgs = {
@@ -100,7 +100,7 @@
               ./hosts/traveler/home.nix
             ];
           };
-        "whobson@DESKTOP-61MATB" =
+        "whobson@hyperion" =
           let
             username = "whobson";
             specialArgs = {
