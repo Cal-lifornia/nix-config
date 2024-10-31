@@ -87,6 +87,7 @@
         fonts = [
           "FiraCode"
           "JetBrainsMono"
+          "RobotoMono"
         ];
       })
     ];
