@@ -153,6 +153,11 @@
     zsh-powerlevel10k
     binutils
     gccgo14
+    catppuccin-sddm.override
+    {
+      flavor = "frappe";
+      font = "Noto Sans";
+    }
   ];
 
   # Enable sound with pipewire.
@@ -210,6 +215,6 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.enableHidpi = true;
-  #services.displayManager.sddm.theme = "where_is_my_sddm_theme";
+  services.displayManager.sddm.theme = "catppuccin-frappe";
 
 }

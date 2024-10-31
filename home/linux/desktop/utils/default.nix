@@ -7,7 +7,6 @@
   home.packages = with pkgs; [
     appimage-run
     xflux
-    dunst
     catimg
   ];
 }

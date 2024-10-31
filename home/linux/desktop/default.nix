@@ -59,6 +59,7 @@ in
       ".config/wlogout".source = "${configDir}/wlogout";
       ".config/wofi".source = "${configDir}/wofi";
       ".config/waybar".source = "${configDir}/waybar";
+      ".config/dunst".source = "${configDir}/dunst";
       ".config/swww/swww_randomize_multi.sh" = {
         source = "${configDir}/swww/swww_randomize_multi.sh";
         executable = true;
