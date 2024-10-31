@@ -12,6 +12,7 @@
     # images
     imv
     spotifywm
+    pavucontrol
   ];
 
   programs = {

@@ -1,7 +1,7 @@
 { pkgs, username, ... }:
 {
   imports = [
-    ../home.nix
+    ../../home/home.nix
   ];
   home = {
     username = "${username}";
