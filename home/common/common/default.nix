@@ -20,6 +20,7 @@ in
     with pkgs;
     [
       stow
+      sqlite
     ]
   );
 }

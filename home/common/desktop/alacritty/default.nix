@@ -40,6 +40,9 @@
             chars = "\u001BB";
           }
         ];
+        env = {
+          TERM = "xterm-256color";
+        };
       };
     };
   };

@@ -3,37 +3,43 @@
   lib,
   username,
   ...
-}: {
+}:
+{
   # ============================= User related =============================
 
   imports = [
     ./modules
-];
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     #shell = pkgs.zsh;
   };
   # given the users in this list the right to specify additional substituters via:
   #    1. `nixConfig.substituers` in `flake.nix`
   #    2. command line args `--options substituers http://xxx`
-  nix.settings.trusted-users = [username];
+  nix.settings.trusted-users = [ username ];
 
   # customise /etc/nix/nix.conf declaratively via `nix.settings`
   nix.settings = {
     # enable flakes globally
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
   };
 
   virtualisation = {
     docker.enable = true;
   };
-
-  
 
   # do garbage collection weekly to keep disk usage low
   nix.gc = {
@@ -77,7 +83,12 @@
       noto-fonts-emoji
 
       # nerdfonts
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "JetBrainsMono"
+        ];
+      })
     ];
 
     # use fonts specified by user rather than default ones
@@ -87,10 +98,19 @@
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
+      serif = [
+        "Noto Serif"
+        "Noto Color Emoji"
+      ];
+      sansSerif = [
+        "Noto Sans"
+        "Noto Color Emoji"
+      ];
+      monospace = [
+        "JetBrainsMono Nerd Font"
+        "Noto Color Emoji"
+      ];
+      emoji = [ "Noto Color Emoji" ];
     };
   };
 
@@ -143,18 +163,18 @@
   };
   security.polkit.enable = true;
 
-  programs.regreet.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = {
-      initial_session = {
-        user = "whobson";
-        command = "$SHELL -l";
-      };
-    };
-  };
+  # programs.regreet.enable = true;
+  # services.greetd = {
+  #  enable = true;
+  #  settings = {
+  #    initial_session = {
+  #      user = "whobson";
+  #      command = "$SHELL -l";
+  #    };
+  #  };
+  # };
 
-programs = {
+  programs = {
     zsh.enable = true;
     #bash = {
     #  interactiveShellInit = ''
@@ -166,7 +186,7 @@ programs = {
   };
 
   services = {
-    dbus.packages = [pkgs.gcr];
+    dbus.packages = [ pkgs.gcr ];
 
     geoclue2.enable = true;
 
@@ -183,10 +203,10 @@ programs = {
       #media-session.enable = true;
     };
 
-    udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   };
-  services.xserver.enable = true;
-  services.displayManager.defaultSession = "sddm";
+  services.xserver.enable = false;
+  services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.enableHidpi = true;

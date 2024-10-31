@@ -9,6 +9,9 @@
     ripgrep
     glow
     neovim
+    nodejs_22
+    go
+    unzip
   ];
 
   programs = {
