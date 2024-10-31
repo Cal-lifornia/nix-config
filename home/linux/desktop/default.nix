@@ -20,8 +20,9 @@ in
     hyprland.homeManagerModules.default
   ];
   home = {
-    packages =
-      (with pkgs; [
+    packages = (
+      with pkgs;
+      [
         #User Apps
         celluloid
         vesktop
@@ -47,14 +48,13 @@ in
         insomnia
         parsec-bin
         _1password-gui
-        vial
-      ])
-      ++ (with pkgs.gnome; [
         nautilus
         zenity
         gnome-tweaks
         eog
-      ]);
+      ]
+    );
+
     file = {
       ".config/hypr".source = "${configDir}/hyprland";
       ".config/wlogout".source = "${configDir}/wlogout";

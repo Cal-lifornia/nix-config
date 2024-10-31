@@ -208,7 +208,13 @@
       #media-session.enable = true;
     };
 
-    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+    udev = {
+      packages = with pkgs; [ gnome-settings-daemon ];
+      extraRules = ''
+        KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+      '';
+
+    };
   };
   services.xserver.enable = false;
   services.displayManager.defaultSession = "hyprland";

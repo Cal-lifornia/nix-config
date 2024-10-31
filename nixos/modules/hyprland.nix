@@ -17,5 +17,8 @@
     wl-clipboard
     wofi
     waybar
+    grimblast
+    flameshot
+    cliphist
   ];
 }

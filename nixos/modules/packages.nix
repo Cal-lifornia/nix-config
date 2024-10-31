@@ -7,5 +7,6 @@
     dunst
     steamtinkerlaunch
     cava
+    vial
   ];
 }
