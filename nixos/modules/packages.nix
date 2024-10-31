@@ -6,5 +6,6 @@
     unzip
     dunst
     steamtinkerlaunch
+    cava
   ];
 }

@@ -47,6 +47,7 @@ in
         insomnia
         parsec-bin
         _1password-gui
+        vial
       ])
       ++ (with pkgs.gnome; [
         nautilus
