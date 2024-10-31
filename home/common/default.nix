@@ -5,6 +5,6 @@
 }:
 {
   imports = [
-    ./programs
+    ./common
   ];
 }
