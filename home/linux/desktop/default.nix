@@ -15,6 +15,7 @@ in
     ./utils
     ./scripts
     ./themes
+    ./browsers
     hyprland.homeManagerModules.default
   ];
   home = {
@@ -42,6 +43,9 @@ in
         btop
         tokyo-night-gtk
 
+        insomnia
+        parsec-bin
+        _1password-gui
       ])
       ++ (with pkgs.gnome; [
         nautilus

@@ -1,6 +1,5 @@
 { pkgs, lib, ... }:
 {
-  imports = [ ./alacritty.nix ];
   home.packages = with pkgs; [
     #utils
     git

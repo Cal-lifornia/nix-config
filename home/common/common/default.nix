@@ -8,9 +8,7 @@ in
 {
   imports = [
     ./shells
-    #./browsers
     ./terminal
-    ./media
     ./tmux
   ];
 
@@ -21,10 +19,6 @@ in
   home.packages = (
     with pkgs;
     [
-      #parsec-bin
-      obsidian
-      #insomnia
-      #_1password-gui
       stow
     ]
   );
