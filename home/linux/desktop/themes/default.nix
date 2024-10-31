@@ -1,10 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [ 
-    ./cava
+  imports = [
+    #./cava
   ];
-  
+
   gtk = {
     enable = true;
     iconTheme = {

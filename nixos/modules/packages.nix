@@ -5,6 +5,6 @@
     xdg-desktop-portal-wlr
     unzip
     dunst
-    steamtickerlaunch
+    steamtinkerlaunch
   ];
 }

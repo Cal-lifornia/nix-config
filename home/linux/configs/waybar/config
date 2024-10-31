@@ -140,6 +140,7 @@
       "custom/playerctl#play",
       "custom/playerctl#foward",
       "custom/playerlabel"
+      "hyprland/window"
     ],
     "modules-right": [
       "tray",
@@ -154,6 +155,10 @@
       "format-linked": "{ifname} (No IP)",
       "format-wifi": "  {signalStrength}%",
       "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
     },
     "position": "top",
     "pulseaudio": {

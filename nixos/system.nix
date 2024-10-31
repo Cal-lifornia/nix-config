@@ -155,7 +155,7 @@
     binutils
     gccgo14
     (catppuccin-sddm.override {
-      flavor = "frappe";
+      flavor = "mocha";
       font = "Noto Sans";
     })
   ];
@@ -215,6 +215,6 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.enableHidpi = true;
-  services.displayManager.sddm.theme = "catppuccin-frappe";
+  services.displayManager.sddm.theme = "mocha";
 
 }
