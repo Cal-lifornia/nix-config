@@ -73,7 +73,7 @@
                 home-manager.useUserPackages = true;
 
                 home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = import ./home/linux;
+                home-manager.users.${username} = import ./hosts/desktop/home.nix;
               }
             ];
           };
@@ -97,7 +97,28 @@
               inherit username;
             };
             modules = [
-              ./home/mac
+              ./hosts/traveler/home.nix
+            ];
+          };
+        "whobson@DESKTOP-61MATB" =
+          let
+            username = "whobson";
+            specialArgs = {
+              inherit username;
+            };
+            pkgs = import nixpkgs {
+              config.allowUnfree = true;
+              system = "x86_64-linux";
+            };
+          in
+          home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            extraSpecialArgs = {
+              inherit inputs;
+              inherit username;
+            };
+            modules = [
+              ./hosts/wsl/home.nix
             ];
           };
       };
