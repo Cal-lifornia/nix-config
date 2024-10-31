@@ -16,6 +16,7 @@ in
     ./scripts
     ./themes
     ./browsers
+    ./swww
     hyprland.homeManagerModules.default
   ];
   home = {
@@ -58,6 +59,10 @@ in
       ".config/wlogout".source = "${configDir}/wlogout";
       ".config/wofi".source = "${configDir}/wofi";
       ".config/waybar".source = "${configDir}/waybar";
+      "config/swww/swww_randomize_multi.sh" = {
+        source = "${configDir}/swww/swww_randomize_multi";
+        executable = true;
+      };
     };
   };
   dconf.settings = {
