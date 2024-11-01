@@ -8,7 +8,7 @@ in
 {
   imports = [
     ./shells
-    ./terminal
+    ./dev
     ./tmux
   ];
 
@@ -20,7 +20,6 @@ in
     with pkgs;
     [
       stow
-      sqlite
     ]
   );
 }
