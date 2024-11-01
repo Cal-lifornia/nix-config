@@ -12,6 +12,9 @@
   programs = {
 
     bash.enable = true;
+    nushell = {
+      enable = true;
+    };
     ripgrep.enable = true;
     fd.enable = true;
     zoxide = {
@@ -25,7 +28,6 @@
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
-      enableNushellIntegration = true;
     };
     direnv = {
       enable = true;

@@ -17,6 +17,8 @@ in
         tmuxPlugins.resurrect
         tmuxPlugins.continuum
         tmuxPlugins.nord
+        tmuxPlugins.tmux-fzf
+        tmuxPlugins.extrakto
       ];
 
       sensibleOnTop = true;
@@ -58,7 +60,6 @@ in
 
         set -g @resurrect-capture-pane-contents 'on'
         set -g @continuum-restore 'on'
-        set -g @catppuccin-flavour 'macchiato'
       '';
     };
   };

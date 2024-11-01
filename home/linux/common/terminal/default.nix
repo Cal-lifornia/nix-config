@@ -4,5 +4,6 @@
     gnumake
     nano
     wget
+    sysz
   ];
 }
