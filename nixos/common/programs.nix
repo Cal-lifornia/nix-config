@@ -1,6 +1,12 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   programs = {
+    ssh.setXAuthLocation = lib.mkForce false;
 
     gnupg = {
       agent = {

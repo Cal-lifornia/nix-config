@@ -132,7 +132,6 @@
   services.openssh = {
     enable = true;
     settings = {
-      setXAuthLocation = lib.mkForce false;
       X11Forwarding = true;
       PermitRootLogin = "no"; # disable root login
       PasswordAuthentication = false; # disable password login
