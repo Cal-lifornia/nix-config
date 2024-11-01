@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../nixos/system.nix
+    ../../nixos/desktop
   ];
 
   #service.xserver.videoDrivers = [ "amdgpu" ];

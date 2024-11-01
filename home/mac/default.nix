@@ -1,7 +1,7 @@
 { pkgs, username, ... }:
 {
   imports = [
-    ../../home/home.nix
+    ../../home/common
     ../../home/common/desktop
   ];
   home = {

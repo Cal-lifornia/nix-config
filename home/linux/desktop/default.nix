@@ -17,6 +17,7 @@ in
     ./themes
     ./browsers
     ./swww
+    ../../common/desktop
     hyprland.homeManagerModules.default
   ];
   home = {

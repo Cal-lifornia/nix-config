@@ -29,14 +29,6 @@
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
 
-    gnupg = {
-      agent = {
-        enable = true;
-        enableSSHSupport = true;
-      };
-    };
-
-    mtr.enable = true;
   };
 
 }

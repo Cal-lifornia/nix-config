@@ -32,6 +32,7 @@ in
         set -g prefix C-a
         unbind C-b
         bind-key C-a send-prefix
+        bind-key -r r run "tmux source ~/.config/tmux/tmux.conf"
         bind-key -r f run-shell "tmux neww ~/.local/scripts/tmux-sessioniser"
         unbind %
         bind | split-window -h

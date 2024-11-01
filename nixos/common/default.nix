@@ -5,10 +5,9 @@
   ...
 }:
 {
-  # ============================= User related =============================
 
   imports = [
-    ./modules
+    ./programs.nix
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -19,6 +18,9 @@
       "networkmanager"
       "wheel"
       "docker"
+    ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICHRkeBpPBgmUP5kRySd209zd62QgF64gvctwJt3KciW"
     ];
     #shell = pkgs.zsh;
   };
@@ -133,9 +135,8 @@
     openFirewall = true;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
+
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
@@ -146,81 +147,11 @@
     # print screen key is also bound to this tool in i3 config
     scrot
     neofetch
-    xfce.thunar # xfce4's file manager
     nnn # terminal file manager
     docker-compose
     neovim
     tmux
-    zsh-powerlevel10k
     binutils
     gccgo14
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "Noto Sans";
-    })
   ];
-
-  # Enable sound with pipewire.
-  # sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  services.power-profiles-daemon = {
-    enable = true;
-  };
-  security.polkit.enable = true;
-
-  # programs.regreet.enable = true;
-  # services.greetd = {
-  #  enable = true;
-  #  settings = {
-  #    initial_session = {
-  #      user = "whobson";
-  #      command = "$SHELL -l";
-  #    };
-  #  };
-  # };
-
-  programs = {
-    zsh.enable = true;
-    #bash = {
-    #  interactiveShellInit = ''
-    #    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-    #       WLR_NO_HARDWARE_CURSORS=1 Hyprland #prevents cursor disappear when using Nvidia drivers
-    #    fi
-    #  '';
-    #};
-  };
-
-  services = {
-    dbus.packages = [ pkgs.gcr ];
-
-    geoclue2.enable = true;
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
-    };
-
-    udev = {
-      packages = with pkgs; [ gnome-settings-daemon ];
-      extraRules = ''
-        KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
-      '';
-
-    };
-  };
-  services.xserver.enable = false;
-  services.displayManager.defaultSession = "hyprland";
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.enableHidpi = true;
-  services.displayManager.sddm.theme = "mocha";
-
 }

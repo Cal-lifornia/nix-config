@@ -3,6 +3,7 @@
   imports = [
     ./alacritty
     #./media
+    ../common
   ];
   home.packages = (
     with pkgs;

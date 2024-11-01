@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    ../home.nix
+    ../common
     ./common
   ];
   home = {
