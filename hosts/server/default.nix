@@ -7,7 +7,7 @@
 {
   imports = [
     # Include the default lxc/lxd configuration.
-    #"${modulesPath}/virtualisation/lxc-container.nix"
+    "${modulesPath}/virtualisation/lxc-container.nix"
     ../../nixos/server
   ];
 
