@@ -22,7 +22,7 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICHRkeBpPBgmUP5kRySd209zd62QgF64gvctwJt3KciW"
     ];
-    #shell = pkgs.zsh;
+    shell = pkgs.zsh;
   };
   # given the users in this list the right to specify additional substituters via:
   #    1. `nixConfig.substituers` in `flake.nix`
