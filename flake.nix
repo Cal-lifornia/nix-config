@@ -77,6 +77,28 @@
               }
             ];
           };
+        server =
+          let
+            username = "serveradmin";
+            specialArgs = {
+              inherit username;
+            };
+          in
+          nixpkgs.lib.nixosSystem rec {
+            inherit specialArgs;
+            system = "x86_64-linux";
+            modules = [
+              ./hosts/server
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+
+                home-manager.extraSpecialArgs = inputs // specialArgs;
+                home-manager.users.${username} = import ./hosts/server/home.nix;
+              }
+            ];
+          };
       };
       homeConfigurations = {
         "whobson@traveler" =

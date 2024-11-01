@@ -29,6 +29,10 @@
   #    2. command line args `--options substituers http://xxx`
   nix.settings.trusted-users = [ username ];
 
+  networking.nameservers = [
+    "192.168.1.198"
+  ];
+
   # customise /etc/nix/nix.conf declaratively via `nix.settings`
   nix.settings = {
     # enable flakes globally
