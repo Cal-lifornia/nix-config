@@ -9,6 +9,7 @@
     # Include the default lxc/lxd configuration.
     "${modulesPath}/virtualisation/lxc-container.nix"
     ../../nixos/server
+    "/etc/nixos/hostname.nix"
   ];
 
   boot.isContainer = true;
