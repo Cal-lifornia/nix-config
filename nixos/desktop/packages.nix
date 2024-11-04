@@ -8,5 +8,6 @@
     steamtinkerlaunch
     cava
     vial
+    kitty
   ];
 }

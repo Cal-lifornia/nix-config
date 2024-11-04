@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     #utils
-    git
     rustup
     curl
     lazygit
