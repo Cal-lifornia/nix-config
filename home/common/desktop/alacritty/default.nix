@@ -13,7 +13,7 @@
           bold.family = "JetBrainsMono Nerd Font Mono";
           italic.family = "JetBrainsMono Nerd Font Mono";
           bold_italic.family = "JetBrainsMono Nerd Font Mono";
-          size = 14;
+          size = 12;
         };
 
         window = {

@@ -9,5 +9,7 @@
     cava
     vial
     kitty
+    nwg-displays
+    wdisplays
   ];
 }

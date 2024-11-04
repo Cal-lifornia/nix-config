@@ -4,7 +4,7 @@
     git = {
       enable = true;
       ignores = [
-        ".direnv"
+        ".direnv/"
         "*.swp"
         ".env"
         ".envrc"
