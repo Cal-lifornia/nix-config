@@ -13,7 +13,7 @@
           bold.family = "JetBrainsMono Nerd Font Mono";
           italic.family = "JetBrainsMono Nerd Font Mono";
           bold_italic.family = "JetBrainsMono Nerd Font Mono";
-          size = 12;
+          size = 14;
         };
 
         window = {
@@ -32,12 +32,12 @@
           {
             key = "Right";
             mods = "Alt";
-            chars = "\u001BF";
+            chars = "\x1BF";
           }
           {
             key = "Left";
             mods = "Alt";
-            chars = "\u001BB";
+            chars = "\x1BB";
           }
         ];
         env = {
