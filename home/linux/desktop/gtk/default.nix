@@ -31,24 +31,33 @@
     };
 
     enable = true;
-    cursorTheme = {
-      name = "Catppuccin-Macchiato-Blue";
-      package = pkgs.catppuccin-cursors.macchiatoBlue;
-    };
-
-    theme = {
-      name = "Catppuccin-Macchiato-Compact-Blue-dark";
-      package = pkgs.catppuccin-gtk.override {
-        size = "compact";
-        accents = [ "blue" ];
-        variant = "macchiato";
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      icon = {
+        enable = true;
+        flavor = "mocha";
       };
+      size = "compact";
     };
+    # cursorTheme = {
+    #   name = "Catppuccin-Macchiato-Blue";
+    #   package = pkgs.catppuccin-cursors.macchiatoBlue;
+    # };
 
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-folders;
-    };
+    # theme = {
+    #   name = "Catppuccin-Macchiato-Compact-Blue-dark";
+    #   package = pkgs.catppuccin-gtk.override {
+    #     size = "compact";
+    #     accents = [ "blue" ];
+    #     variant = "macchiato";
+    #   };
+    # };
+    #
+    # iconTheme = {
+    #   name = "Papirus-Dark";
+    #   package = pkgs.papirus-folders;
+    # };
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1

@@ -10,6 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
@@ -18,6 +19,7 @@
       nixpkgs,
       home-manager,
       hyprland,
+      catppuccin,
       ...
     }@inputs:
     let
@@ -73,7 +75,12 @@
                 home-manager.useUserPackages = true;
 
                 home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = import ./hosts/desktop/home.nix;
+                home-manager.users.${username} = {
+                  imports = [
+                    ./hosts/desktop/home.nix
+                    catppuccin.homeManagerModules.catppuccin
+                  ];
+                };
               }
             ];
           };
@@ -95,7 +102,12 @@
                 home-manager.useUserPackages = true;
 
                 home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = import ./hosts/server/home.nix;
+                home-manager.users.${username} = {
+                  imports = [
+                    ./hosts/server/home.nix
+                    catppuccin.homeManagerModules.catppuccin
+                  ];
+                };
               }
             ];
           };
@@ -120,6 +132,7 @@
             };
             modules = [
               ./hosts/traveler/home.nix
+              catppuccin.homeManagerModules.catppuccin
             ];
           };
         "whobson@hyperion" =
@@ -141,6 +154,7 @@
             };
             modules = [
               ./hosts/wsl/home.nix
+              catppuccin.homeManagerModules.catppuccin
             ];
           };
       };

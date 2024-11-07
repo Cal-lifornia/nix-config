@@ -25,7 +25,13 @@
       enableZshIntegration = true;
       enableNushellIntegration = true;
     };
-    bat.enable = true;
+    bat = {
+      enable = true;
+      catpuccin = {
+        enable = true;
+        flavor = "mocha";
+      };
+    };
     fzf = {
       enable = true;
       enableZshIntegration = true;
