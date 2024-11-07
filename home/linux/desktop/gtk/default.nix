@@ -9,8 +9,27 @@
   imports = [
     ./environment.nix
   ];
+  home = {
+    packages = with pkgs; [
+      viewnior
+      catppuccin-cursors.macchiatoBlue
+      catppuccin-gtk
+      papirus-folders
+    ];
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.catppuccin-cursors.macchiatoBlue;
+      name = "Catppuccin-Macchiato-Blue 24";
+      size = 24;
+    };
+  };
 
   gtk = {
+    font = {
+      name = "Noto Sans";
+      size = 14;
+    };
+
     enable = true;
     cursorTheme = {
       name = "Catppuccin-Macchiato-Blue";

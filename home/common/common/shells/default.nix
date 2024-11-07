@@ -2,6 +2,7 @@
 {
   imports = [
     ./zsh.nix
+    ./starship.nix
   ];
 
   home.packages = with pkgs; [
@@ -37,10 +38,6 @@
       enableNushellIntegration = true;
     };
     carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
-    starship = {
       enable = true;
       enableNushellIntegration = true;
     };
