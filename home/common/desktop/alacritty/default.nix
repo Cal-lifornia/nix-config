@@ -13,7 +13,7 @@
           bold.family = "JetBrainsMono Nerd Font Mono";
           italic.family = "JetBrainsMono Nerd Font Mono";
           bold_italic.family = "JetBrainsMono Nerd Font Mono";
-          size = 14;
+          size = 15;
         };
 
         window = {
@@ -28,18 +28,6 @@
           program = "/usr/bin/env";
           args = [ "zsh" ];
         };
-        keyboard.bindings = [
-          {
-            key = "Right";
-            mods = "Alt";
-            chars = "\x1BF";
-          }
-          {
-            key = "Left";
-            mods = "Alt";
-            chars = "\x1BB";
-          }
-        ];
         env = {
           TERM = "xterm-256color";
         };

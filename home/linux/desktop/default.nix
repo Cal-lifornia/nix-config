@@ -14,10 +14,11 @@ in
     ./media
     ./utils
     ./scripts
-    ./themes
     ./browsers
     ./swww
     ../../common/desktop
+    ./gtk
+    ./gaming
     hyprland.homeManagerModules.default
   ];
   home = {
@@ -28,7 +29,6 @@ in
         celluloid
         vesktop
         cool-retro-term
-        bibata-cursors
         vscode
         lollypop
         lutris
@@ -44,7 +44,6 @@ in
         mpc-cli
         tty-clock
         btop
-        tokyo-night-gtk
 
         insomnia
         parsec-bin
@@ -62,19 +61,11 @@ in
       ".config/wofi".source = "${configDir}/wofi";
       ".config/waybar".source = "${configDir}/waybar";
       ".config/dunst".source = "${configDir}/dunst";
+      ".config/satty".source = "${configDir}/satty";
       ".config/swww/swww_randomize_multi.sh" = {
         source = "${configDir}/swww/swww_randomize_multi.sh";
         executable = true;
       };
-    };
-  };
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Tokyonight-Dark-B-LB";
     };
   };
 }

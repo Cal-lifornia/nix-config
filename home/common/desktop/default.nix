@@ -9,6 +9,7 @@
     with pkgs;
     [
       obsidian
+      zoom-us
     ]
   );
 }

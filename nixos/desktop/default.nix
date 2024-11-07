@@ -11,16 +11,14 @@
     ./hyprland.nix
     ./packages.nix
     ./programs.nix
+    ./steam.nix
+    ./theme.nix
   ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     xfce.thunar # xfce4's file manager
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "Noto Sans";
-    })
   ];
 
   # Enable sound with pipewire.
@@ -75,7 +73,7 @@
       sddm.enable = true;
       sddm.wayland.enable = true;
       sddm.enableHidpi = true;
-      sddm.theme = "mocha";
+      sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
     };
   };
 

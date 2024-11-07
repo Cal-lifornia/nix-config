@@ -1,7 +1,7 @@
 { config, ... }:
 let
   browser = [ "firefox.desktop" ];
-
+  fileManager = [ "nautilus" ];
   # XDG MIME types
   associations = {
     "application/x-extension-htm" = browser;
@@ -17,6 +17,9 @@ let
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/unknown" = browser;
+
+    "inode/directory" = fileManager;
+    "application/x-gnome-saved-search" = fileManager;
 
     "audio/*" = [ "mpv.desktop" ];
     "video/*" = [ "mpv.dekstop" ];

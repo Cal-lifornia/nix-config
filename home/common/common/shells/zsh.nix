@@ -16,6 +16,7 @@
         export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
         export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
         [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+        export $GRIMBLAST_EDITOR=satty
       '';
       oh-my-zsh = {
         enable = true;

@@ -24,12 +24,6 @@ in
           '';
         }
         {
-          plugin = continuum;
-          extraConfig = ''
-            set -g @continuum-restore 'on'
-          '';
-        }
-        {
           plugin = catppuccin;
           extraConfig = ''
             set -g @catppuccin_flavour 'frappe'

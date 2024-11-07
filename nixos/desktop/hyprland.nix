@@ -18,7 +18,6 @@
     wofi
     waybar
     grimblast
-    flameshot
     cliphist
   ];
 }
