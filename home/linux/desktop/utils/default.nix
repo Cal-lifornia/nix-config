@@ -3,6 +3,7 @@
   imports = [
     ./xdg.nix
     ./cava.nix
+    ./rofi.nix
   ];
 
   home.packages = with pkgs; [

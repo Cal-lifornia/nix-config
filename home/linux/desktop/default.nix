@@ -10,7 +10,6 @@ in
 {
   imports = [
     ./hypr
-    ./rofi
     ./media
     ./utils
     ./scripts

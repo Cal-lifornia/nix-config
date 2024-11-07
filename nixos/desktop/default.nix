@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  catpuccin,
+  catppuccin,
   ...
 }:
 {
@@ -74,7 +74,8 @@
       sddm.enable = true;
       sddm.wayland.enable = true;
       sddm.enableHidpi = true;
-      catpuccin = {
+      sddm.package = pkgs.kdePackages.sddm;
+      sddm.catppuccin = {
         enable = true;
         flavor = "frappe";
         font = "Noto Sans";

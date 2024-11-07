@@ -22,4 +22,9 @@ in
       stow
     ]
   );
+
+  # catppuccin = {
+  #   enable = true;
+  #   flavor = "mocha";
+  # };
 }

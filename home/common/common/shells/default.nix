@@ -27,7 +27,7 @@
     };
     bat = {
       enable = true;
-      catpuccin = {
+      catppuccin = {
         enable = true;
         flavor = "mocha";
       };

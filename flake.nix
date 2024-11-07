@@ -62,12 +62,14 @@
             specialArgs = {
               inherit username;
               inherit hyprland;
+              inherit catppuccin;
             };
           in
           nixpkgs.lib.nixosSystem rec {
             inherit specialArgs;
             system = "x86_64-linux";
             modules = [
+              catppuccin.nixosModules.catppuccin
               ./hosts/desktop
               home-manager.nixosModules.home-manager
               {
@@ -89,12 +91,14 @@
             username = "serveradmin";
             specialArgs = {
               inherit username;
+              inherit catppuccin;
             };
           in
           nixpkgs.lib.nixosSystem rec {
             inherit specialArgs;
             system = "x86_64-linux";
             modules = [
+              catppuccin.nixosModules.catppuccin
               ./hosts/server
               home-manager.nixosModules.home-manager
               {
@@ -118,6 +122,7 @@
             username = "whobson";
             specialArgs = {
               inherit username;
+              inherit catppuccin;
             };
             pkgs = import nixpkgs {
               config.allowUnfree = true;
@@ -140,6 +145,7 @@
             username = "whobson";
             specialArgs = {
               inherit username;
+              inherit catppuccin;
             };
             pkgs = import nixpkgs {
               config.allowUnfree = true;
