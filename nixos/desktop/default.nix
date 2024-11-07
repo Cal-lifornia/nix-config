@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  catpuccin,
   ...
 }:
 {
@@ -73,7 +74,12 @@
       sddm.enable = true;
       sddm.wayland.enable = true;
       sddm.enableHidpi = true;
-      sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+      catpuccin = {
+        enable = true;
+        flavor = "frappe";
+        font = "Noto Sans";
+      };
+      # sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
     };
   };
 
