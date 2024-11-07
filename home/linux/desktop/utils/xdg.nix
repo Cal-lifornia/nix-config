@@ -34,13 +34,15 @@ in
 {
   xdg = {
     enable = true;
-    cacheHome = config.home.homeDirectory + "/.local/cache";
 
     mimeApps = {
       enable = true;
       defaultApplications = associations;
     };
 
+    cacheHome = config.home.homeDirectory + "/.cache";
+    configHome = config.home.homeDirectory + "/.config";
+    dataHome = config.home.homeDirectory + "/.local/share";
     userDirs = {
       enable = true;
       createDirectories = true;
