@@ -3,6 +3,7 @@
   imports = [
     ../../home/common
     ../../home/common/desktop
+    ./shell.nix
   ];
   home = {
     username = "${username}";
