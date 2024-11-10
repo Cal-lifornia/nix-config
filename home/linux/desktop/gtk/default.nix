@@ -15,49 +15,46 @@
       catppuccin-cursors.macchiatoBlue
       catppuccin-gtk
       papirus-folders
+      colloid-gtk-theme
+      colloid-icon-theme
     ];
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.catppuccin-cursors.macchiatoBlue;
-      name = "Catppuccin-Macchiato-Blue 24";
-      size = 24;
-    };
   };
 
   gtk = {
+    enable = true;
     font = {
       name = "Noto Sans";
       size = 14;
     };
 
-    enable = true;
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-      icon = {
-        enable = true;
-        flavor = "mocha";
-      };
-      size = "compact";
-    };
-    # cursorTheme = {
-    #   name = "Catppuccin-Macchiato-Blue";
-    #   package = pkgs.catppuccin-cursors.macchiatoBlue;
-    # };
-
-    # theme = {
-    #   name = "Catppuccin-Macchiato-Compact-Blue-dark";
-    #   package = pkgs.catppuccin-gtk.override {
-    #     size = "compact";
-    #     accents = [ "blue" ];
-    #     variant = "macchiato";
+    # catppuccin = {
+    #   icon = {
+    #     enable = true;
+    #     flavor = "mocha";
     #   };
     # };
-    #
-    # iconTheme = {
-    #   name = "Papirus-Dark";
-    #   package = pkgs.papirus-folders;
-    # };
+    cursorTheme = {
+      name = "catppuccin-macchiato-blue";
+      package = pkgs.catppuccin-cursors.macchiatoBlue;
+    };
+
+    theme = {
+      name = "colloid-gtk-theme";
+      package = pkgs.colloid-gtk-theme.override {
+        themeVariants = [ "orange" ];
+        tweaks = [
+          "catppuccin"
+        ];
+      };
+    };
+
+    iconTheme = {
+      name = "Colloid-Catppuccin-Dark";
+      package = pkgs.colloid-icon-theme.override {
+        schemeVariants = [ "all" ];
+        colorVariants = [ "orange" ];
+      };
+    };
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
@@ -67,6 +64,7 @@
     gtk4.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
+        gtk-cursor-theme-name=Catppuccin-Macchiato-Blue
       '';
     };
   };
@@ -76,7 +74,7 @@
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = "Tokyonight-Dark-B-LB";
+      name = "Colloid-Catpuccin-Orange";
     };
   };
 }
