@@ -4,7 +4,19 @@
   pkgs,
   ...
 }:
+let
+  catppuccin-gtk = pkgs.catppuccin-gtk.overrideAttrs {
+    src = pkgs.fetchFromGitHub {
+      owner = "catppuccin";
+      repo = "gtk";
+      rev = "v1.0.3";
+      fetchSubmodules = true;
+      hash = "sha256-q5/VcFsm3vNEw55zq/vcM11eo456SYE5TQA3g2VQjGc=";
+    };
 
+    postUnpack = "";
+  };
+in
 {
   imports = [
     ./environment.nix
@@ -12,12 +24,19 @@
   home = {
     packages = with pkgs; [
       viewnior
-      catppuccin-cursors.macchiatoBlue
-      catppuccin-gtk
-      papirus-folders
-      colloid-gtk-theme
-      colloid-icon-theme
+      bibata-cursors
     ];
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
   };
 
   gtk = {
@@ -27,34 +46,20 @@
       size = 14;
     };
 
-    # catppuccin = {
-    #   icon = {
-    #     enable = true;
-    #     flavor = "mocha";
-    #   };
-    # };
-    cursorTheme = {
-      name = "catppuccin-macchiato-blue";
-      package = pkgs.catppuccin-cursors.macchiatoBlue;
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
     };
 
     theme = {
-      name = "colloid-gtk-theme";
-      package = pkgs.colloid-gtk-theme.override {
-        themeVariants = [ "orange" ];
-        tweaks = [
-          "catppuccin"
-        ];
+      name = "catppuccin-mocha-teal-compact";
+      package = catppuccin-gtk.override {
+        accents = [ "teal" ];
+        variant = "mocha";
+        size = "compact";
       };
     };
 
-    iconTheme = {
-      name = "Colloid-Catppuccin-Dark";
-      package = pkgs.colloid-icon-theme.override {
-        schemeVariants = [ "all" ];
-        colorVariants = [ "orange" ];
-      };
-    };
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
@@ -64,17 +69,13 @@
     gtk4.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
-        gtk-cursor-theme-name=Catppuccin-Macchiato-Blue
+        gtk-cursor-theme-name=catppuccin-macchiato-blue-cursors
       '';
     };
   };
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-    };
-
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Colloid-Catpuccin-Orange";
     };
   };
 }

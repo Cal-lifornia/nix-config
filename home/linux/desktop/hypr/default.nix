@@ -6,7 +6,8 @@
 }:
 
 {
-  imports = [ 
+  imports = [
     ./hyprland-environment.nix
+    ./dunst.nix
   ];
 }
