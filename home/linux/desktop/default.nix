@@ -55,7 +55,7 @@ in
     );
 
     file = {
-      ".config/hypr".source = "${configDir}/hyprland";
+      ".config/hypr".source = "${configDir}/hypr";
       ".config/wlogout".source = "${configDir}/wlogout";
       ".config/wofi".source = "${configDir}/wofi";
       ".config/waybar".source = "${configDir}/waybar";
