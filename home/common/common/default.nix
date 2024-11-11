@@ -10,6 +10,7 @@ in
     ./shells
     ./dev
     ./tmux
+    ./programs
   ];
 
   home.file = {

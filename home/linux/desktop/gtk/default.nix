@@ -4,7 +4,19 @@
   pkgs,
   ...
 }:
+let
+  catppuccin-gtk = pkgs.catppuccin-gtk.overrideAttrs {
+    src = pkgs.fetchFromGitHub {
+      owner = "catppuccin";
+      repo = "gtk";
+      rev = "v1.0.3";
+      fetchSubmodules = true;
+      hash = "sha256-q5/VcFsm3vNEw55zq/vcM11eo456SYE5TQA3g2VQjGc=";
+    };
 
+    postUnpack = "";
+  };
+in
 {
   imports = [
     ./environment.nix
@@ -12,52 +24,42 @@
   home = {
     packages = with pkgs; [
       viewnior
-      catppuccin-cursors.macchiatoBlue
-      catppuccin-gtk
-      papirus-folders
+      bibata-cursors
     ];
     pointerCursor = {
       gtk.enable = true;
-      package = pkgs.catppuccin-cursors.macchiatoBlue;
-      name = "Catppuccin-Macchiato-Blue 24";
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
       size = 24;
     };
   };
 
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+  };
+
   gtk = {
+    enable = true;
     font = {
       name = "Noto Sans";
       size = 14;
     };
 
-    enable = true;
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-      icon = {
-        enable = true;
-        flavor = "mocha";
-      };
-      size = "compact";
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
     };
-    # cursorTheme = {
-    #   name = "Catppuccin-Macchiato-Blue";
-    #   package = pkgs.catppuccin-cursors.macchiatoBlue;
-    # };
 
-    # theme = {
-    #   name = "Catppuccin-Macchiato-Compact-Blue-dark";
-    #   package = pkgs.catppuccin-gtk.override {
-    #     size = "compact";
-    #     accents = [ "blue" ];
-    #     variant = "macchiato";
-    #   };
-    # };
-    #
-    # iconTheme = {
-    #   name = "Papirus-Dark";
-    #   package = pkgs.papirus-folders;
-    # };
+    theme = {
+      name = "catppuccin-mocha-teal-compact";
+      package = catppuccin-gtk.override {
+        accents = [ "teal" ];
+        variant = "mocha";
+        size = "compact";
+      };
+    };
+
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
@@ -67,16 +69,13 @@
     gtk4.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
+        gtk-cursor-theme-name=catppuccin-macchiato-blue-cursors
       '';
     };
   };
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-    };
-
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Tokyonight-Dark-B-LB";
     };
   };
 }

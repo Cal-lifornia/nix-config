@@ -4,5 +4,6 @@
     steam
     steam-run
     lutris
+    xorg.xrandr
   ];
 }

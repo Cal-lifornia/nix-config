@@ -19,5 +19,6 @@
     waybar
     grimblast
     cliphist
+    hyprcursor
   ];
 }

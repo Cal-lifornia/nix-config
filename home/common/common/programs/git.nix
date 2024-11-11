@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.programs = {
+  programs = {
     git = {
       enable = true;
       ignores = [
