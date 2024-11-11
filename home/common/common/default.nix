@@ -11,6 +11,7 @@ in
     ./dev
     ./tmux
     ./programs
+    ./helix
   ];
 
   home.file = {
