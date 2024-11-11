@@ -1,5 +1,8 @@
 { pkgs, lib, ... }:
 {
+  imports = [
+    ./helix
+  ];
   home.packages = with pkgs; [
     #utils
     rustup
