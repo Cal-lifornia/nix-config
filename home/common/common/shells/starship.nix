@@ -4,12 +4,12 @@ let
 in
 {
   programs.starship = {
-    enable = false;
+    enable = true;
 
     enableBashIntegration = true;
     enableNushellIntegration = true;
     settings = {
-      palette = "opal";
+      palette = "amethyst";
     } // builtins.fromTOML (builtins.readFile "${configDir}/starship.toml");
   };
 }

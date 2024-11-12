@@ -1,4 +1,5 @@
 format = """
+[╭╴](fg:arrow)\
 $os\
 $username\
 $directory\
@@ -22,8 +23,8 @@ $docker_context\
 )\
 [](fg:sixth bg:seventh)\
 $time\
-$cmd_duration\
-$character\
+$cmd_duration
+[╰─](fg:arrow)$character\
 """
 
 # Palettes:
