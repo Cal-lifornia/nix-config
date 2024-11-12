@@ -1,8 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, helix-master, ... }:
 {
+  nixpkgs = {
+    overlays = [
+      helix-master.overlays.default
+    ];
+  };
   programs = {
     helix = {
       enable = true;
+      package = helix-master.packages.${pkgs.system}.default;
       settings = {
         theme = "catppuccin_macchiato";
         editor = {

@@ -11,6 +11,7 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     catppuccin.url = "github:catppuccin/nix";
+    helix-master.url = "github:helix-editor/helix";
   };
 
   outputs =
@@ -20,6 +21,7 @@
       home-manager,
       hyprland,
       catppuccin,
+      helix-master,
       ...
     }@inputs:
     let
@@ -63,6 +65,7 @@
               inherit username;
               inherit hyprland;
               inherit catppuccin;
+              inherit helix-master;
             };
           in
           nixpkgs.lib.nixosSystem rec {
@@ -92,6 +95,7 @@
             specialArgs = {
               inherit username;
               inherit catppuccin;
+              inherit helix-master;
             };
           in
           nixpkgs.lib.nixosSystem rec {
@@ -123,6 +127,7 @@
             specialArgs = {
               inherit username;
               inherit catppuccin;
+              inherit helix-master;
             };
             pkgs = import nixpkgs {
               config.allowUnfree = true;
@@ -134,6 +139,7 @@
             extraSpecialArgs = {
               inherit inputs;
               inherit username;
+              inherit helix-master;
             };
             modules = [
               ./hosts/traveler/home.nix
@@ -146,6 +152,7 @@
             specialArgs = {
               inherit username;
               inherit catppuccin;
+              inherit helix-master;
             };
             pkgs = import nixpkgs {
               config.allowUnfree = true;
@@ -157,6 +164,7 @@
             extraSpecialArgs = {
               inherit inputs;
               inherit username;
+              inherit helix-master;
             };
             modules = [
               ./hosts/wsl/home.nix
