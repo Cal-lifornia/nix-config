@@ -45,7 +45,7 @@
       #    1. https://github.com/ryan4yin/nix-config/issues/26
       #    2. https://github.com/ryan4yin/nix-config/issues/8
       #  Spawn a nushell in login mode via `bash`
-      shell = "${pkgs.bash}/bin/bash --login -c 'nu --login --interactive'";
+      shell = "/usr/bin/env zsh -l";
     };
 
     # macOS specific settings
