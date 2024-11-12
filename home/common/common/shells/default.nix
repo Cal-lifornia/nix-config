@@ -30,7 +30,7 @@
       enable = true;
       catppuccin = {
         enable = true;
-        flavor = "mocha";
+        flavor = "macchiato";
       };
     };
     fzf = {

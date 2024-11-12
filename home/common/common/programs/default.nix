@@ -6,14 +6,22 @@
 
   home.packages = with pkgs; [
     eza
-    yazi
   ];
 
   programs = {
     zellij = {
       enable = true;
-      enableZshIntegration = true;
       enableBashIntegration = true;
+    };
+    yazi = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      catppuccin = {
+        enable = true;
+        flavor = "macchiato";
+      };
     };
   };
 }

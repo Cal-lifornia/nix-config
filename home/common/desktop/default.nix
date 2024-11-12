@@ -4,6 +4,7 @@
     ./alacritty
     #./media
     ../common
+    ./kitty
   ];
   home.packages = (
     with pkgs;

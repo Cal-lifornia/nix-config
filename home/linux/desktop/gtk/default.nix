@@ -52,10 +52,10 @@ in
     };
 
     theme = {
-      name = "catppuccin-mocha-teal-compact";
+      name = "catppuccin-macchiato-teal-compact";
       package = catppuccin-gtk.override {
         accents = [ "teal" ];
-        variant = "mocha";
+        variant = "macchiato";
         size = "compact";
       };
     };

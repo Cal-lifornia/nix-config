@@ -15,6 +15,7 @@ in
 
   home.file = {
     ".config/themes".source = "${configDir}/themes";
+    ".config/starship".source = "${configDir}/starship";
   };
 
   home.packages = (

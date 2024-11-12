@@ -7,7 +7,7 @@
       font = "Noto Sans";
       catppuccin = {
         enable = true;
-        flavor = "mocha";
+        flavor = "macchiato";
       };
     };
   };
