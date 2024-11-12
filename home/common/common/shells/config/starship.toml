@@ -32,7 +32,6 @@ $character\
 #   ruby: red.
 # To change the colors: change to the corresponding palette.
 
-palette = "ruby"
 
 # Disables the blank line at the start of the prompt
 add_newline = true
