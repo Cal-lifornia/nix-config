@@ -15,7 +15,7 @@ in
 
   home.file = {
     ".config/themes".source = "${configDir}/themes";
-    ".config/zellij".source = "${configDir}/zellij";
+    # ".config/zellij".source = "${configDir}/zellij";
   };
 
   home.packages = (

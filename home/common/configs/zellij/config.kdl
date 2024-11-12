@@ -4,9 +4,11 @@ keybinds {
             floating true
             "move_to_focused_tab" true
             "cwd" "/"
-            "root_dirs" "~/projects;~/work;~/personal"
+            "root_dirs" "/Users/whobson/projects;/Users/whobson/work;/Users/whobson/personal"
             "session_layout" ":default"
-        }
+      }; SwitchToMode "Locked";
     }
   }
 }
+
+theme "catppuccin-macchiato"

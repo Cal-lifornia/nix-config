@@ -6,6 +6,8 @@
       autosuggestion.enable = true;
       shellAliases = {
         cat = "bat --paging=never";
+        el = "eza -l";
+        zs = "~/.local/scripts/zellij-sessioniser";
       };
       initExtraFirst = ''
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
