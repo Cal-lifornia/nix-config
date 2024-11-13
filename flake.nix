@@ -52,6 +52,7 @@
               statix
               vulnix
               haskellPackages.dhall-nix
+              nil
             ];
           };
         }
