@@ -9,7 +9,6 @@ in
   imports = [
     ./shells
     ./dev
-    ./tmux
     ./programs
   ];
 

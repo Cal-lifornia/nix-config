@@ -1,14 +1,7 @@
 keybinds {
-  session {
-    bind "f" { LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij-sessionizer.wasm" {
-            floating true
-            "move_to_focused_tab" true
-            "cwd" "/"
-            "root_dirs" "/Users/whobson/projects;/Users/whobson/work;/Users/whobson/personal"
-            "session_layout" ":default"
-      }; SwitchToMode "Locked";
-    }
-  }
+ unbind "Alt h" "Alt j" "Alt k" "Alt l" 
+ unbind "Alt Left" "Alt Down" "Alt Up" "Alt Right" 
 }
+
 
 theme "catppuccin-macchiato"

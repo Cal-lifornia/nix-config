@@ -8,9 +8,16 @@
   programs = {
     helix = {
       enable = true;
+      defaultEditor = true;
       package = helix-master.packages.${pkgs.system}.default;
       settings = {
         theme = "catppuccin_macchiato";
+        keys = {
+          normal = {
+            "C-s" = ":w"; # Ctrl + s to save file
+            "C-S-s" = ":wa"; # Ctrl + Shift + s to save all buffers
+          };
+        };
         editor = {
           bufferline = "always";
           statusline = {

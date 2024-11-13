@@ -3,7 +3,7 @@
   imports = [
     ./git.nix
     ./yazi.nix
-    ./zellij.nix
+    ./multiplexers
   ];
 
   home.packages = with pkgs; [
