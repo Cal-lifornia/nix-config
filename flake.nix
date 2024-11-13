@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -18,6 +19,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       hyprland,
       catppuccin,
@@ -70,6 +72,9 @@
             };
           in
           nixpkgs.lib.nixosSystem rec {
+            pkgs = import nixpkgs {
+              config.allowUnfree = true;
+            };
             inherit specialArgs;
             system = "x86_64-linux";
             modules = [
@@ -100,6 +105,9 @@
             };
           in
           nixpkgs.lib.nixosSystem rec {
+            pkgs = import nixpkgs {
+              config.allowUnfree = true;
+            };
             inherit specialArgs;
             system = "x86_64-linux";
             modules = [
@@ -137,11 +145,7 @@
           in
           home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
-            extraSpecialArgs = {
-              inherit inputs;
-              inherit username;
-              inherit helix-master;
-            };
+            extraSpecialArgs = inputs // specialArgs;
             modules = [
               ./hosts/traveler/home.nix
               catppuccin.homeManagerModules.catppuccin
@@ -162,11 +166,7 @@
           in
           home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
-            extraSpecialArgs = {
-              inherit inputs;
-              inherit username;
-              inherit helix-master;
-            };
+            extraSpecialArgs = inputs // specialArgs;
             modules = [
               ./hosts/wsl/home.nix
               catppuccin.homeManagerModules.catppuccin
