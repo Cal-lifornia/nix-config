@@ -23,7 +23,6 @@
         theme = "catppuccin_macchiato";
         keys = {
           normal = {
-            "C-k" = ":save_selection";
             "C-s" = ":w"; # Ctrl + s to save file
             "C-S-s" = ":wa"; # Ctrl + Shift + s to save all buffers
             "C-y" = {
@@ -33,11 +32,6 @@
               # Open the file(s) in a horizontal pane
               "h" = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ~/.local/scripts/yazi-picker hsplit";
             };
-
-          };
-          completion = {
-            "Up" = "no_op";
-            "Down" = "no_op";
           };
         };
         editor = {

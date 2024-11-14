@@ -2,6 +2,7 @@
 {
   imports = [
     ./helix
+    ./kdlfmt.nix
   ];
   home.packages = with pkgs; [
     #utils
@@ -15,6 +16,8 @@
     unzip
     sqlite
     lua-language-server
+    nixfmt-rfc-style
+    nil
   ];
 
 }
