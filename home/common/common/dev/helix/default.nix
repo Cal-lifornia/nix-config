@@ -18,6 +18,17 @@
             command = "nixfmt";
           };
         }
+        {
+          name = "kdl";
+          auto-format = true;
+          formatter = {
+            command = "kdlfmt";
+            args = [
+              "format"
+              "-"
+            ];
+          };
+        }
       ];
       settings = {
         theme = "catppuccin_macchiato";
