@@ -34,6 +34,10 @@
         theme = "catppuccin_macchiato";
         keys = {
           normal = {
+            # Shift + left/right arrow to move buffers 
+            "S-left" = "goto_previous_buffer";
+            "S-right" = "goto_next_buffer";
+
             "C-s" = ":w"; # Ctrl + s to save file
             "C-S-s" = ":wa"; # Ctrl + Shift + s to save all buffers
             "C-y" = {
