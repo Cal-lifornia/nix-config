@@ -35,6 +35,8 @@
           };
         };
         editor = {
+          line-number = "relative";
+          cursor-shape.insert = "bar";
           bufferline = "always";
           statusline = {
             left = [

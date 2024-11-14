@@ -2,10 +2,10 @@
 {
   imports = [
     ./helix
-    ./kdlfmt.nix
   ];
   home.packages = with pkgs; [
     #utils
+    (callPackage ./kdlfmt.nix { })
     rustup
     curl
     lazygit
@@ -19,5 +19,4 @@
     nixfmt-rfc-style
     nil
   ];
-
 }
