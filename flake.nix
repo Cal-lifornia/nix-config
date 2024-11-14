@@ -72,9 +72,6 @@
             };
           in
           nixpkgs.lib.nixosSystem rec {
-            pkgs = import nixpkgs {
-              config.allowUnfree = true;
-            };
             inherit specialArgs;
             system = "x86_64-linux";
             modules = [

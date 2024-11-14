@@ -1,8 +1,7 @@
 {
   home.sessionVariables = {
     BROWSER = "firefox";
-    EDITOR = "nvim";
-    TERMINAL = "alacritty";
+    TERMINAL = "kitty";
     QT_SCALE_FACTOR = "1";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     GTK_CSD = "0";

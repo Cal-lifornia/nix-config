@@ -14,6 +14,7 @@
     go
     unzip
     sqlite
+    lua-language-server
   ];
 
 }

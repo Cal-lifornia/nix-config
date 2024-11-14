@@ -1,6 +1,10 @@
 keybinds {
  //unbind "Alt h" "Alt j" "Alt k" "Alt l" 
  unbind "Alt Left" "Alt Down" "Alt Up" "Alt Right" 
+ unbind "Ctrl s"
+ shared_except "search" "locked" {
+        bind "Ctrl f" { SwitchToMode "Search"; }
+    }
 }
 
 
