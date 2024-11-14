@@ -5,7 +5,7 @@
   ];
   home.packages = with pkgs; [
     #utils
-    (callPackage ./kdlfmt.nix { })
+    # (callPackage ./kdlfmt.nix { })
     rustup
     curl
     lazygit
