@@ -19,14 +19,10 @@
           };
         }
         {
-          name = "kdl";
+          name = "go";
           auto-format = true;
           formatter = {
-            command = "kdlfmt";
-            args = [
-              "format"
-              "-"
-            ];
+            command = "goimports";
           };
         }
       ];
