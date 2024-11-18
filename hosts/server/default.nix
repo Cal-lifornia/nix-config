@@ -9,8 +9,9 @@
     # Include the default lxc/lxd configuration.
     "${modulesPath}/virtualisation/lxc-container.nix"
     ../../nixos/server
-    "/etc/nixos/hostname.nix"
   ];
+
+  networking.hostName = builtins.getEnv "HOSTNAME";
 
   boot.isContainer = true;
   # Enable passwordless sudo.

@@ -10,22 +10,24 @@
       enable = true;
       defaultEditor = true;
       package = helix-master.packages.${pkgs.system}.default;
-      languages = [
-        {
-          name = "nix";
-          auto-format = true;
-          formatter = {
-            command = "nixfmt";
-          };
-        }
-        {
-          name = "go";
-          auto-format = true;
-          formatter = {
-            command = "goimports";
-          };
-        }
-      ];
+      languages = {
+        language = [
+          {
+            name = "nix";
+            auto-format = true;
+            formatter = {
+              command = "nixfmt";
+            };
+          }
+          {
+            name = "go";
+            auto-format = true;
+            formatter = {
+              command = "goimports";
+            };
+          }
+        ];
+      };
       settings = {
         theme = "catppuccin_macchiato";
         keys = {
