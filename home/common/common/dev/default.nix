@@ -18,5 +18,6 @@
     lua-language-server
     nixfmt-rfc-style
     nil
+
   ];
 }
