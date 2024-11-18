@@ -4,6 +4,7 @@
     ./git.nix
     ./yazi.nix
     ./multiplexers
+    ./virtualistion.nix
   ];
 
   home.packages = with pkgs; [
