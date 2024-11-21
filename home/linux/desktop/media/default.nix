@@ -13,6 +13,7 @@
     imv
     spotifywm
     pavucontrol
+    gimp
   ];
 
   programs = {

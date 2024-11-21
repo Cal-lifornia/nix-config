@@ -6,7 +6,7 @@
     unzip
     dunst
     steamtinkerlaunch
-    cava
+    # cava
     vial
     kitty
     nwg-displays
