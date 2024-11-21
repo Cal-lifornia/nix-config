@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   browser = [ "firefox.desktop" ];
   fileManager = [ "nautilus" ];
@@ -32,6 +32,9 @@ let
   };
 in
 {
+  home.packages = [
+    pkgs.nautilus
+  ];
   xdg = {
     enable = true;
 

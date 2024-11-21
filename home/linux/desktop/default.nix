@@ -4,7 +4,6 @@ in
 {
   hyprland,
   pkgs,
-  username,
   ...
 }:
 {
@@ -47,7 +46,6 @@ in
         insomnia
         parsec-bin
         _1password-gui
-        nautilus
         zenity
         gnome-tweaks
         eog

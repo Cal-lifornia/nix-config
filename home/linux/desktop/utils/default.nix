@@ -2,7 +2,7 @@
 {
   imports = [
     ./xdg.nix
-    # ./cava.nix
+    ./cava.nix
     ./rofi.nix
   ];
 

@@ -1,7 +1,9 @@
-{ ... }:
+{ pkgs-stable, ... }:
 {
+
   programs.cava = {
     enable = true;
+    package = pkgs-stable.cava;
     settings = {
       general = {
         framerate = 60;

@@ -64,16 +64,19 @@
         desktop =
           let
             username = "whobson";
+            system = "x86_64-linux";
+            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
             specialArgs = {
               inherit username;
               inherit hyprland;
               inherit catppuccin;
               inherit helix-master;
+              inherit nixpkgs-stable;
+              inherit pkgs-stable;
             };
           in
           nixpkgs.lib.nixosSystem rec {
             inherit specialArgs;
-            system = "x86_64-linux";
             modules = [
               catppuccin.nixosModules.catppuccin
               ./hosts/desktop
