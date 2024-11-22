@@ -45,7 +45,7 @@
               # Open the file(s) in a horizontal pane
               "h" = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ~/.local/scripts/yazi-picker hsplit";
 
-              "g" = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- lazygit";
+              "g" = ":sh zellij run -c -i -x 10% -y 10% --width 80% --height 80% -- lazygit";
             };
           };
         };
