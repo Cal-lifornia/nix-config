@@ -19,5 +19,8 @@
     nixfmt-rfc-style
     nil
 
+    taplo
+    cargo-insta
+    just
   ];
 }
