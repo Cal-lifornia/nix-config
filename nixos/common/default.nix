@@ -33,8 +33,6 @@
     "192.168.1.198"
   ];
 
-  environment.etc."resolv.conf".text = "nameserver 192.68.1.198\n";
-
   # customise /etc/nix/nix.conf declaratively via `nix.settings`
   nix.settings = {
     # enable flakes globally
