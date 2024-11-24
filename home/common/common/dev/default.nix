@@ -18,6 +18,7 @@
     lua-language-server
     nixfmt-rfc-style
     nil
+    bash-language-server
 
     taplo
     cargo-insta

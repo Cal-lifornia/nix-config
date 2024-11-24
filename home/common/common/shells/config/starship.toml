@@ -1,5 +1,4 @@
 format = """
-[╭╴](fg:arrow)\
 $os\
 $username\
 $directory\
@@ -23,8 +22,9 @@ $docker_context\
 )\
 [](fg:sixth bg:seventh)\
 $time\
-$cmd_duration
-[╰─](fg:arrow)$character\
+$cmd_duration\
+[](fg:eighth bg:eighth)[](eighth)\
+\n$character\
 """
 
 # Palettes:
@@ -224,6 +224,3 @@ format = '[  $time]($style)[](fg:seventh bg:eighth)'
 style = "bg:eighth fg:white"
 format = '[  $duration ]($style)'
 
-[character]
-success_symbol = "[](fg:eighth bg:eighth)[](fg:eighth)"
-error_symbol = "[](fg:eighth bg:error)[](fg:error)"
