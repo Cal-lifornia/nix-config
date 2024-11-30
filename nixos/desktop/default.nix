@@ -14,6 +14,7 @@
     ./programs.nix
     ./steam.nix
     ./theme.nix
+    ./bluetooth.nix
   ];
 
   # List packages installed in system profile. To search, run:
