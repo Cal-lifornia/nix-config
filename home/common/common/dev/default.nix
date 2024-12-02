@@ -19,6 +19,7 @@
     nixfmt-rfc-style
     nil
     bash-language-server
+    yaml-language-server
 
     taplo
     cargo-insta
