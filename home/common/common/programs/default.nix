@@ -11,6 +11,10 @@
     eza
     vhs
     wtf
+    lazygit
+    glow
+    unzip
+    curl
   ];
 
 }
