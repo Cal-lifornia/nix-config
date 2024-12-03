@@ -9,6 +9,9 @@
   imports = [
     ./hyprland-environment.nix
     ./dunst.nix
-    ./swappy.nix
+  ];
+
+  home.packages = with pkgs; [
+    swappy
   ];
 }
