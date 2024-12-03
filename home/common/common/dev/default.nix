@@ -4,24 +4,25 @@
     ./helix
   ];
   home.packages = with pkgs; [
-    #utils
-    # (callPackage ./kdlfmt.nix { })
+    # utils
+    sqlite
+    just # replacement for GNU Make
+
+    #languages
     rustup
-    curl
-    lazygit
-    glow
     neovim
     nodejs_22
     go
-    unzip
-    sqlite
-    lua-language-server
-    nixfmt-rfc-style
+
+    # language servers
     nil
     bash-language-server
-
+    yaml-language-server
     taplo
     cargo-insta
-    just
+    lua-language-server
+
+    # formatters
+    nixfmt-rfc-style
   ];
 }

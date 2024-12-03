@@ -28,6 +28,7 @@
           }
           {
             name = "toml";
+            auto-format = true;
             formatter = {
               command = "taplo";
               args = [
@@ -36,13 +37,24 @@
               ];
             };
           }
+          {
+            name = "yaml";
+            auto-format = true;
+          }
 
         ];
         language-server = {
           rust-analyzer.config.check = {
             command = "clippy";
           };
+          yaml-language-server.config.yaml = {
+            format = {
+              enable = true;
+            };
+            validation = true;
+          };
         };
+
       };
       settings = {
         theme = "catppuccin_macchiato";

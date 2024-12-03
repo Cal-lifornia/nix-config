@@ -10,6 +10,11 @@
   home.packages = with pkgs; [
     eza
     vhs
+    wtf
+    lazygit
+    glow
+    unzip
+    curl
   ];
 
 }
