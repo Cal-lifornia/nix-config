@@ -89,13 +89,9 @@
       noto-fonts-emoji
 
       # nerdfonts
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-          "JetBrainsMono"
-          "RobotoMono"
-        ];
-      })
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.fira-code
+      nerd-fonts.roboto-mono
     ];
 
     # use fonts specified by user rather than default ones
