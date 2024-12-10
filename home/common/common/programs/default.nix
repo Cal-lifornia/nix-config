@@ -15,6 +15,7 @@
     glow
     unzip
     curl
+    btop
   ];
 
 }

@@ -41,7 +41,6 @@ in
         pamixer
         mpc-cli
         tty-clock
-        btop
 
         insomnia
         parsec-bin
