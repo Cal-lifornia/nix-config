@@ -10,5 +10,6 @@
     appimage-run
     xflux
     catimg
+    remmina
   ];
 }
