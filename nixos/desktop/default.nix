@@ -2,7 +2,6 @@
   pkgs,
   lib,
   catppuccin,
-  ...
 }:
 {
   # ============================= User related =============================
@@ -15,6 +14,7 @@
     ./steam.nix
     ./theme.nix
     ./bluetooth.nix
+    ./sound.nix
   ];
 
   # List packages installed in system profile. To search, run:
