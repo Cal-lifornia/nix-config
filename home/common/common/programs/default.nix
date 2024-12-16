@@ -16,6 +16,7 @@
     unzip
     curl
     btop
+    tailscale
   ];
 
 }

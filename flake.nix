@@ -71,7 +71,6 @@
               inherit hyprland;
               inherit catppuccin;
               inherit helix-master;
-              inherit nixpkgs-stable;
               inherit pkgs-stable;
             };
           in
