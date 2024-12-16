@@ -21,6 +21,8 @@
     taplo
     cargo-insta
     lua-language-server
+    ruff
+    marksman
 
     # formatters
     nixfmt-rfc-style

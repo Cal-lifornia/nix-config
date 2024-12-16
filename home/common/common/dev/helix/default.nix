@@ -41,6 +41,10 @@
             name = "yaml";
             auto-format = true;
           }
+          {
+            name = "markdown";
+            auto-format = true;
+          }
 
         ];
         language-server = {
@@ -60,7 +64,7 @@
         theme = "catppuccin_macchiato";
         keys = {
           normal = {
-            # Shift + left/right arrow to move buffers 
+            # Shift + left/right arrow to move buffers
             "S-left" = "goto_previous_buffer";
             "S-right" = "goto_next_buffer";
 
@@ -89,9 +93,9 @@
               "spinner"
               "read-only-indicator"
               "file-modification-indicator"
+              "version-control"
             ];
             center = [
-              "file-absolute-path"
               "file-name"
             ];
             mode = {
