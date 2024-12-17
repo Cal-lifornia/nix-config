@@ -88,7 +88,7 @@
         };
         editor = {
           line-number = "relative";
-          continue-comments = "false";
+          continue-comments = false;
           cursor-shape.insert = "bar";
           bufferline = "always";
           statusline = {
