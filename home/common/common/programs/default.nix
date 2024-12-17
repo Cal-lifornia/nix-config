@@ -17,6 +17,7 @@
     curl
     btop
     tailscale
+    jq
   ];
 
 }
