@@ -13,6 +13,10 @@
     hyprland.url = "github:hyprwm/Hyprland";
     catppuccin.url = "github:catppuccin/nix";
     helix-master.url = "github:helix-editor/helix";
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,6 +28,7 @@
       hyprland,
       catppuccin,
       helix-master,
+      nixos-generators,
       ...
     }@inputs:
     let
@@ -59,6 +64,29 @@
           };
         }
       );
+
+      packages.x86_64-linux = {
+        proxmox =
+          let
+            system = "x86_64-linux";
+            username = "whobson";
+            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+            specialArgs = {
+              inherit username;
+              inherit pkgs-stable;
+            };
+
+          in
+          nixos-generators.nixosGenerate {
+            modules = [
+              ./hosts/vm
+            ];
+
+            format = "proxmox";
+            specialArgs = inputs // specialArgs;
+
+          };
+      };
 
       nixosConfigurations = {
         desktop =
