@@ -161,6 +161,9 @@
             inherit specialArgs;
             modules = [
               catppuccin.nixosModules.catppuccin
+              {
+                virtualisation.diskSize = 40 * 1024;
+              }
               ./hosts/vm
               self.nixosModules.myFormats
               home-manager.nixosModules.home-manager
@@ -172,6 +175,7 @@
                 home-manager.users.${username} = {
                   imports = [
                     ./hosts/vm/home.nix
+
                     catppuccin.homeManagerModules.catppuccin
                   ];
                 };
