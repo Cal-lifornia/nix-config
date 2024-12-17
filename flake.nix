@@ -109,7 +109,7 @@
               }
             ];
           };
-        proxmoxvm' =
+        proxmoxvm =
           let
             username = "whobson";
             system = "x86_64-linux";
@@ -126,7 +126,7 @@
             inherit specialArgs;
             modules = [
               catppuccin.nixosModules.catppuccin
-              ./hosts/server
+              ./hosts/vm
               self.nixosModules.myFormats
               home-manager.nixosModules.home-manager
               {
@@ -136,7 +136,7 @@
                 home-manager.extraSpecialArgs = inputs // specialArgs;
                 home-manager.users.${username} = {
                   imports = [
-                    ./hosts/server/home.nix
+                    ./hosts/vm/home.nix
                     catppuccin.homeManagerModules.catppuccin
                   ];
                 };
