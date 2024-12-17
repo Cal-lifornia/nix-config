@@ -47,6 +47,9 @@
       #  Spawn a nushell in login mode via `bash`
       shell = "/usr/bin/env zsh -l";
     };
+    environment = {
+      "TERM" = "xterm-256color";
+    };
 
     # macOS specific settings
     darwinLaunchOptions = [ "--start-as=maximized" ];
