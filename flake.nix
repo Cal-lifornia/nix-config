@@ -259,27 +259,28 @@
               ./hosts/wsl/home.nix
               catppuccin.homeManagerModules.catppuccin
             ];
-         "serveradmin@citizen" =
-          let
-            username = "serveradmin";
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-            };
-            pkgs = import nixpkgs {
-              config.allowUnfree = true;
-              system = "x86_64-linux";
-            };
-          in
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = inputs // specialArgs;
-            modules = [
-              ./hosts/wsl/home.nix
-              catppuccin.homeManagerModules.catppuccin
-            ];
-          } };
+            "serveradmin@citizen" =
+              let
+                username = "serveradmin";
+                specialArgs = {
+                  inherit username;
+                  inherit catppuccin;
+                  inherit helix-master;
+                };
+                pkgs = import nixpkgs {
+                  config.allowUnfree = true;
+                  system = "x86_64-linux";
+                };
+              in
+              home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                extraSpecialArgs = inputs // specialArgs;
+                modules = [
+                  ./hosts/wsl/home.nix
+                  catppuccin.homeManagerModules.catppuccin
+                ];
+              };
+          };
       };
     };
 }
