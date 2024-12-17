@@ -12,6 +12,8 @@
 
   system.stateVersion = "24.11";
   users.users.root.password = "";
-  networking.hostName = "";
-  networking.domain = "local.hobcloud.net";
+  networking.useDHCP = true;
+  networking.dhcpcd.extraConfig = ''
+    hostname
+  '';
 }
