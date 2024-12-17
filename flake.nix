@@ -65,28 +65,15 @@
         }
       );
 
-      packages.x86_64-linux = {
-        proxmox =
-          let
-            system = "x86_64-linux";
-            username = "whobson";
-            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-            specialArgs = {
-              inherit username;
-              inherit pkgs-stable;
-            };
+      nixosModules.myFormats =
+        { config, ... }:
+        {
+          imports = [
+            nixos-generators.nixosModules.all-formats
+          ];
 
-          in
-          nixos-generators.nixosGenerate {
-            modules = [
-              ./hosts/vm
-            ];
-
-            format = "proxmox";
-            specialArgs = inputs // specialArgs;
-
-          };
-      };
+          nixpkgs.hostPlatform = "x86_64-linux";
+        };
 
       nixosConfigurations = {
         desktop =
@@ -122,6 +109,41 @@
               }
             ];
           };
+        proxmoxvm' =
+          let
+            username = "whobson";
+            system = "x86_64-linux";
+            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+            specialArgs = {
+              inherit username;
+              inherit catppuccin;
+              inherit helix-master;
+              inherit pkgs-stable;
+            };
+          in
+
+          nixpkgs.lib.nixosSystem rec {
+            inherit specialArgs;
+            modules = [
+              catppuccin.nixosModules.catppuccin
+              ./hosts/server
+              self.nixosModules.myFormats
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+
+                home-manager.extraSpecialArgs = inputs // specialArgs;
+                home-manager.users.${username} = {
+                  imports = [
+                    ./hosts/server/home.nix
+                    catppuccin.homeManagerModules.catppuccin
+                  ];
+                };
+              }
+            ];
+          };
+
         server =
           let
             username = "serveradmin";
