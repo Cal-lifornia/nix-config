@@ -134,7 +134,10 @@
     openFirewall = true;
   };
 
-  services.tailscale.enable = true;
+  services.tailscale = {
+    package = pkgs.tailscale;
+    enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
 
