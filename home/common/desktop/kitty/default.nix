@@ -46,9 +46,7 @@
       #    2. https://github.com/ryan4yin/nix-config/issues/8
       #  Spawn a nushell in login mode via `bash`
       shell = "/usr/bin/env zsh -l";
-    };
-    environment = {
-      "TERM" = "xterm-256color";
+      term = "xterm-256color";
     };
 
     # macOS specific settings
