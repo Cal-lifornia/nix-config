@@ -26,5 +26,6 @@
 
     # formatters
     nixfmt-rfc-style
+    mdformat
   ];
 }

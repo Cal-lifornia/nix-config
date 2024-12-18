@@ -3,10 +3,10 @@ local options = {
     lua = { "stylua" },
     -- css = { "prettier" },
     -- html = { "prettier" },
-    markdown = { "markdownfmt" },
     nix = { "nixfmt" },
     python = { "black" },
     rust = { "rustfmt" },
+    markdown = {"mdformat"},
   },
 
   format_on_save = {
