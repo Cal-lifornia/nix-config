@@ -221,6 +221,27 @@
               catppuccin.homeManagerModules.catppuccin
             ];
           };
+        "whobson@variks" =
+          let
+            username = "whobson";
+            specialArgs = {
+              inherit username;
+              inherit catppuccin;
+              inherit helix-master;
+            };
+            pkgs = import nixpkgs {
+              config.allowUnfree = true;
+              system = "aarch64-darwin";
+            };
+          in
+          home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            extraSpecialArgs = inputs // specialArgs;
+            modules = [
+              ./hosts/wsl/home.nix
+              catppuccin.homeManagerModules.catppuccin
+            ];
+          };
         "whobson@hyperion" =
           let
             username = "whobson";
@@ -242,6 +263,7 @@
               catppuccin.homeManagerModules.catppuccin
             ];
           };
+
       };
     };
 }
