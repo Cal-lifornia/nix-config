@@ -17,6 +17,7 @@ in
     ../../common/desktop
     ./gtk
     ./gaming
+    ./dev
     hyprland.homeManagerModules.default
   ];
   home = {
@@ -27,7 +28,6 @@ in
         celluloid
         vesktop
         cool-retro-term
-        vscode
         lollypop
         lutris
         openrgb
@@ -42,7 +42,6 @@ in
         mpc-cli
         tty-clock
 
-        insomnia
         parsec-bin
         _1password-gui
         zenity

@@ -109,6 +109,40 @@
               }
             ];
           };
+        wslnix =
+          let
+            username = "whobson";
+            system = "x86_64-linux";
+            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+            specialArgs = {
+              inherit username;
+              inherit catppuccin;
+              inherit helix-master;
+              inherit pkgs-stable;
+            };
+          in
+
+          nixpkgs.lib.nixosSystem rec {
+            inherit specialArgs;
+            modules = [
+              catppuccin.nixosModules.catppuccin
+              ./hosts/wslnix
+              self.nixosModules.myFormats
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+
+                home-manager.extraSpecialArgs = inputs // specialArgs;
+                home-manager.users.${username} = {
+                  imports = [
+                    ./hosts/wslnix/home.nix
+                    catppuccin.homeManagerModules.catppuccin
+                  ];
+                };
+              }
+            ];
+          };
         proxmoxlxc =
           let
             username = "whobson";
@@ -137,79 +171,6 @@
                 home-manager.users.${username} = {
                   imports = [
                     ./hosts/vm/home.nix
-                    catppuccin.homeManagerModules.catppuccin
-                  ];
-                };
-              }
-            ];
-          };
-
-        proxmoxvm =
-          let
-            username = "whobson";
-            system = "x86_64-linux";
-            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-              inherit pkgs-stable;
-            };
-          in
-
-          nixpkgs.lib.nixosSystem rec {
-            inherit specialArgs;
-            modules = [
-              catppuccin.nixosModules.catppuccin
-              {
-                virtualisation.diskSize = 40 * 1024;
-              }
-              ./hosts/vm
-              self.nixosModules.myFormats
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-
-                home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = {
-                  imports = [
-                    ./hosts/vm/home.nix
-
-                    catppuccin.homeManagerModules.catppuccin
-                  ];
-                };
-              }
-            ];
-          };
-
-        server =
-          let
-            username = "serveradmin";
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-            };
-          in
-          nixpkgs.lib.nixosSystem rec {
-            pkgs = import nixpkgs {
-              config.allowUnfree = true;
-            };
-            inherit specialArgs;
-            system = "x86_64-linux";
-            modules = [
-              catppuccin.nixosModules.catppuccin
-              ./hosts/server
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-
-                home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = {
-                  imports = [
-                    ./hosts/server/home.nix
                     catppuccin.homeManagerModules.catppuccin
                   ];
                 };
