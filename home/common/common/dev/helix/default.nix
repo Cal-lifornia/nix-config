@@ -45,6 +45,18 @@
             name = "markdown";
             auto-format = true;
           }
+          {
+            name = "hcl";
+            auto-format = true;
+            language-servers = [ "terraform-ls" ];
+            language-id = "terraform";
+          }
+          {
+            name = "tfvars";
+            auto-format = true;
+            language-servers = [ "terraform-ls" ];
+            language-id = "terraform-vars";
+          }
 
         ];
         language-server = {
@@ -56,6 +68,12 @@
               enable = true;
             };
             validation = true;
+          };
+          terraform-ls = {
+            command = "terraform-ls";
+            args = [
+              "serve"
+            ];
           };
         };
 

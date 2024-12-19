@@ -13,6 +13,7 @@
     neovim
     nodejs_22
     go
+    opentofu
 
     # language servers
     nil
@@ -23,6 +24,7 @@
     lua-language-server
     ruff
     marksman
+    terraform-ls
 
     # formatters
     nixfmt-rfc-style
