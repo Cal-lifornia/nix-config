@@ -1,4 +1,9 @@
-{ pkgs, helix-master, ... }:
+{
+  pkgs,
+  helix-master,
+  lib,
+  ...
+}:
 {
   nixpkgs = {
     overlays = [

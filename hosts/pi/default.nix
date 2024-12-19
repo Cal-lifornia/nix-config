@@ -7,7 +7,7 @@
 {
   imports = [
     # Include the default lxc/lxd configuration.
-    ../../nixos/common
+    ../../nixos/vm
   ];
 
   system.stateVersion = "24.11";

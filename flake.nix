@@ -238,7 +238,7 @@
             inherit pkgs;
             extraSpecialArgs = inputs // specialArgs;
             modules = [
-              ./hosts/wsl/home.nix
+              ./hosts/pi/home.nix
               catppuccin.homeManagerModules.catppuccin
             ];
           };
