@@ -231,7 +231,7 @@
             };
             pkgs = import nixpkgs {
               config.allowUnfree = true;
-              system = "aarch64-darwin";
+              system = "aarch64-linux";
             };
           in
           home-manager.lib.homeManagerConfiguration {
