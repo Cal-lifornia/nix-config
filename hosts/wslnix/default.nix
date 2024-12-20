@@ -2,6 +2,7 @@
   modulesPath,
   config,
   pkgs,
+  username,
   ...
 }:
 {
@@ -13,4 +14,5 @@
 
   system.stateVersion = "24.11";
   wsl.enable = true;
+  wsl.defaultUser = "${username}";
 }
