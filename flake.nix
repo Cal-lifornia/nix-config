@@ -17,6 +17,7 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
 
   outputs =
@@ -29,6 +30,7 @@
       catppuccin,
       helix-master,
       nixos-generators,
+      nixos-wsl,
       ...
     }@inputs:
     let
@@ -127,6 +129,7 @@
             modules = [
               catppuccin.nixosModules.catppuccin
               ./hosts/wslnix
+              nixos-wsl.nixosModules.default
               self.nixosModules.myFormats
               home-manager.nixosModules.home-manager
               {
@@ -259,7 +262,7 @@
             inherit pkgs;
             extraSpecialArgs = inputs // specialArgs;
             modules = [
-              ./hosts/wsl/home.nix
+              ./hosts/wslnix/home.nix
               catppuccin.homeManagerModules.catppuccin
             ];
           };
