@@ -48,6 +48,12 @@
       enable = true;
       enableNushellIntegration = true;
     };
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+      enableNuShellIntegration = true;
+    };
   };
 
 }
