@@ -52,7 +52,6 @@
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
-      enableNuShellIntegration = true;
     };
   };
 
