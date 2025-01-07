@@ -11,6 +11,7 @@
     [
       obsidian
       zoom-us
+      gifski
     ]
   );
 }

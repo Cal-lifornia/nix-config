@@ -9,6 +9,7 @@
     just # replacement for GNU Make
     nodePackages.postcss-cli
     nodePackages.postcss
+    hyperfine
 
     #languages
     rustup
