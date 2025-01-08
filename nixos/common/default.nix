@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   lib,
   username,
   ...
@@ -132,7 +133,7 @@
   };
 
   services.tailscale = {
-    package = pkgs.tailscale;
+    package = pkgs-stable.tailscale;
     enable = true;
   };
 
