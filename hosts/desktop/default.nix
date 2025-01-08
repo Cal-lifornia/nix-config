@@ -30,6 +30,6 @@
 
   networking.hostName = "hob-nixos";
 
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
 
 }
