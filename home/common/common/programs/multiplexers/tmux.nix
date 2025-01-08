@@ -7,30 +7,32 @@ in
     source = "${scriptsDir}/tmux-sessioniser";
     executable = true;
   };
+  catppuccin = {
+    tmux = {
+      enable = true;
+      flavor = "frappe";
+      extraConfig = ''
+        #set -g @catppuccin_status_modules_right "application session user host date_time"
+        set -g @catppuccin_window_status_style "rounded"
+
+
+        # Make the status line pretty and add some modules
+        set -g status-right-length 100
+        set -g status-left-length 100
+        set -g status-left ""
+        set -g status-right "#{E:@catppuccin_status_application}"
+        set -agF status-right "#{E:@catppuccin_status_cpu}"
+        set -ag status-right "#{E:@catppuccin_status_session}"
+        set -ag status-right "#{E:@catppuccin_status_uptime}"
+        set -agF status-right "#{E:@catppuccin_status_battery}"
+      '';
+    };
+  };
   programs = {
     tmux = {
       enable = true;
       escapeTime = 0;
       baseIndex = 1;
-      catppuccin = {
-        enable = true;
-        flavor = "frappe";
-        extraConfig = ''
-          #set -g @catppuccin_status_modules_right "application session user host date_time"
-          set -g @catppuccin_window_status_style "rounded"
-
-
-          # Make the status line pretty and add some modules
-          set -g status-right-length 100
-          set -g status-left-length 100
-          set -g status-left ""
-          set -g status-right "#{E:@catppuccin_status_application}"
-          set -agF status-right "#{E:@catppuccin_status_cpu}"
-          set -ag status-right "#{E:@catppuccin_status_session}"
-          set -ag status-right "#{E:@catppuccin_status_uptime}"
-          set -agF status-right "#{E:@catppuccin_status_battery}"
-        '';
-      };
       plugins = with pkgs.tmuxPlugins; [
         vim-tmux-navigator
         better-mouse-mode

@@ -11,6 +11,12 @@
     curl
     eza
   ];
+  catppuccin = {
+    bat = {
+      enable = true;
+      flavor = "macchiato";
+    };
+  };
 
   programs = {
 
@@ -28,10 +34,6 @@
     };
     bat = {
       enable = true;
-      catppuccin = {
-        enable = true;
-        flavor = "macchiato";
-      };
     };
     fzf = {
       enable = true;

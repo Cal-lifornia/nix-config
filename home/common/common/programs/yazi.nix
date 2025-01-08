@@ -6,10 +6,12 @@
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
-      catppuccin = {
-        enable = true;
-        flavor = "macchiato";
-      };
+    };
+  };
+  catppuccin = {
+    yazi = {
+      enable = true;
+      flavor = "macchiato";
     };
   };
 }
