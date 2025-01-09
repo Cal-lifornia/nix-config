@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   browser = [ "firefox.desktop" ];
-  fileManager = [ "nautilus" ];
+  fileManager = [ "nautilus.desktop" ];
   # XDG MIME types
   associations = {
     "application/x-extension-htm" = browser;
@@ -54,9 +54,12 @@ in
       };
     };
     configFile = {
-      "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
-      "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
-      "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+      "gtk-4.0/assets".source =
+        "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+      "gtk-4.0/gtk.css".source =
+        "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+      "gtk-4.0/gtk-dark.css".source =
+        "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
     };
   };
   programs.zsh.initExtra = "export XDG_DATA_DIRS=$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";

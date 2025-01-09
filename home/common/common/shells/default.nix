@@ -50,11 +50,11 @@
       enable = true;
       enableNushellIntegration = true;
     };
-    atuin = {
-      enable = true;
-      enableZshIntegration = true;
-      enableBashIntegration = true;
-    };
+    # atuin = {
+    #   enable = true;
+    #   enableZshIntegration = true;
+    #   enableBashIntegration = true;
+    # };
   };
 
 }

@@ -61,7 +61,10 @@
 
     # Enables Vial to see and manage my keyboard
     udev = {
-      packages = with pkgs; [ gnome-settings-daemon ];
+      packages = with pkgs; [
+        gnome-settings-daemon
+        openocd
+      ];
       extraRules = ''
         KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
       '';

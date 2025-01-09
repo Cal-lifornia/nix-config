@@ -12,6 +12,9 @@
     ./virtualisation.nix
   ];
 
+  # Allows user modification of udevs
+  users.extraGroups.plugdev = { };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
@@ -20,6 +23,8 @@
       "networkmanager"
       "wheel"
       "docker"
+      "plugdev"
+      "dialout"
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICHRkeBpPBgmUP5kRySd209zd62QgF64gvctwJt3KciW"
