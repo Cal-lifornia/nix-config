@@ -18,6 +18,7 @@
     btop
     tailscale
     jq
+    navi
   ];
 
 }
