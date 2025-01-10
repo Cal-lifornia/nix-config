@@ -131,6 +131,10 @@
               select = "SELECT";
             };
           };
+          inline-diagnostics = {
+            cursor-line = "info";
+            other-lines = "warning";
+          };
         };
       };
     };
