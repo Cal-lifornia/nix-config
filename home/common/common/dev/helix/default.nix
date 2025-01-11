@@ -132,7 +132,7 @@
             };
           };
           inline-diagnostics = {
-            cursor-line = "hint";
+            cursor-line = "info";
             other-lines = "warning";
           };
         };
