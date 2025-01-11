@@ -16,7 +16,6 @@
 
     mtr.enable = true;
     zsh.enable = true;
-    zsh.package = pkgs-unstable.zsh;
     #bash = {
     #  interactiveShellInit = ''
     #    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
