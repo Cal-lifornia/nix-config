@@ -19,7 +19,6 @@
 
       xwayland = {
         enable = true;
-        package = pkgs-unstable.xwayland;
       };
 
       portalPackage = pkgs-unstable.xdg-desktop-portal-hyprland;
