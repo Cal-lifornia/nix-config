@@ -78,12 +78,12 @@
       sddm.wayland.enable = true;
       sddm.enableHidpi = true;
       sddm.package = pkgs.kdePackages.sddm;
-      sddm.catppuccin = {
-        enable = true;
-        flavor = "frappe";
-        font = "Noto Sans";
-      };
-      # sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+      # sddm.catppuccin = {
+      #   enable = true;
+      #   flavor = "frappe";
+      #   font = "Noto Sans";
+      # };
+      sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
     };
   };
 
