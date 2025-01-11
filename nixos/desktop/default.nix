@@ -2,7 +2,6 @@
   pkgs-unstable,
   lib,
   catppuccin,
-  pkgs,
   ...
 }:
 {
@@ -78,7 +77,7 @@
       sddm.enable = true;
       sddm.wayland.enable = true;
       sddm.enableHidpi = true;
-      sddm.package = pkgs.kdePackages.sddm;
+      sddm.package = pkgs-unstable.kdePackages.sddm;
       sddm.catppuccin = {
         enable = true;
         flavor = "frappe";

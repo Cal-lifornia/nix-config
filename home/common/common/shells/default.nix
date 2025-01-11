@@ -53,7 +53,7 @@
     direnv = {
       enable = true;
       enableZshIntegration = true;
-      package = pkgs-unstable.direnv;
+      packages = pkgs-unstable.direnv;
       nix-direnv = {
         enable = true;
         package = pkgs-unstable.nix-direnv;
@@ -62,7 +62,7 @@
     };
     carapace = {
       enable = true;
-      package = pkgs-unstable.carapace;
+      packages = pkgs-unstable.carapace;
       enableNushellIntegration = true;
     };
     # atuin = {
