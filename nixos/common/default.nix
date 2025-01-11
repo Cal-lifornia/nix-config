@@ -10,7 +10,6 @@
   imports = [
     ./programs.nix
     ./virtualisation.nix
-    ./version.nix
   ];
 
   # Allows user modification of udevs
