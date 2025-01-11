@@ -1,8 +1,11 @@
-{ config, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 
 {
+  programs.hyprland = {
+    enable = true;
+  };
 
-  environment.systemPackages = with pkgs-unstable; [
+  environment.systemPackages = with pkgs; [
     hyprpaper
     libnotify
     qt5.qtwayland

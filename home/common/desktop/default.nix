@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./alacritty
@@ -7,7 +7,7 @@
     ./kitty
   ];
   home.packages = (
-    with pkgs-unstable;
+    with pkgs;
     [
       obsidian
       zoom-us

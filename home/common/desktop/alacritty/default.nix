@@ -1,9 +1,8 @@
-{ pkgs-unstable, ... }:
+{ pkgs, lib, ... }:
 {
   programs = {
     alacritty = {
       enable = true;
-      package = pkgs-unstable.alacritty;
       settings = {
         import = [
           "~/.config/themes/alacritty/catppuccin-macchiato.toml"

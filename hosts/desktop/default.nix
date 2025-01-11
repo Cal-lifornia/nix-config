@@ -1,4 +1,4 @@
-{ system, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [

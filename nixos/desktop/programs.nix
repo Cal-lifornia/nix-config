@@ -1,13 +1,14 @@
-{ config, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 
 {
+  services.flatpak.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = false;
     xdgOpenUsePortal = false;
     extraPortals = [
-      pkgs-unstable.xdg-desktop-portal-hyprland
-      pkgs-unstable.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
     ];
   };
 
@@ -15,13 +16,12 @@
 
     hyprland = {
       enable = true;
-      package = pkgs-unstable.hyprland;
 
       xwayland = {
         enable = true;
       };
 
-      portalPackage = pkgs-unstable.xdg-desktop-portal-hyprland;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
 
   };
