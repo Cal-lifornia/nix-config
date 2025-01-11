@@ -1,9 +1,9 @@
-{ pkgs-unstable, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./helix
   ];
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     # utils
     sqlite
     just # replacement for GNU Make

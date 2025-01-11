@@ -1,9 +1,8 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   programs = {
     yazi = {
       enable = true;
-      package = pkgs-unstable.yazi;
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;

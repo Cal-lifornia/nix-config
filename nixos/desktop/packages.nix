@@ -1,6 +1,6 @@
-{ config, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs-unstable; [
+  environment.systemPackages = with pkgs; [
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
     unzip

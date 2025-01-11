@@ -1,9 +1,8 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   programs = {
     git = {
       enable = true;
-      package = pkgs-unstable.git;
       userEmail = "willhobson@live.com.au";
       userName = "William Hobson";
       ignores = [

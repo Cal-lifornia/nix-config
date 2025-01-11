@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./git.nix
@@ -7,7 +7,7 @@
     ./virtualistion.nix
   ];
 
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     eza
     vhs
     wtf
