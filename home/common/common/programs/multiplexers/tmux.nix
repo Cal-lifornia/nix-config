@@ -1,7 +1,7 @@
 let
   scriptsDir = ./scripts;
 in
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
   home.file.".local/scripts/tmux-sessioniser" = {
     source = "${scriptsDir}/tmux-sessioniser";
@@ -31,9 +31,10 @@ in
   programs = {
     tmux = {
       enable = true;
+      package = pkgs-unstable.tmux;
       escapeTime = 0;
       baseIndex = 1;
-      plugins = with pkgs.tmuxPlugins; [
+      plugins = with pkgs-unstable.tmuxPlugins; [
         vim-tmux-navigator
         better-mouse-mode
         yank

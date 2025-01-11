@@ -1,13 +1,10 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-
-  home.packages = with pkgs; [
-    zellij
-  ];
 
   programs = {
     zellij = {
       enable = true;
+      package = pkgs-unstable.zellij;
       enableBashIntegration = true;
     };
   };

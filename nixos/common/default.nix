@@ -1,6 +1,6 @@
 {
+  pkgs-unstable,
   pkgs,
-  pkgs-stable,
   lib,
   username,
   ...
@@ -10,7 +10,6 @@
   imports = [
     ./programs.nix
     ./virtualisation.nix
-    ./version.nix
   ];
 
   # Allows user modification of udevs
@@ -30,7 +29,7 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICHRkeBpPBgmUP5kRySd209zd62QgF64gvctwJt3KciW"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs-unstable.zsh;
   };
   # given the users in this list the right to specify additional substituters via:
   #    1. `nixConfig.substituers` in `flake.nix`
@@ -83,7 +82,7 @@
   services.printing.enable = true;
 
   fonts = {
-    packages = with pkgs; [
+    packages = with pkgs-unstable; [
       # icon fonts
       material-design-icons
 
@@ -139,11 +138,11 @@
   };
 
   services.tailscale = {
-    package = pkgs-stable.tailscale;
+    package = pkgs.tailscale;
     enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
 
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget

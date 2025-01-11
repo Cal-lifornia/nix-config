@@ -1,6 +1,5 @@
 {
-  lib,
-  pkgs,
+  pkgs-unstable,
   ...
 }:
 
@@ -15,11 +14,9 @@
 #
 ###########################################################
 {
-  home.packages = with pkgs; [
-    kitty
-  ];
   programs.kitty = {
     enable = true;
+    package = pkgs-unstable.kitty;
     # kitty has catppuccin theme built-in,
     # all the built-in themes are packaged into an extra package named `kitty-themes`
     # and it's installed by home-manager if `theme` is specified.
@@ -27,7 +24,7 @@
     font = {
       name = "JetBrainsMono Nerd Font Mono";
       # use different font size on macOS
-      size = if pkgs.stdenv.isDarwin then 14 else 15;
+      size = if pkgs-unstable.stdenv.isDarwin then 14 else 15;
     };
 
     # consistent with wezterm

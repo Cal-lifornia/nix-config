@@ -1,5 +1,5 @@
 {
-  pkgs,
+  pkgs-unstable,
   lib,
   catppuccin,
   ...
@@ -20,7 +20,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
     xfce.thunar # xfce4's file manager
   ];
 
@@ -42,7 +42,7 @@
   # };
 
   services = {
-    dbus.packages = [ pkgs.gcr ];
+    dbus.packages = [ pkgs-unstable.gcr ];
 
     geoclue2.enable = true;
 
@@ -61,7 +61,7 @@
 
     # Enables Vial to see and manage my keyboard
     udev = {
-      packages = with pkgs; [
+      packages = with pkgs-unstable; [
         gnome-settings-daemon
         openocd
       ];
@@ -77,7 +77,7 @@
       sddm.enable = true;
       sddm.wayland.enable = true;
       sddm.enableHidpi = true;
-      sddm.package = pkgs.kdePackages.sddm;
+      sddm.package = pkgs-unstable.kdePackages.sddm;
       sddm.catppuccin = {
         enable = true;
         flavor = "frappe";

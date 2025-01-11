@@ -2,7 +2,7 @@ let
   configDir = ../configs;
 in
 {
-  pkgs,
+  pkgs-unstable,
   ...
 }:
 {
@@ -19,7 +19,7 @@ in
   };
 
   home.packages = (
-    with pkgs;
+    with pkgs-unstable;
     [
       stow
     ]

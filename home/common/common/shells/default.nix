@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
   imports = [
     ./zsh.nix
     ./starship.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs-unstable; [
     zsh-powerlevel10k
     nnn
     curl
@@ -19,35 +19,50 @@
   };
 
   programs = {
-
     bash.enable = true;
     nushell = {
       enable = true;
+      package = pkgs-unstable.nushell;
     };
-    ripgrep.enable = true;
-    fd.enable = true;
+    ripgrep = {
+      enable = true;
+      package = pkgs-unstable.ripgrep;
+    };
+    fd = {
+      enable = true;
+      package = pkgs-unstable.fd;
+    };
+
     zoxide = {
       enable = true;
+      package = pkgs-unstable.zoxide;
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
     };
     bat = {
       enable = true;
+      package = pkgs-unstable.bat;
     };
     fzf = {
       enable = true;
+      package = pkgs-unstable.fzf;
       enableZshIntegration = true;
       enableBashIntegration = true;
     };
     direnv = {
       enable = true;
       enableZshIntegration = true;
-      nix-direnv.enable = true;
+      packages = pkgs-unstable.direnv;
+      nix-direnv = {
+        enable = true;
+        package = pkgs-unstable.nix-direnv;
+      };
       enableNushellIntegration = true;
     };
     carapace = {
       enable = true;
+      packages = pkgs-unstable.carapace;
       enableNushellIntegration = true;
     };
     # atuin = {

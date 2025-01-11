@@ -1,11 +1,11 @@
-{ lib, inputs, ... }:
+{ pkgs-unstable, ... }:
 let
   configDir = ./config;
 in
 {
   programs.starship = {
     enable = true;
-
+    package = pkgs-unstable.starship;
     enableBashIntegration = true;
     enableNushellIntegration = true;
     settings = {

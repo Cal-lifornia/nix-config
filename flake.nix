@@ -2,8 +2,8 @@
   description = "My NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -24,7 +24,7 @@
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
+      nixpkgs-unstable,
       home-manager,
       hyprland,
       catppuccin,
@@ -82,13 +82,13 @@
           let
             username = "whobson";
             system = "x86_64-linux";
-            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+            pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
             specialArgs = {
               inherit username;
               inherit hyprland;
               inherit catppuccin;
               inherit helix-master;
-              inherit pkgs-stable;
+              inherit pkgs-unstable;
             };
           in
           nixpkgs.lib.nixosSystem rec {
@@ -115,12 +115,12 @@
           let
             username = "whobson";
             system = "x86_64-linux";
-            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+            pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
             specialArgs = {
               inherit username;
               inherit catppuccin;
               inherit helix-master;
-              inherit pkgs-stable;
+              inherit pkgs-unstable;
             };
           in
 
@@ -150,12 +150,12 @@
           let
             username = "whobson";
             system = "x86_64-linux";
-            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+            pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
             specialArgs = {
               inherit username;
               inherit catppuccin;
               inherit helix-master;
-              inherit pkgs-stable;
+              inherit pkgs-unstable;
             };
           in
 
