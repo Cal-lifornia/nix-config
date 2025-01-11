@@ -3,7 +3,7 @@
 
   virtualisation = {
     docker.enable = true;
-    package = pkgs-unstable.docker;
+    docker.package = pkgs-unstable.docker;
     podman = {
       enable = true;
       package = pkgs-unstable.podman;
