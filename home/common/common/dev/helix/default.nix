@@ -18,7 +18,7 @@
       languages = {
         grammar = [
           {
-            name = "masm";
+            name = "armasm";
             source = {
               git = "https://github.com/SethBarberee/tree-sitter-asm";
               rev = "eee056ff31ea758eaa0ff00f0ec335f156cc5ebe";
@@ -80,9 +80,10 @@
             };
           }
           {
-            name = "masm";
-            file-types = [ "masm" ];
-            scope = "source.masm";
+            name = "armasm";
+            file-types = [ "ms" ];
+            scope = "source.ms";
+            comment-tokens = [ "//" ];
           }
 
         ];
