@@ -10,6 +10,7 @@
         "*.swp"
         ".env"
         ".envrc"
+        ".venv"
       ];
       signing = {
         key = null;

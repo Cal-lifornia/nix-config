@@ -62,6 +62,14 @@
             language-servers = [ "terraform-ls" ];
             language-id = "terraform-vars";
           }
+          {
+            name = "make";
+            auto-format = false;
+            indent = {
+              tab-width = 4;
+              unit = "t";
+            };
+          }
 
         ];
         language-server = {
