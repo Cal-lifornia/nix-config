@@ -8,7 +8,6 @@
   programs = {
     zellij = {
       enable = true;
-      enableBashIntegration = true;
     };
   };
   home.file = {
