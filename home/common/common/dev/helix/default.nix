@@ -16,6 +16,15 @@
       defaultEditor = true;
       package = helix-master.packages.${pkgs.system}.default;
       languages = {
+        grammar = [
+          {
+            name = "masm";
+            source = {
+              git = "https://github.com/SethBarberee/tree-sitter-asm";
+              rev = "eee056ff31ea758eaa0ff00f0ec335f156cc5ebe";
+            };
+          }
+        ];
         language = [
           {
             name = "nix";
@@ -69,6 +78,11 @@
               tab-width = 4;
               unit = "t";
             };
+          }
+          {
+            name = "masm";
+            file-types = [ "masm" ];
+            scope = "source.masm";
           }
 
         ];
