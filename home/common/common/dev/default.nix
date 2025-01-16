@@ -2,6 +2,7 @@
 {
   imports = [
     ./helix
+    ./os-programming.nix
   ];
   home.packages = with pkgs; [
     # utils
