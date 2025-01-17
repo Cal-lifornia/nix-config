@@ -18,7 +18,14 @@
       languages = {
         grammar = [
           {
-            name = "armasm";
+            name = "csv";
+            source = {
+              git = "https://github.com/weartist/rainbow-csv-tree-sitter";
+              rev = "d3dbf916446131417e4c2ea9eb8591b23b466d27";
+            };
+          }
+          {
+            name = "asm";
             source = {
               git = "https://github.com/SethBarberee/tree-sitter-asm";
               rev = "eee056ff31ea758eaa0ff00f0ec335f156cc5ebe";
@@ -84,6 +91,11 @@
             file-types = [ "ms" ];
             scope = "source.ms";
             comment-tokens = [ "//" ];
+          }
+          {
+            name = "csv";
+            file-types = [ "csv" ];
+            scope = "source.csv";
           }
 
         ];
