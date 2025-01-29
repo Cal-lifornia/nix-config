@@ -97,11 +97,32 @@
             file-types = [ "csv" ];
             scope = "source.csv";
           }
+          {
+            name = "python";
+            language-servers = [ "pylsp" ];
+            roots = [ ".git" ];
+            workspace-lsp-roots = [ "src/updater" ];
+            auto-format = true;
+          }
 
         ];
         language-server = {
           rust-analyzer.config.check = {
             command = "clippy";
+          };
+          pylsp.config.pylsp.plugins = {
+            flake8.enabled = false;
+            autopep8.enabled = false;
+            mccabe.enabled = false;
+            pycodestyle.enabled = false;
+            pyflakes.enabled = false;
+            pylint.enabled = false;
+            yapf.enabled = false;
+            ruff = {
+              enabled = true;
+              ignore = [ "F401" ];
+              lineLength = 120;
+            };
           };
           yaml-language-server.config.yaml = {
             format = {
@@ -115,6 +136,7 @@
               "serve"
             ];
           };
+
         };
 
       };

@@ -29,6 +29,8 @@
     ruff
     marksman
     terraform-ls
+    python313Packages.python-lsp-server
+    python313Packages.python-lsp-ruff
 
     # formatters
     nixfmt-rfc-style
