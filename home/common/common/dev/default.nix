@@ -35,5 +35,6 @@
     # formatters
     nixfmt-rfc-style
     mdformat
+    black
   ];
 }

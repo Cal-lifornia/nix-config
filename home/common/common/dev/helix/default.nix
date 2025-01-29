@@ -111,6 +111,7 @@
             command = "clippy";
           };
           pylsp.config.pylsp.plugins = {
+            black.enabled = true;
             flake8.enabled = false;
             autopep8.enabled = false;
             mccabe.enabled = false;
