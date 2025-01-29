@@ -102,6 +102,13 @@
             language-servers = [ "pylsp" ];
             roots = [ ".git" ];
             workspace-lsp-roots = [ "src/updater" ];
+            formatter = {
+              command = "black";
+              args = [
+                "--quiet"
+                "-"
+              ];
+            };
             auto-format = true;
           }
 
