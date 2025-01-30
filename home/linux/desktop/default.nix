@@ -47,6 +47,7 @@ in
         zenity
         gnome-tweaks
         eog
+        libreoffice-qt6-fresh
       ]
     );
 
