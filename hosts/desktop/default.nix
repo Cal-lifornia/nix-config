@@ -11,21 +11,21 @@
     #initrd.kernalModules = [ "amdgpu" ];
     loader = {
 
-      #efi = {
-      #  canTouchEfiVariables = true;
-      #  efiSysMountPoint = "/boot/EFI";
-      #};
+      # efi = {
+      #   canTouchEfiVariables = true;
+      #   efiSysMountPoint = "/boot/EFI";
+      # };
       systemd-boot.enable = true;
-      #grub = {
-      #  enable = true;
-      #  devices = [
-      #    "nodev"
-      #  ];
-        #efiInstallAsRemovable = true;
-        #efiSupport = true;
-        #useOSProber = true;
-        #default = "saved";
-      #};
+      # grub = {
+      #   enable = true;
+      #   devices = [
+      #     "nodev"
+      #   ];
+      #efiInstallAsRemovable = true;
+      #   efiSupport = true;
+      #   useOSProber = true;
+      #   default = "saved";
+      # };
     };
   };
 

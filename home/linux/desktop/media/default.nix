@@ -14,6 +14,9 @@
     spotifywm
     pavucontrol
     gimp
+
+    # music
+    cider-2
   ];
 
   programs = {
