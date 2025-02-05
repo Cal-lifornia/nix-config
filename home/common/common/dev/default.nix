@@ -31,6 +31,7 @@
     terraform-ls
     python313Packages.python-lsp-server
     python313Packages.python-lsp-ruff
+    gopls
 
     # formatters
     nixfmt-rfc-style
