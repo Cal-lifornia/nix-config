@@ -35,45 +35,45 @@ in
     # };
   };
 
-  # qt = {
-  #   enable = true;
-  #   platformTheme.name = "gtk";
-  # };
+  qt = {
+    enable = true;
+    # platformTheme.name = "gtk";
+  };
 
-  # gtk = {
-  #   enable = false;
-  #   font = {
-  #     name = "Noto Sans";
-  #     size = 12;
-  #   };
+  gtk = {
+    enable = true;
+    # font = {
+    #   name = "Noto Sans";
+    #   size = 12;
+    # };
 
-  #   iconTheme = {
-  #     package = pkgs.adwaita-icon-theme;
-  #     name = "Adwaita";
-  #   };
+    # iconTheme = {
+    #   package = pkgs.adwaita-icon-theme;
+    #   name = "Adwaita";
+    # };
 
-  #   theme = {
-  #     name = "catppuccin-macchiato-teal-compact";
-  #     package = catppuccin-gtk.override {
-  #       accents = [ "teal" ];
-  #       variant = "macchiato";
-  #       size = "compact";
-  #     };
-  #   };
+    # theme = {
+    #   name = "catppuccin-macchiato-teal-compact";
+    #   package = catppuccin-gtk.override {
+    #     accents = [ "teal" ];
+    #     variant = "macchiato";
+    #     size = "compact";
+    #   };
+    # };
 
-  #   gtk3.extraConfig = {
-  #     Settings = ''
-  #       gtk-application-prefer-dark-theme=1
-  #     '';
-  #   };
+    # gtk3.extraConfig = {
+    #   Settings = ''
+    #     gtk-application-prefer-dark-theme=1
+    #   '';
+    # };
 
-  #   gtk4.extraConfig = {
-  #     Settings = ''
-  #       gtk-application-prefer-dark-theme=1
-  #       gtk-cursor-theme-name=catppuccin-macchiato-blue-cursors
-  #     '';
-  #   };
-  # };
+    # gtk4.extraConfig = {
+    #   Settings = ''
+    #     gtk-application-prefer-dark-theme=1
+    #     gtk-cursor-theme-name=catppuccin-macchiato-blue-cursors
+    #   '';
+    # };
+  };
   # dconf.settings = {
   #   "org/gnome/desktop/interface" = {
   #     color-scheme = "prefer-dark";
