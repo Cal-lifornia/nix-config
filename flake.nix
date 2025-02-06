@@ -117,7 +117,7 @@
                   imports = [
                     ./hosts/desktop/home.nix
                     catppuccin.homeManagerModules.catppuccin
-                    stylix.homeManagerModules.stylix
+                    # stylix.homeManagerModules.stylix
                   ];
                 };
               }

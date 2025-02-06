@@ -5,7 +5,7 @@
   ...
 }:
 {
-  home.packages = with pkgs-stable; [
+  home.packages = with pkgs; [
     base16-schemes
   ];
 
@@ -14,7 +14,7 @@
     image = ./elden-ring-title.jpg;
     autoEnable = true;
     polarity = "dark";
-    # base16Scheme = "${pkgs-stable.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
