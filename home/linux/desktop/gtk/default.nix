@@ -20,6 +20,7 @@ in
 {
   imports = [
     ./environment.nix
+    ./stylix.nix
   ];
   home = {
     packages = with pkgs; [
