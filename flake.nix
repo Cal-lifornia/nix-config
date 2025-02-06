@@ -18,7 +18,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    stylix.url = "github:danth/stylix/release-24.11";
+    stylix = {
+      url = "github:danth/stylix/release-24.11";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+
   };
 
   outputs =
@@ -98,6 +105,7 @@
             inherit specialArgs;
             modules = [
               catppuccin.nixosModules.catppuccin
+              stylix.nixosModules.stylix
               ./hosts/desktop
               home-manager.nixosModules.home-manager
               {
@@ -109,7 +117,7 @@
                   imports = [
                     ./hosts/desktop/home.nix
                     catppuccin.homeManagerModules.catppuccin
-                    stylix.nixosModules.stylix
+                    stylix.homeManagerModules.stylix
                   ];
                 };
               }

@@ -16,7 +16,7 @@
     ./theme.nix
     ./bluetooth.nix
     ./sound.nix
-    ./stylix.nix
+    # ./stylix.nix
   ];
 
   # List packages installed in system profile. To search, run:
