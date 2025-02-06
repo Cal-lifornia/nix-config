@@ -74,7 +74,7 @@
 
     xserver.enable = false;
     displayManager = {
-      defaultSession = "hyprland";
+      defaultSession = "hyprland-uwsm";
       sddm.enable = true;
       sddm.wayland.enable = true;
       sddm.enableHidpi = true;

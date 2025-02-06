@@ -2,6 +2,7 @@
 
 {
   services.flatpak.enable = true;
+  xdg.autostart.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = false;
@@ -13,17 +14,22 @@
   };
 
   programs = {
-
+    uwsm.enable = true;
     hyprland = {
       enable = true;
+      withUWSM = true;
 
       xwayland = {
         enable = true;
+        # hidpi = true;
       };
 
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
 
+  };
+  environment.sessionVariables = {
+    NIXOS_XDG_OPEN_USE_PORTAL = "1";
   };
 
 }
