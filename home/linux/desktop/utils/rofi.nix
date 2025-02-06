@@ -4,11 +4,11 @@
     rofi = {
       enable = true;
       location = "center";
-      font = "Noto Sans";
-      catppuccin = {
-        enable = true;
-        flavor = "macchiato";
-      };
+      # font = "Noto Sans";
+      # catppuccin = {
+      #   enable = true;
+      #   flavor = "macchiato";
+      # };
     };
   };
 }
