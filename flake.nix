@@ -18,6 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -31,6 +32,7 @@
       helix-master,
       nixos-generators,
       nixos-wsl,
+      stylix,
       ...
     }@inputs:
     let
@@ -89,6 +91,7 @@
               inherit catppuccin;
               inherit helix-master;
               inherit pkgs-stable;
+              inherit stylix;
             };
           in
           nixpkgs.lib.nixosSystem rec {
@@ -106,6 +109,7 @@
                   imports = [
                     ./hosts/desktop/home.nix
                     catppuccin.homeManagerModules.catppuccin
+                    stylix.homeManagerModules.stylix
                   ];
                 };
               }

@@ -6,5 +6,5 @@
     alsa-oss
   ];
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 }
