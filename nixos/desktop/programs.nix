@@ -1,10 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  # environment.systemPackages = with pkgs; [
+  #   xdg-desktop-portal-hyprland
+  # ];
+
   services.flatpak.enable = true;
+
   xdg.autostart.enable = true;
   xdg.portal = {
     enable = true;
+    config.common.default = "gtk";
     wlr.enable = false;
     xdgOpenUsePortal = false;
     extraPortals = [
@@ -24,7 +30,7 @@
         # hidpi = true;
       };
 
-      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+      # portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
 
   };
