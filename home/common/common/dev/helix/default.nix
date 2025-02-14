@@ -178,6 +178,7 @@
           continue-comments = false;
           cursor-shape.insert = "bar";
           bufferline = "always";
+          end-of-line-diagnostics = "hint";
           statusline = {
             left = [
               "mode"
@@ -196,8 +197,8 @@
             };
           };
           inline-diagnostics = {
-            cursor-line = "hint";
-            other-lines = "warning";
+            cursor-line = "error";
+            other-lines = "error";
           };
         };
       };
