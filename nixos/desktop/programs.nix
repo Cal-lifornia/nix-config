@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  # environment.systemPackages = with pkgs; [
-  #   xdg-desktop-portal-hyprland
-  # ];
+  environment.systemPackages = with pkgs; [
+    libsForQt5.qt5.qtwayland
+  ];
 
   services.flatpak.enable = true;
 

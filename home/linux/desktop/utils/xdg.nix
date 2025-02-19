@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   browser = [ "firefox.desktop" ];
-  fileManager = [ "nautilus.desktop" ];
+  fileManager = [ "thunar.desktop" ];
   # XDG MIME types
   associations = {
     "application/x-extension-htm" = browser;
