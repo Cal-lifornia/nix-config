@@ -11,5 +11,6 @@
     xflux
     catimg
     remmina
+    sticky-notes
   ];
 }
