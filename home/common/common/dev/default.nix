@@ -2,7 +2,7 @@
 {
   imports = [
     ./helix
-    ./os-programming.nix
+    ./debugging.nix
   ];
   home.packages = with pkgs; [
     # utils
