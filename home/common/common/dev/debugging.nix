@@ -4,5 +4,6 @@
     hexyl
     fq
     binsider
+    lldb
   ];
 }
