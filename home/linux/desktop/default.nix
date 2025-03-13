@@ -41,6 +41,7 @@ in
         pamixer
         mpc-cli
         tty-clock
+        gearlever
 
         parsec-bin
         _1password-gui
