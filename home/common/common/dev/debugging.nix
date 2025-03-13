@@ -6,5 +6,6 @@
     binsider
     lldb
     imhex
+    ghidra-bin
   ];
 }
