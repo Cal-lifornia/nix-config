@@ -5,5 +5,6 @@
     fq
     binsider
     lldb
+    imhex
   ];
 }

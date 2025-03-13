@@ -17,7 +17,6 @@
     neovim
     nodejs_22
     go
-    opentofu
 
     # language servers
     nil
