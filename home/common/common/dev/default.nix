@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./helix
@@ -8,13 +8,10 @@
     # utils
     sqlite
     just # replacement for GNU Make
-    nodePackages.postcss-cli
-    nodePackages.postcss
-    hyperfine
+    neovim
 
     #languages
     rustup
-    neovim
     nodejs_22
     go
 
