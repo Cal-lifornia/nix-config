@@ -3,7 +3,7 @@
   imports = [
     ./helix
     ./debugging.nix
-    ./gamedev.nix
+    # ./gamedev.nix
   ];
   home.packages = with pkgs; [
     # utils
