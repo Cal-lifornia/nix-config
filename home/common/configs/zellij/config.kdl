@@ -10,4 +10,5 @@ keybinds {//unbind "Alt h" "Alt j" "Alt k" "Alt l"
     }
 }
 theme "catppuccin-macchiato"
+show_startup_tips false
 
