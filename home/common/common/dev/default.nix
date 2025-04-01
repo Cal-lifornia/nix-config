@@ -10,6 +10,7 @@
     sqlite
     just # replacement for GNU Make
     neovim
+    xmake # Alternative to Cmake
 
     #languages
     rustup
