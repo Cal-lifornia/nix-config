@@ -162,15 +162,14 @@
             "C-S-s" = ":wa"; # Ctrl + Shift + s to save all buffers
             "C-y" = {
               "y" =
-                ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ~/.local/scripts/yazi-picker open";
+                ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker open %{buffer_name}";
               # Open the file(s) in a vertical pane
               "v" =
-                ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ~/.local/scripts/yazi-picker vsplit";
+                ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker vsplit %{buffer_name}";
               # Open the file(s) in a horizontal pane
               "h" =
-                ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ~/.local/scripts/yazi-picker hsplit";
+                ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker hsplit %{buffer_name}";
 
-              "g" = ":sh zellij run -c -i -x 10% -y 10% --width 80% --height 80% -- lazygit";
             };
           };
         };

@@ -116,7 +116,7 @@
                 home-manager.users.${username} = {
                   imports = [
                     ./hosts/desktop/home.nix
-                    catppuccin.homeManagerModules.catppuccin
+                    catppuccin.homeModules.catppuccin
                     # stylix.homeManagerModules.stylix
                   ];
                 };
@@ -152,7 +152,7 @@
                 home-manager.users.${username} = {
                   imports = [
                     ./hosts/wslnix/home.nix
-                    catppuccin.homeManagerModules.catppuccin
+                    catppuccin.homeModules.catppuccin
                   ];
                 };
               }
@@ -186,7 +186,7 @@
                 home-manager.users.${username} = {
                   imports = [
                     ./hosts/vm/home.nix
-                    catppuccin.homeManagerModules.catppuccin
+                    catppuccin.homeModules.catppuccin
                   ];
                 };
               }
@@ -212,7 +212,7 @@
             extraSpecialArgs = inputs // specialArgs;
             modules = [
               ./hosts/traveler/home.nix
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
             ];
           };
         "serveradmin@citizen" =
@@ -233,7 +233,7 @@
             extraSpecialArgs = inputs // specialArgs;
             modules = [
               ./hosts/wsl/home.nix
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
             ];
           };
         "whobson@variks" =
@@ -254,7 +254,7 @@
             extraSpecialArgs = inputs // specialArgs;
             modules = [
               ./hosts/pi/home.nix
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
             ];
           };
         "whobson@hyperion" =
@@ -275,7 +275,7 @@
             extraSpecialArgs = inputs // specialArgs;
             modules = [
               ./hosts/wslnix/home.nix
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
             ];
           };
 
