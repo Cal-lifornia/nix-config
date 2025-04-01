@@ -29,6 +29,7 @@
     python313Packages.python-lsp-server
     python313Packages.python-lsp-ruff
     gopls
+    nodePackages.vscode-json-languageserver
 
     # formatters
     nixfmt-rfc-style
