@@ -34,6 +34,32 @@
         ];
         language = [
           {
+            name = "c";
+            file-types = [
+              "c"
+              "h"
+            ];
+            formatter = {
+              command = "clang-format";
+            };
+            auto-format = true;
+          }
+          {
+            name = "cpp";
+            file-types = [
+              "cpp"
+              "cc"
+              "cxx"
+              "hpp"
+              "hcc"
+              "hxx"
+            ];
+            formatter = {
+              command = "clang-format";
+            };
+            auto-format = true;
+          }
+          {
             name = "nix";
             auto-format = true;
             formatter = {
