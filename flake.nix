@@ -56,6 +56,9 @@
       ];
       forEachSupportedSystem =
         f: nixpkgs.lib.genAttrs supportedSystems (system: f { pkgs = import nixpkgs { inherit system; }; });
+      mkSystem = import ./lib/mksystem.nix {
+        inherit nixpkgs inputs;
+      };
     in
     {
       devShells = forEachSupportedSystem (
@@ -194,27 +197,12 @@
           };
       };
       homeConfigurations = {
-        "whobson@traveler" =
-          let
-            username = "whobson";
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-            };
-            pkgs = import nixpkgs {
-              config.allowUnfree = true;
-              system = "aarch64-darwin";
-            };
-          in
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = inputs // specialArgs;
-            modules = [
-              ./hosts/traveler/home.nix
-              catppuccin.homeModules.catppuccin
-            ];
-          };
+        "whobson@traveler" = mkSystem "macbook-pro-m2" {
+          system = "aarch64-darwin";
+          user = "whobson";
+          darwin = true;
+          homeManaged = true;
+        };
         "serveradmin@citizen" =
           let
             username = "serveradmin";
