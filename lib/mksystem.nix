@@ -1,6 +1,5 @@
 {
   nixpkgs,
-  overlays,
   inputs,
 }:
 name:
@@ -17,15 +16,17 @@ let
   machineConfig = ../machines/${name}.nix;
   homeConfig = ../machines/home/${name}.nix;
   specialArgs = {
-    inherit user;
+    username = user;
   };
 
+  pkgs = import nixpkgs;
+
   systemFunc =
-    if homeManaged then inputs.home-manager.lib.homeManagerConfigurations else nixpkgs.lib.nixosSystem;
+    if homeManaged then inputs.home-manager.lib.homeManagerConfiguration else nixpkgs.lib.nixosSystem;
 in
 systemFunc rec {
   inherit system;
-  inherit specialArgs;
+  inherit pkgs;
 
   modules = [
     { nixpkgs.config.allowUnfree = true; }
@@ -63,4 +64,4 @@ systemFunc rec {
 
   ];
 }
-// (if homeManaged then { extraSpecialArgs = inputs // specialArgs; } else { })
+// (if homeManaged then { extraSpecialArgs = inputs // specialArgs; } else { inherit specialArgs; })
