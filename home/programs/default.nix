@@ -18,13 +18,6 @@ in
     ".config/zellij".source = "${configDir}/zellij";
   };
 
-  home.packages = (
-    with pkgs;
-    [
-      stow
-    ]
-  );
-
   # catppuccin = {
   #   enable = true;
   #   flavor = "mocha";
