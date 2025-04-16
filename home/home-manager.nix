@@ -11,6 +11,9 @@ in
   programs = {
     home-manager.enable = true;
   };
+  imports = [
+    inputs.catppuccin.homeModules.catppuccin
+  ];
 
   home.stateVersion = "24.11";
 }

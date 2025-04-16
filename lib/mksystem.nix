@@ -5,58 +5,55 @@
 name:
 {
   system,
-  user,
+  username,
+  args,
   darwin ? false,
   wsl ? false,
-  homeManaged ? false,
+  desktop ? false,
 }:
 let
   isWSL = wsl;
+  isDesktop = desktop;
 
   machineConfig = ../machines/${name}.nix;
   homeConfig = ../machines/home/${name}.nix;
+
+  pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+
   specialArgs = {
-    username = user;
+    inherit username;
+    inherit pkgs-stable;
+    inherit args;
   };
 
-  pkgs = import nixpkgs;
-
-  systemFunc =
-    if homeManaged then inputs.home-manager.lib.homeManagerConfiguration else nixpkgs.lib.nixosSystem;
+  systemFunc = nixpkgs.lib.nixosSystem;
+  home-manager = inputs.home-manager.nixosModules;
 in
 systemFunc rec {
   inherit system;
-  inherit pkgs;
+  inherit specialArgs;
 
   modules = [
     { nixpkgs.config.allowUnfree = true; }
 
     (if isWSL then inputs.nixos-wsl.nixosModules.default else { })
 
-    (
-      if homeManaged then
-        homeConfig inputs.catppuccin.homeModules.catppuccin
-      else
-        machineConfig inputs.catppuccin.nixosModules.catppuccin
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+    machineConfig
+    home-manager.home-manager
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.extraSpecialArgs = inputs // specialArgs;
+      home-manager.users.${username} = import homeConfig {
+        isDesktop = isDesktop;
+        inputs = inputs;
+      };
+    }
 
-            home-manager.extraSpecialArgs = inputs // specialArgs;
-
-            home-manager.users.${user} = {
-              imports = [
-                homeConfig
-                inputs.catppuccin.homeModules.catppuccin
-              ];
-            };
-          }
-    )
     {
       config._modules.args = {
         currentSystem = system;
-        currentSystemUser = user;
+        currentSystemUser = username;
         isWSL = isWSL;
         inputs = inputs;
       };
@@ -64,4 +61,3 @@ systemFunc rec {
 
   ];
 }
-// (if homeManaged then { extraSpecialArgs = inputs // specialArgs; } else { inherit specialArgs; })
