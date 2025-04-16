@@ -93,111 +93,21 @@
         };
 
       nixosConfigurations = {
-        desktop =
-          let
-            username = "whobson";
-            system = "x86_64-linux";
-            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-            specialArgs = {
-              inherit username;
-              inherit hyprland;
-              inherit catppuccin;
-              inherit helix-master;
-              inherit pkgs-stable;
-              inherit stylix;
-            };
-          in
-          nixpkgs.lib.nixosSystem rec {
-            inherit specialArgs;
-            modules = [
-              catppuccin.nixosModules.catppuccin
-              stylix.nixosModules.stylix
-              ./hosts/desktop
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-
-                home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = {
-                  imports = [
-                    ./hosts/desktop/home.nix
-                    catppuccin.homeModules.catppuccin
-                    # stylix.homeManagerModules.stylix
-                  ];
-                };
-              }
-            ];
-          };
-        wslnix =
-          let
-            username = "whobson";
-            system = "x86_64-linux";
-            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-              inherit pkgs-stable;
-            };
-          in
-
-          nixpkgs.lib.nixosSystem rec {
-            inherit specialArgs;
-            modules = [
-              catppuccin.nixosModules.catppuccin
-              ./hosts/wslnix
-              nixos-wsl.nixosModules.default
-              self.nixosModules.myFormats
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-
-                home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = {
-                  imports = [
-                    ./hosts/wslnix/home.nix
-                    catppuccin.homeModules.catppuccin
-                  ];
-                };
-              }
-            ];
-          };
-        proxmoxlxc =
-          let
-            username = "whobson";
-            system = "x86_64-linux";
-            pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-              inherit pkgs-stable;
-            };
-          in
-
-          nixpkgs.lib.nixosSystem rec {
-            inherit specialArgs;
-            modules = [
-              catppuccin.nixosModules.catppuccin
-              ./hosts/vm
-              self.nixosModules.myFormats
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-
-                home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = {
-                  imports = [
-                    ./hosts/vm/home.nix
-                    catppuccin.homeModules.catppuccin
-                  ];
-                };
-              }
-            ];
-          };
+        desktop = mkSystem "desktop-nixos" {
+          system = "x86_64-linux";
+          username = "whobson";
+          desktop = true;
+        };
+        wslnix = mkSystem "wsl-nix" {
+          username = "whobson";
+          system = "x86_64-linux";
+          wsl = true;
+        };
+        proxmoxlxc = mkSystem "vm-nixos" {
+          username = "whobson";
+          system = "x86_64-linux";
+          generator = true;
+        };
       };
       homeConfigurations = {
         "whobson@traveler" = mkHome "macbook-pro-m2" {
@@ -206,70 +116,14 @@
           desktop = true;
           darwin = true;
         };
-        "serveradmin@citizen" =
-          let
-            username = "serveradmin";
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-            };
-            pkgs = import nixpkgs {
-              config.allowUnfree = true;
-              system = "x86_64-linux";
-            };
-          in
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = inputs // specialArgs;
-            modules = [
-              ./hosts/wsl/home.nix
-              catppuccin.homeModules.catppuccin
-            ];
-          };
-        "whobson@variks" =
-          let
-            username = "whobson";
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-            };
-            pkgs = import nixpkgs {
-              config.allowUnfree = true;
-              system = "aarch64-linux";
-            };
-          in
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = inputs // specialArgs;
-            modules = [
-              ./hosts/pi/home.nix
-              catppuccin.homeModules.catppuccin
-            ];
-          };
-        "whobson@hyperion" =
-          let
-            username = "whobson";
-            specialArgs = {
-              inherit username;
-              inherit catppuccin;
-              inherit helix-master;
-            };
-            pkgs = import nixpkgs {
-              config.allowUnfree = true;
-              system = "x86_64-linux";
-            };
-          in
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = inputs // specialArgs;
-            modules = [
-              ./hosts/wslnix/home.nix
-              catppuccin.homeModules.catppuccin
-            ];
-          };
-
+        "whobson@citizen" = mkHome "vm-home" {
+          system = "x86_64-linux";
+          username = "whobson";
+        };
+        "whobson@variks" = mkHome "vm-home" {
+          system = "x86_64-linux";
+          username = "whobson";
+        };
       };
     };
 }

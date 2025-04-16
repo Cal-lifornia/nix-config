@@ -9,11 +9,14 @@ name:
   darwin ? false,
   wsl ? false,
   desktop ? false,
+  generator ? false,
 }:
 let
   isWSL = wsl;
   isDesktop = desktop;
-  isLinuxDesktop = !darwin && desktop;
+  isMac = darwin;
+  isLinux = !darwin;
+  isLinuxDesktop = isLinux && isDesktop;
 
   machineConfig = ../machines/${name}.nix;
   homeConfig = ../home/home-manager.nix;
@@ -32,6 +35,10 @@ let
     {
       inherit username;
       inherit pkgs-stable;
+      inherit isMac;
+      inherit isLinux;
+      inherit isLinuxDesktop;
+      inherit isDesktop;
     }
     // (
       if isLinuxDesktop then
@@ -59,6 +66,7 @@ systemFunc rec {
     { nixpkgs.config.allowUnfree = true; }
 
     (if isWSL then inputs.nixos-wsl.nixosModules.default else { })
+    (if generator then inputs.self.nixosModules.myFormats else { })
 
     machineConfig
     home-manager.home-manager
@@ -67,7 +75,6 @@ systemFunc rec {
       home-manager.useUserPackages = true;
       home-manager.extraSpecialArgs = inputs // specialArgs;
       home-manager.users.${username} = import homeConfig {
-        isDesktop = isDesktop;
         inputs = inputs;
       };
     }
