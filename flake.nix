@@ -59,6 +59,9 @@
       mkSystem = import ./lib/mksystem.nix {
         inherit nixpkgs inputs;
       };
+      mkHome = import ./lib/mkhome.nix {
+        inherit nixpkgs inputs;
+      };
     in
     {
       devShells = forEachSupportedSystem (
@@ -197,11 +200,11 @@
           };
       };
       homeConfigurations = {
-        "whobson@traveler" = mkSystem "macbook-pro-m2" {
+        "whobson@traveler" = mkHome "macbook-pro-m2" {
           system = "aarch64-darwin";
           user = "whobson";
+          desktop = true;
           darwin = true;
-          homeManaged = true;
         };
         "serveradmin@citizen" =
           let

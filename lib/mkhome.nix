@@ -4,11 +4,9 @@ name:
   system,
   username,
   darwin ? false,
-  wsl ? false,
   desktop ? false,
 }:
 let
-  isWSL = wsl;
   isDesktop = desktop;
   isLinuxDesktop = !darwin && desktop;
 
