@@ -6,8 +6,11 @@
   home.packages = with pkgs; [
     papirus-icon-theme
   ];
-  services.dunst = {
+  services.swaync = {
     enable = true;
+  };
+  services.dunst = {
+    enable = false;
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
