@@ -16,13 +16,17 @@ let
   isLinuxDesktop = !darwin && desktop;
 
   machineConfig = ../machines/${name}.nix;
-  homeConfig = ../machines/home/${name}.nix;
+  homeConfig = ../home/home-manager.nix;
 
   pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
   hyprland = inputs.hyprland;
   catppuccin = inputs.catppuccin;
   helix-master = inputs.helix-master;
   stylix = inputs.stylix;
+  pkgs = import nixpkgs {
+    config.allowUnfree = true;
+    system = "${system}";
+  };
 
   specialArgs =
     {
@@ -49,6 +53,7 @@ in
 systemFunc rec {
   inherit system;
   inherit specialArgs;
+  inherit pkgs;
 
   modules = [
     { nixpkgs.config.allowUnfree = true; }

@@ -1,8 +1,14 @@
-{ isDesktop, inputs, ... }:
+{
+  isDesktop,
+  isLinuxDesktop,
+  inputs,
+  ...
+}:
 {
   pkgs,
   lib,
   username,
+  catppuccin,
   ...
 }:
 
@@ -17,7 +23,7 @@ in
     home-manager.enable = true;
   };
   imports = [
-    inputs.catppuccin.homeModules.catppuccin
+    catppuccin.homeModules.catppuccin
     (import ./programs {
       inherit isMac;
       inherit isLinux;
