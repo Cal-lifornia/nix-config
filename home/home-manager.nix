@@ -1,21 +1,13 @@
-{
-  isDesktop,
-  isLinuxDesktop,
-  inputs,
-  ...
-}:
+{inputs, ...}
 {
   pkgs,
   lib,
   username,
-  catppuccin,
+  isLinux
   ...
 }:
 
 let
-  isMac = pkgs.stdenv.isDarwin;
-  isLinux = pkgs.stdenv.isLinux;
-  isLinuxDesktop = isLinux && isLinuxDesktop;
 in
 {
 
@@ -23,13 +15,8 @@ in
     home-manager.enable = true;
   };
   imports = [
-    catppuccin.homeModules.catppuccin
-    (import ./programs {
-      inherit isMac;
-      inherit isLinux;
-      inherit isLinuxDesktop;
-      inherit isDesktop;
-    })
+    inputs.catppuccin.homeModules.catppuccin
+    ./programs
   ];
 
   home = {

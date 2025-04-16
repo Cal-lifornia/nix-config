@@ -8,7 +8,9 @@ name:
 }:
 let
   isDesktop = desktop;
-  isLinuxDesktop = !darwin && desktop;
+  isMac = darwin;
+  isLinux = !darwin;
+  isLinuxDesktop = isLinux && isDesktop;
 
   homeConfig = ../home/home-manager.nix;
   pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
@@ -25,20 +27,20 @@ let
     inherit pkgs-stable;
     inherit catppuccin;
     inherit helix-master;
+    inherit isMac;
+    inherit isLinux;
+    inherit isLinuxDesktop;
+    inherit isDesktop;
   };
 
-  home-manager = inputs.home-manager.lib.homeManagerConfiguration;
 in
-home-manager rec {
-  inherit system;
+inputs.home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
 
   extraSpecialArgs = inputs // specialArgs;
 
   modules = [
     (import homeConfig {
-      isDesktop = isDesktop;
-      isLinuxDesktop = isLinuxDesktop;
       inputs = inputs;
     })
   ];

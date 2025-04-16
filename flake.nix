@@ -202,7 +202,7 @@
       homeConfigurations = {
         "whobson@traveler" = mkHome "macbook-pro-m2" {
           system = "aarch64-darwin";
-          user = "whobson";
+          username = "whobson";
           desktop = true;
           darwin = true;
         };

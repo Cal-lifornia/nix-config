@@ -1,6 +1,3 @@
-let
-  configDir = ../configs;
-in
 {
   pkgs,
   lib,
@@ -8,9 +5,11 @@ in
   isMac,
   isLinux,
   isLinuxDesktop,
-  hyprland,
   ...
 }:
+let
+  configDir = ../configs;
+in
 {
   imports =
     [
@@ -22,7 +21,6 @@ in
       ./terminals
     ])
     ++ (lib.optionals isLinuxDesktop [
-      hyprland.homeManagerModules.default
       ./hypr
       ./desktop-utils
       ./desktop-theming
