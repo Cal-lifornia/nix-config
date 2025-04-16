@@ -1,13 +1,12 @@
 {
-  pkgs,
-  config,
+  isLinuxDesktop,
   username,
   ...
 }:
 {
   programs = {
     firefox = {
-      enable = true;
+      enable = if isLinuxDesktop then true else false;
       profiles.${username} = {
         isDefault = true;
       };

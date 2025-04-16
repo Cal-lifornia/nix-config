@@ -6,7 +6,6 @@ name:
 {
   system,
   username,
-  args,
   darwin ? false,
   wsl ? false,
   desktop ? false,
@@ -14,17 +13,35 @@ name:
 let
   isWSL = wsl;
   isDesktop = desktop;
+  isLinuxDesktop = !darwin && desktop;
 
   machineConfig = ../machines/${name}.nix;
   homeConfig = ../machines/home/${name}.nix;
 
   pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+  hyprland = inputs.hyprland;
+  catppuccin = inputs.catppuccin;
+  helix-master = inputs.helix-master;
+  stylix = inputs.stylix;
 
-  specialArgs = {
-    inherit username;
-    inherit pkgs-stable;
-    inherit args;
-  };
+  specialArgs =
+    {
+      inherit username;
+      inherit pkgs-stable;
+    }
+    // (
+      if isLinuxDesktop then
+        {
+          inherit
+            hyprland
+            catppuccin
+            helix-master
+            stylix
+            ;
+        }
+      else
+        { }
+    );
 
   systemFunc = nixpkgs.lib.nixosSystem;
   home-manager = inputs.home-manager.nixosModules;

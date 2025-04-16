@@ -1,5 +1,10 @@
 { isDesktop, inputs, ... }:
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  username,
+  ...
+}:
 
 let
   isMac = pkgs.stdenv.isDarwin;
@@ -13,7 +18,18 @@ in
   };
   imports = [
     inputs.catppuccin.homeModules.catppuccin
+    (import ./programs {
+      inherit isMac;
+      inherit isLinux;
+      inherit isLinuxDesktop;
+      inherit isDesktop;
+    })
   ];
+
+  home = {
+    username = "${username}";
+    homeDirectory = if isLinux then "/home/${username}" else "/Users/${username}";
+  };
 
   home.stateVersion = "24.11";
 }
