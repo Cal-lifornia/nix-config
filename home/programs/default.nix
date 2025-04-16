@@ -16,6 +16,12 @@ in
       ./shells
       ./dev
       ./multiplexers
+      ./gaming.nix
+      ./yazi.nix
+      ./git.nix
+      ./media.nix
+      ./browsers.nix
+      ./virtualistion.nix
     ]
     ++ (lib.optionals isDesktop [
       ./terminals
