@@ -26,6 +26,9 @@ in
       ./hypr
       ./desktop-utils
       ./desktop-theming
+    ])
+    ++ (lib.optionals isMac [
+      ./mac.nix
     ]);
 
   home.file =
