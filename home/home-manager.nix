@@ -1,14 +1,11 @@
-{inputs, ...}
+{ inputs, ... }:
 {
   pkgs,
   lib,
   username,
-  isLinux
+  isLinux,
   ...
 }:
-
-let
-in
 {
 
   programs = {
