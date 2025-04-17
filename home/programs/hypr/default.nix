@@ -9,7 +9,6 @@
 {
   imports = [
     ./hyprland-environment.nix
-    ./waybar.nix
     ./notifications.nix
     hyprland.homeManagerModules.default
   ];

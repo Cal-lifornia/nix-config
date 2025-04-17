@@ -26,33 +26,21 @@ let
   catppuccin = inputs.catppuccin;
   helix-master = inputs.helix-master;
   stylix = inputs.stylix;
-  pkgs = import nixpkgs {
-    config.allowUnfree = true;
-    system = "${system}";
-  };
 
-  specialArgs =
-    {
-      inherit username;
-      inherit pkgs-stable;
-      inherit isMac;
-      inherit isLinux;
-      inherit isLinuxDesktop;
-      inherit isDesktop;
-    }
-    // (
-      if isLinuxDesktop then
-        {
-          inherit
-            hyprland
-            catppuccin
-            helix-master
-            stylix
-            ;
-        }
-      else
-        { }
-    );
+  specialArgs = {
+    inherit username;
+    inherit pkgs-stable;
+    inherit isMac;
+    inherit isLinux;
+    inherit isLinuxDesktop;
+    inherit isDesktop;
+    inherit
+      hyprland
+      catppuccin
+      helix-master
+      stylix
+      ;
+  };
 
   systemFunc = nixpkgs.lib.nixosSystem;
   home-manager = inputs.home-manager.nixosModules;
@@ -60,13 +48,13 @@ in
 systemFunc rec {
   inherit system;
   inherit specialArgs;
-  inherit pkgs;
 
   modules = [
     { nixpkgs.config.allowUnfree = true; }
 
     (if isWSL then inputs.nixos-wsl.nixosModules.default else { })
     (if generator then inputs.self.nixosModules.myFormats else { })
+    (if isLinuxDesktop then stylix.nixosModules.stylix else { })
 
     machineConfig
     home-manager.home-manager
@@ -75,15 +63,6 @@ systemFunc rec {
       home-manager.useUserPackages = true;
       home-manager.extraSpecialArgs = inputs // specialArgs;
       home-manager.users.${username} = import homeConfig {
-        inputs = inputs;
-      };
-    }
-
-    {
-      config._modules.args = {
-        currentSystem = system;
-        currentSystemUser = username;
-        isWSL = isWSL;
         inputs = inputs;
       };
     }
