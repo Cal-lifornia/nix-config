@@ -19,7 +19,11 @@
   };
 
   programs = {
-
+    navi = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+    };
     bash.enable = true;
     nushell = {
       enable = true;
