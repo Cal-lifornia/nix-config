@@ -12,7 +12,7 @@
 
   stylix = {
     enable = true;
-    # image = ./elden-ring-title.jpg;
+    image = ./elden-ring-title.jpg;
     # autoEnable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";

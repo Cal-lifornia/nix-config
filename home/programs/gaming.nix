@@ -8,6 +8,6 @@
       steam
       steam-run
       lutris
-      xorg.xandr
+      # xorg.xandr
     ]);
 }

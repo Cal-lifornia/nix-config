@@ -61,6 +61,7 @@ in
   home.packages =
     with pkgs;
     [
+      lazygit
     ]
     ++ (lib.optionals isDesktop [
       obsidian

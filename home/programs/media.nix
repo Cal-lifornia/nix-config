@@ -15,7 +15,7 @@
 
     ]
     ++ (lib.optionals isDesktop [
-      spotify
+      # spotify
     ])
     ++ (lib.optionals isLinuxDesktop [
       # audio control
