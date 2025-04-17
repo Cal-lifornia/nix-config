@@ -61,6 +61,15 @@ in
   home.packages =
     with pkgs;
     [
+      eza
+      vhs
+      wtf
+      glow
+      unzip
+      curl
+      btop
+      tailscale
+      jq
       lazygit
     ]
     ++ (lib.optionals isDesktop [
