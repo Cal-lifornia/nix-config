@@ -71,6 +71,7 @@ in
       tailscale
       jq
       lazygit
+      tldr
     ]
     ++ (lib.optionals isDesktop [
       obsidian
