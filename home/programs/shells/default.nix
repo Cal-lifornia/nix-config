@@ -16,6 +16,10 @@
       enable = true;
       flavor = "macchiato";
     };
+    # atuin = {
+    #   enable = true;
+    #   flavor = "macchiato";
+    # };
   };
 
   programs = {
@@ -54,11 +58,11 @@
       enable = true;
       enableNushellIntegration = true;
     };
-    # atuin = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   enableBashIntegration = true;
-    # };
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = false;
+    };
   };
 
 }

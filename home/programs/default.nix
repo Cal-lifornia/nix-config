@@ -74,7 +74,6 @@ in
     ]
     ++ (lib.optionals isDesktop [
       obsidian
-      zoom-us
       gifski
     ])
     ++ (lib.optionals isLinux [
@@ -93,6 +92,7 @@ in
       lutris
       openrgb
       nwg-look
+      zoom-us
 
       #misc
       nano
