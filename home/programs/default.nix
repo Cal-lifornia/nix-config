@@ -63,7 +63,6 @@ in
     [
       eza
       vhs
-      wtf
       glow
       unzip
       curl
