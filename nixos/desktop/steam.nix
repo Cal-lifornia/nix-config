@@ -1,5 +1,8 @@
 { pkgs, lib, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    steamtinkerlaunch
+  ];
   programs = {
     steam = {
       enable = true;
