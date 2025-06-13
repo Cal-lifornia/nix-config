@@ -32,6 +32,7 @@
       python313Packages.python-lsp-ruff
       gopls
       nodePackages.vscode-json-languageserver
+      wgsl-analyzer
 
       # formatters
       nixfmt-rfc-style

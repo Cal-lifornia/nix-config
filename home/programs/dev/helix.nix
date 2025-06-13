@@ -45,6 +45,13 @@
             auto-format = true;
           }
           {
+            name = "wgsl";
+            formatter = {
+              command = "wgslfmt";
+            };
+            auto-format = true;
+          }
+          {
             name = "cpp";
             file-types = [
               "cpp"
