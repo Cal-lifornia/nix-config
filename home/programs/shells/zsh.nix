@@ -39,7 +39,7 @@
         enable = true;
         plugins = [
           "git"
-          "direnv"
+          "sudo"
         ];
       };
       antidote = {
