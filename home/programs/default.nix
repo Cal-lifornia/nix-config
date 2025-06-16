@@ -67,7 +67,6 @@ in
       unzip
       curl
       btop
-      tailscale
       jq
       lazygit
       tldr
@@ -81,6 +80,7 @@ in
       nano
       wget
       sysz
+      tailscale
     ])
     ++ (lib.optionals isLinuxDesktop [
       virtualbox
