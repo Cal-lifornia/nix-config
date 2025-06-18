@@ -49,6 +49,7 @@
       helix.enable = false;
       yazi.enable = false;
       zellij.enable = false;
+      starship.enable = false;
     };
   };
 

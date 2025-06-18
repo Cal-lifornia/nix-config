@@ -34,48 +34,48 @@ in
     # };
   };
 
-  qt = {
-    enable = if cosmic then false else true;
-    platformTheme.name = "gtk";
-  };
-
-  gtk = {
-    enable = if cosmic then false else true;
-    # font = {
-    #   name = "Noto Sans";
-    #   size = 12;
-    # };
-
-    # iconTheme = {
-    #   package = pkgs.adwaita-icon-theme;
-    #   name = "Adwaita";
-    # };
-
-    # theme = {
-    #   name = "catppuccin-macchiato-teal-compact";
-    #   package = catppuccin-gtk.override {
-    #     accents = [ "teal" ];
-    #     variant = "macchiato";
-    #     size = "compact";
-    #   };
-    # };
-
-    # gtk3.extraConfig = {
-    #   Settings = ''
-    #     gtk-application-prefer-dark-theme=1
-    #   '';
-    # };
-
-    # gtk4.extraConfig = {
-    #   Settings = ''
-    #     gtk-application-prefer-dark-theme=1
-    #     gtk-cursor-theme-name=catppuccin-macchiato-blue-cursors
-    #   '';
-    # };
-  };
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
+  # qt = {
+  #   enable = if cosmic then false else true;
+  #   platformTheme.name = "gtk";
   # };
+
+  # gtk = {
+  #   enable = if cosmic then false else true;
+  #   # font = {
+  #   #   name = "Noto Sans";
+  #   #   size = 12;
+  #   # };
+
+  #   # iconTheme = {
+  #   #   package = pkgs.adwaita-icon-theme;
+  #   #   name = "Adwaita";
+  #   # };
+
+  #   # theme = {
+  #   #   name = "catppuccin-macchiato-teal-compact";
+  #   #   package = catppuccin-gtk.override {
+  #   #     accents = [ "teal" ];
+  #   #     variant = "macchiato";
+  #   #     size = "compact";
+  #   #   };
+  #   # };
+
+  #   # gtk3.extraConfig = {
+  #   #   Settings = ''
+  #   #     gtk-application-prefer-dark-theme=1
+  #   #   '';
+  #   # };
+
+  #   # gtk4.extraConfig = {
+  #   #   Settings = ''
+  #   #     gtk-application-prefer-dark-theme=1
+  #   #     gtk-cursor-theme-name=catppuccin-macchiato-blue-cursors
+  #   #   '';
+  #   # };
+  # };
+  # # dconf.settings = {
+  # #   "org/gnome/desktop/interface" = {
+  # #     color-scheme = "prefer-dark";
+  # #   };
+  # # };
 }

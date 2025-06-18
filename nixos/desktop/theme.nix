@@ -13,7 +13,7 @@
   ];
 
   stylix = {
-    enable = if cosmic then false else true;
+    enable = true;
     image = ./elden-ring-title.jpg;
     # autoEnable = true;
     polarity = "dark";
@@ -58,7 +58,7 @@
       };
     };
     targets = {
-      gtk.enable = true;
+      gtk.enable = if cosmic then true else false;
     };
   };
 }

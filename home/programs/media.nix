@@ -28,8 +28,8 @@
       pavucontrol
       gimp
 
-      # music
-      cider-2
+      # # music
+      # cider-2
 
     ]);
 
