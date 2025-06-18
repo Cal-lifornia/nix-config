@@ -1,7 +1,6 @@
 {
   pkgs,
-  stylix,
-  pkgs-stable,
+  cosmic,
   ...
 }:
 {
@@ -14,7 +13,7 @@
   ];
 
   stylix = {
-    enable = true;
+    enable = if cosmic then false else true;
     image = ./elden-ring-title.jpg;
     # autoEnable = true;
     polarity = "dark";
