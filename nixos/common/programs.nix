@@ -5,11 +5,15 @@
   ...
 }:
 {
+  environment.systemPackages = with pkgs; [
+    pinentry-all
+  ];
   programs = {
     ssh.setXAuthLocation = lib.mkForce false;
 
     gnupg = {
       agent = {
+        pinentryPackage = pkgs.pinentry-all;
         enable = true;
         enableSSHSupport = true;
       };
