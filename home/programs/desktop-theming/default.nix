@@ -1,7 +1,6 @@
 {
-  config,
-  lib,
   pkgs,
+  cosmic,
   ...
 }:
 let
@@ -36,12 +35,12 @@ in
   };
 
   qt = {
-    enable = true;
+    enable = if cosmic then false else true;
     platformTheme.name = "gtk";
   };
 
   gtk = {
-    enable = true;
+    enable = if cosmic then false else true;
     # font = {
     #   name = "Noto Sans";
     #   size = 12;
