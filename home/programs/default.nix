@@ -105,7 +105,6 @@ in
       gearlever
 
       parsec-bin
-      _1password-gui
       zenity
       gnome-tweaks
       eog

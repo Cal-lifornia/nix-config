@@ -27,7 +27,7 @@
     font = {
       name = "JetBrainsMono Nerd Font Mono";
       # use different font size on macOS
-      size = 14;
+      size = if pkgs.stdenv.isDarwin then 14 else 13;
     };
 
     # consistent with wezterm
