@@ -10,6 +10,7 @@ name:
   wsl ? false,
   desktop ? false,
   generator ? false,
+  cosmic ? true,
 }:
 let
   isWSL = wsl;
@@ -34,6 +35,7 @@ let
     inherit isLinux;
     inherit isLinuxDesktop;
     inherit isDesktop;
+    inherit cosmic;
     inherit
       hyprland
       catppuccin

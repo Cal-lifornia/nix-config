@@ -2,6 +2,7 @@
   pkgs,
   lib,
   catppuccin,
+  cosmic,
   ...
 }:
 {
@@ -9,7 +10,7 @@
 
   imports = [
     ../common
-    ./hyprland.nix
+    (if cosmic then ./cosmic.nix else ./hyprland.nix)
     ./packages.nix
     ./programs.nix
     ./steam.nix
