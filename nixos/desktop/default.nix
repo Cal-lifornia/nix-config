@@ -11,7 +11,6 @@
   imports = [
     ../common
     (if cosmic then ./cosmic.nix else ./hyprland.nix)
-    ./packages.nix
     ./programs.nix
     ./steam.nix
     ./theme.nix
