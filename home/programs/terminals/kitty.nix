@@ -48,6 +48,7 @@
       shell = "/usr/bin/env zsh -l";
       term = "xterm-256color";
       confirm_os_window_close = 0;
+      hide_window_decorations = true;
     };
 
     # macOS specific settings
