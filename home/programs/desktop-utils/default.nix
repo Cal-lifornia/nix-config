@@ -4,6 +4,7 @@
     ./xdg.nix
     ./cava.nix
     ./rofi.nix
+    ./clipboard.nix
   ];
 
   home.packages = with pkgs; [

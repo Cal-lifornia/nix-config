@@ -9,6 +9,9 @@
     # cava
     vial
     kitty
+    wl-clipboard
+    wofi
+    cliphist
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtgraphicaleffects
     libsForQt5.qt5.qtsvg

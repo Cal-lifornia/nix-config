@@ -60,11 +60,8 @@
     swayidle
     swaylock-effects
     wlogout
-    wl-clipboard
-    wofi
     waybar
     grimblast
-    cliphist
     hyprcursor
   ];
 }
