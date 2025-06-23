@@ -44,13 +44,14 @@
             };
             auto-format = true;
           }
-          # {
-          #   name = "wgsl";
-          #   formatter = {
-          #     command = "wgslfmt";
-          #   };
-          #   auto-format = true;
-          # }
+          {
+            name = "wgsl";
+            formatter = {
+              command = "wgslfmt";
+              args = [ "/dev/stdin" ];
+            };
+            auto-format = true;
+          }
           {
             name = "cpp";
             file-types = [
