@@ -48,7 +48,6 @@
             name = "wgsl";
             formatter = {
               command = "wgslfmt";
-              args = [ "/dev/stdin" ];
             };
             auto-format = true;
           }
