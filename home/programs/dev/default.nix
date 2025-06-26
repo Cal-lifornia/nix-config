@@ -4,6 +4,11 @@
   pkgs-stable,
   ...
 }:
+let
+  wgsl-analyzer = import ./wgslanalyzer.nix {
+    inherit pkgs;
+  };
+in
 {
   imports = [
     ./helix.nix
