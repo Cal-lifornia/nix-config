@@ -43,7 +43,7 @@ in
       gopls
       nodePackages.vscode-json-languageserver
       wgsl-analyzer
-      glsl-analyzer
+      glsl_analyzer
 
       # formatters
       nixfmt-rfc-style
