@@ -9,7 +9,6 @@ in
     enableBashIntegration = true;
     enableNushellIntegration = true;
     settings = {
-      palette = "amethyst";
     } // builtins.fromTOML (builtins.readFile "${configDir}/starship.toml");
   };
 }
