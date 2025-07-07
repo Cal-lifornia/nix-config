@@ -21,7 +21,7 @@
 
             export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
             export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-            [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+            # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
             ${if isMac then "export PATH=$PATH:/opt/homebrew/bin" else ""}
             ${if isLinux && !isDesktop then "export COLORTERM=truecolor" else ""}
           '';
