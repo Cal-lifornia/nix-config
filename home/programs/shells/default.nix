@@ -24,6 +24,10 @@
     #   flavor = "macchiato";
     # };
   };
+  home.shellAliases = {
+    cat = "bat --paging=never";
+    zs = "~/.local/scripts/zellij-sessioniser";
+  };
 
   programs = {
     navi = {

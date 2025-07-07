@@ -8,6 +8,7 @@ in
 
     enableBashIntegration = true;
     enableNushellIntegration = true;
+    enableZshIntegration = true;
     settings = {
     } // builtins.fromTOML (builtins.readFile "${configDir}/starship.toml");
   };

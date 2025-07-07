@@ -11,18 +11,13 @@
     zsh = {
       enable = true;
       autosuggestion.enable = true;
-      shellAliases = {
-        cat = "bat --paging=never";
-        el = "eza -l";
-        zs = "~/.local/scripts/zellij-sessioniser";
-      };
       initContent =
         let
           confExtraFirst = lib.mkBefore ''
-            source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+            # source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
           '';
           confExtra = ''
-            source ~/.config/themes/p10k.zsh
+            # source ~/.config/themes/p10k.zsh
 
             export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
             export ZSH_AUTOSUGGEST_STRATEGY=(history completion)

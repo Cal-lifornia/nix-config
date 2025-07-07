@@ -115,7 +115,7 @@ in
   #   enable = true;
   #   flavor = "mocha";
   # };
-  home.services = {
+  services = {
     gpg-agent = {
       enable = true;
       enableZshIntegration = true;
