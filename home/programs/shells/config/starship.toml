@@ -9,7 +9,6 @@ $os\
 $username\
 $directory\
 $nix_shell\
-$direnv\
 $git_branch\
 $git_commit\
 $git_status\
@@ -270,7 +269,7 @@ version_format = '${raw}'
 [nix_shell]
 symbol = "󱄅"
 style = "fg:color_env"
-format = "( [$symbol ($state)( $name)]($style) )"
+format = "( [$symbol( $state)( $name)]($style) )"
 
 [package]
 disabled = false

@@ -9,6 +9,7 @@
     zsh-powerlevel10k
     nnn
     curl
+    bash
   ];
   catppuccin = {
     bat = {
