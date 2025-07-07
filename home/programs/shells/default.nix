@@ -9,10 +9,13 @@
     zsh-powerlevel10k
     nnn
     curl
-    eza
   ];
   catppuccin = {
     bat = {
+      enable = true;
+      flavor = "macchiato";
+    };
+    nushell = {
       enable = true;
       flavor = "macchiato";
     };
@@ -27,6 +30,13 @@
       enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
+    };
+    eza = {
+      enable = true;
+      icons = "auto";
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
     bash.enable = true;
     nushell = {
@@ -62,6 +72,7 @@
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = false;
+      enableNushellIntegration = true;
     };
   };
 

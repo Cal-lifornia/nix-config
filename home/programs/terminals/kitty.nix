@@ -45,7 +45,7 @@
       #    1. https://github.com/ryan4yin/nix-config/issues/26
       #    2. https://github.com/ryan4yin/nix-config/issues/8
       #  Spawn a nushell in login mode via `bash`
-      shell = "/usr/bin/env zsh -l";
+      shell = "/usr/bin/env nu -l";
       term = "xterm-256color";
       confirm_os_window_close = 0;
       hide_window_decorations = true;

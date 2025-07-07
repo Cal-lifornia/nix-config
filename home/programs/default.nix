@@ -40,6 +40,7 @@ in
       ".config/themes".source = "${configDir}/themes";
       ".config/nvim".source = "${configDir}/nvim";
       ".config/zellij".source = "${configDir}/zellij";
+      ".config/eza/theme.yml".source = "${configDir}/eza/theme.yml";
     }
     // (
       if isLinuxDesktop then
@@ -61,7 +62,6 @@ in
   home.packages =
     with pkgs;
     [
-      eza
       vhs
       glow
       unzip
@@ -115,4 +115,12 @@ in
   #   enable = true;
   #   flavor = "mocha";
   # };
+  home.services = {
+    gpg-agent = {
+      enable = true;
+      enableZshIntegration = true;
+      enableSshSupport = true;
+      enableNushellIntegration = true;
+    };
+  };
 }
