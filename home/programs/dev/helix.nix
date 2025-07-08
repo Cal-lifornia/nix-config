@@ -135,6 +135,16 @@
           {
             name = "javascript";
             auto-format = true;
+            roots = [
+              "deno.json"
+              "deno.jsonc"
+              "package.json"
+            ];
+            language-servers = [ "deno-lsp" ];
+            file-types = [
+              "js"
+              "jsx"
+            ];
             formatter = {
               command = "deno";
               args = [
@@ -147,6 +157,16 @@
           }
           {
             name = "typescript";
+            roots = [
+              "deno.json"
+              "deno.jsonc"
+              "package.json"
+            ];
+            language-servers = [ "deno-lsp" ];
+            file-types = [
+              "ts"
+              "tsx"
+            ];
             auto-format = true;
             formatter = {
               command = "deno";
@@ -182,6 +202,11 @@
         language-server = {
           rust-analyzer.config.check = {
             command = "clippy";
+          };
+          deno-lsp = {
+            command = "deno";
+            args = [ "lsp" ];
+            config.deno.enable = true;
           };
           vscode-json-language-server.command = "vscode-json-languageserver";
           pylsp.config.pylsp.plugins = {
