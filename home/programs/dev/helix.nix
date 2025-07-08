@@ -179,6 +179,30 @@
             };
           }
           {
+            language = "css";
+            formatter = {
+              command = "deno";
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "css"
+              ];
+            };
+          }
+          {
+            language = "html";
+            formatter = {
+              command = "deno";
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "html"
+              ];
+            };
+          }
+          {
             name = "csv";
             file-types = [ "csv" ];
             scope = "source.csv";

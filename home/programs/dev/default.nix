@@ -45,6 +45,9 @@ in
       wgsl-analyzer
       glsl_analyzer
       nixd
+      vscode-css-languageserver
+      superhtml
+      tailwindcss-language-server
 
       # formatters
       nixfmt-rfc-style
