@@ -4,11 +4,11 @@
   pkgs-stable,
   ...
 }:
-let
-  wgsl-analyzer = import ./wgslanalyzer.nix {
-    inherit pkgs;
-  };
-in
+# let
+#   wgsl-analyzer = import ./wgslanalyzer.nix {
+#     inherit pkgs;
+#   };
+# in
 {
   imports = [
     ./helix.nix
@@ -42,7 +42,7 @@ in
       python313Packages.python-lsp-ruff
       gopls
       nodePackages.vscode-json-languageserver
-      wgsl-analyzer
+      # wgsl-analyzer
       glsl_analyzer
       nixd
       vscode-css-languageserver
