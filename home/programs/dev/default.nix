@@ -44,6 +44,7 @@ in
       nodePackages.vscode-json-languageserver
       wgsl-analyzer
       glsl_analyzer
+      nixd
 
       # formatters
       nixfmt-rfc-style

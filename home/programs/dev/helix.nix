@@ -120,10 +120,43 @@
             };
           }
           {
-            name = "armasm";
-            file-types = [ "ms" ];
-            scope = "source.ms";
-            comment-tokens = [ "//" ];
+            name = "svelte";
+            auto-format = true;
+            formatter = {
+              command = "prettier";
+              args = [
+                "--plugin"
+                "prettier-plugin-svelte"
+                "parser"
+                "svelte"
+              ];
+            };
+          }
+          {
+            name = "javascript";
+            auto-format = true;
+            formatter = {
+              command = "deno";
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "js"
+              ];
+            };
+          }
+          {
+            name = "typescript";
+            auto-format = true;
+            formatter = {
+              command = "deno";
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "ts"
+              ];
+            };
           }
           {
             name = "csv";
