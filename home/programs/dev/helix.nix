@@ -121,6 +121,10 @@
           }
           {
             name = "svelte";
+            language-servers = [
+              "svelte-server"
+              "tailwindcss-ls"
+            ];
             auto-format = true;
             formatter = {
               command = "prettier";
@@ -140,7 +144,10 @@
               "deno.jsonc"
               "package.json"
             ];
-            language-servers = [ "deno-lsp" ];
+            language-servers = [
+              "deno-lsp"
+              "tailwindcss-ls"
+            ];
             file-types = [
               "js"
               "jsx"
@@ -162,7 +169,10 @@
               "deno.jsonc"
               "package.json"
             ];
-            language-servers = [ "deno-lsp" ];
+            language-servers = [
+              "deno-lsp"
+              "tailwindcss-ls"
+            ];
             file-types = [
               "ts"
               "tsx"
@@ -180,6 +190,11 @@
           }
           {
             language = "css";
+            language-servers = [
+              "tailwindcss-ls"
+              "vscode-css-language-server"
+            ];
+            auto-format = true;
             formatter = {
               command = "deno";
               args = [
@@ -192,6 +207,12 @@
           }
           {
             language = "html";
+            language-servers = [
+              "vscode-html-language-server"
+              "superhtml"
+              "tailwindcss-ls"
+            ];
+            auto-format = true;
             formatter = {
               command = "deno";
               args = [
