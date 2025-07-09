@@ -41,11 +41,9 @@
       python313Packages.python-lsp-server
       python313Packages.python-lsp-ruff
       gopls
-      nodePackages.vscode-json-languageserver
       # wgsl-analyzer
       glsl_analyzer
       nixd
-      vscode-css-languageserver
       vscode-langservers-extracted
       superhtml
       tailwindcss-language-server
