@@ -189,7 +189,7 @@
             };
           }
           {
-            language = "css";
+            name = "css";
             language-servers = [
               "tailwindcss-ls"
               "vscode-css-language-server"
@@ -206,7 +206,7 @@
             };
           }
           {
-            language = "html";
+            name = "html";
             language-servers = [
               "vscode-html-language-server"
               "superhtml"
