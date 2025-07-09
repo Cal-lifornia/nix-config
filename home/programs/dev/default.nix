@@ -46,6 +46,7 @@
       glsl_analyzer
       nixd
       vscode-css-languageserver
+      vscode-vscode-langservers-extracted
       superhtml
       tailwindcss-language-server
 
