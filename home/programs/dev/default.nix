@@ -41,7 +41,7 @@
       python313Packages.python-lsp-server
       python313Packages.python-lsp-ruff
       gopls
-      # wgsl-analyzer
+      wgsl-analyzer
       glsl_analyzer
       nixd
       vscode-langservers-extracted

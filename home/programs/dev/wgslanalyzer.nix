@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
-pkgs.rustPlatform.buildRustPackage rec {
+pkgs.rustPlatform.buildRustPackage {
   name = "wgsl-analyzer";
-  version = "0.9.10";
+  version = "0.9.9";
   src = pkgs.fetchFromGitHub {
     owner = "wgsl-analyzer";
     repo = "wgsl-analyzer";
