@@ -1,14 +1,15 @@
-{ pkgs, ... }:
+{ pkgs-stable, ... }:
 
-pkgs.rustPlatform.buildRustPackage {
+pkgs-stable.rustPlatform.buildRustPackage {
   name = "wgsl-analyzer";
-  version = "0.9.9";
-  src = pkgs.fetchFromGitHub {
+  version = "0.9.10";
+  src = pkgs-stable.fetchFromGitHub {
     owner = "wgsl-analyzer";
     repo = "wgsl-analyzer";
-    rev = "5d3756806ca2cfba8ea43519d0f978f5e72ed2de";
+    tag = "v0.9.10";
     sha256 = "sha256-KasJXKyXNm3AERLeJ+EPJG++egSPQEsUBj4FgMqmzAg=";
   };
 
+  useFetchCargoVendor = true;
   cargoHash = "sha256-UKt1usU8pgJ9ljZEVVQoXxaLoHMQ9LXueNjsFk+abyI";
 }
