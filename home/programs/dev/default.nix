@@ -30,7 +30,6 @@ in
 
       # language servers
       nil
-      bash-language-server
       yaml-language-server
       taplo
       cargo-insta
@@ -59,5 +58,8 @@ in
       vscode
       ldtk
       libresprite
+    ])
+    ++ (with pkgs-stable; [
+      bash-language-server
     ]);
 }
