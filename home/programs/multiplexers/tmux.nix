@@ -7,27 +7,26 @@ in
     source = "${scriptsDir}/tmux-sessioniser";
     executable = true;
   };
-  catppuccin = {
-    tmux = {
-      enable = true;
-      flavor = "frappe";
-      extraConfig = ''
-        #set -g @catppuccin_status_modules_right "application session user host date_time"
-        set -g @catppuccin_window_status_style "rounded"
+  # catppuccin = {
+  #   tmux = {
+  #     enable = true;
+  #     flavor = "frappe";
+  #     extraConfig = ''
+  #       #set -g @catppuccin_status_modules_right "application session user host date_time"
+  #       set -g @catppuccin_window_status_style "rounded"
 
-
-        # Make the status line pretty and add some modules
-        set -g status-right-length 100
-        set -g status-left-length 100
-        set -g status-left ""
-        set -g status-right "#{E:@catppuccin_status_application}"
-        set -agF status-right "#{E:@catppuccin_status_cpu}"
-        set -ag status-right "#{E:@catppuccin_status_session}"
-        set -ag status-right "#{E:@catppuccin_status_uptime}"
-        set -agF status-right "#{E:@catppuccin_status_battery}"
-      '';
-    };
-  };
+  #       # Make the status line pretty and add some modules
+  #       set -g status-right-length 100
+  #       set -g status-left-length 100
+  #       set -g status-left ""
+  #       set -g status-right "#{E:@catppuccin_status_application}"
+  #       set -agF status-right "#{E:@catppuccin_status_cpu}"
+  #       set -ag status-right "#{E:@catppuccin_status_session}"
+  #       set -ag status-right "#{E:@catppuccin_status_uptime}"
+  #       set -agF status-right "#{E:@catppuccin_status_battery}"
+  #     '';
+  #   };
+  # };
   programs = {
     tmux = {
       enable = true;
@@ -37,36 +36,14 @@ in
         vim-tmux-navigator
         better-mouse-mode
         yank
+        tmux-floax
+        tmux-powerline
         {
           plugin = resurrect;
           extraConfig = ''
             set -g @resurrect-capture-pane-contents 'on'
           '';
         }
-        #{
-        #  plugin = catppuccin;
-        #  extraConfig = ''
-        #    set -g @catppuccin_flavour 'frappe'
-        # set -g @catppuccin_window_left_separator ""
-        # set -g @catppuccin_window_right_separator " "
-        #   set -g @catppuccin_window_middle_separator " █"
-        #   set -g @catppuccin_window_number_position "right"
-        #
-        #   set -g @catppuccin_window_default_fill "number"
-        #   set -g @catppuccin_window_default_text "#W"
-        #
-        #   set -g @catppuccin_window_current_fill "number"
-        #   set -g @catppuccin_window_current_text "#W"
-        #
-        #   set -g @catppuccin_status_modules_right "directory user host session"
-        #   set -g @catppuccin_status_left_separator  " "
-        #   set -g @catppuccin_status_right_separator ""
-        #   set -g @catppuccin_status_fill "icon"
-        #   set -g @catppuccin_status_connect_separator "no"
-        #
-        #   set -g @catppuccin_directory_text "#{pane_current_path}"
-        # '';
-        # }
         tmux-fzf
         extrakto
       ];

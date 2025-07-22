@@ -98,6 +98,13 @@
           {
             name = "markdown";
             auto-format = true;
+            comment-tokens = [
+              "-"
+              "+"
+              "*"
+              "- [ ]"
+              ">"
+            ];
           }
           {
             name = "hcl";
