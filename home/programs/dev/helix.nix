@@ -317,8 +317,9 @@
           };
         };
         editor = {
+          auto-format = true;
           line-number = "relative";
-          continue-comments = false;
+          continue-comments = true;
           cursor-shape.insert = "bar";
           bufferline = "always";
           end-of-line-diagnostics = "hint";
