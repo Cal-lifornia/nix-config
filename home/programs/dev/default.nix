@@ -4,11 +4,11 @@
   pkgs-stable,
   ...
 }:
-let
-  wgsl-analyzer = import ./wgslanalyzer.nix {
-    inherit pkgs-stable;
-  };
-in
+# let
+#   wgsl-analyzer = import ./wgslanalyzer.nix {
+#     inherit pkgs-stable;
+#   };
+# in
 {
   imports = [
     ./helix.nix
@@ -27,6 +27,7 @@ in
       rustup
       nodejs_22
       go
+      deno
 
       # language servers
       nil

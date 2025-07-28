@@ -170,6 +170,19 @@
             };
           }
           {
+            name = "json";
+            auto-format = true;
+            formatter = {
+              command = "deno";
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "json"
+              ];
+            };
+          }
+          {
             name = "typescript";
             roots = [
               "deno.json"
@@ -260,7 +273,6 @@
             args = [ "lsp" ];
             config.deno.enable = true;
           };
-          vscode-json-language-server.command = "vscode-json-languageserver";
           pylsp.config.pylsp.plugins = {
             flake8.enabled = false;
             autopep8.enabled = false;
