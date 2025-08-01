@@ -330,7 +330,8 @@
         };
         editor = {
           auto-format = true;
-          soft-wrap.enable = true;
+          # soft-wrap.enable = true;
+          # soft-wrap.wrap-at-text-width = true;
           line-number = "relative";
           continue-comments = true;
           cursor-shape.insert = "bar";
@@ -354,8 +355,8 @@
             };
           };
           inline-diagnostics = {
-            cursor-line = "error";
-            other-lines = "error";
+            cursor-line = "hint";
+            other-lines = "disable";
           };
         };
       };
