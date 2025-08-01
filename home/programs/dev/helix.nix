@@ -330,7 +330,7 @@
         };
         editor = {
           auto-format = true;
-          soft-wrap = true;
+          soft-wrap.enable = true;
           line-number = "relative";
           continue-comments = true;
           cursor-shape.insert = "bar";
