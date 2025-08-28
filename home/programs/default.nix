@@ -70,6 +70,7 @@ in
       jq
       lazygit
       tldr
+      sd
     ]
     ++ (lib.optionals isDesktop [
       obsidian
