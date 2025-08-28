@@ -9,6 +9,14 @@ keybinds {//unbind "Alt h" "Alt j" "Alt k" "Alt l"
         }
     }
 }
+
+plugins {
+    compact-bar location="zellij:compact-bar" {
+        tooltip "F1"
+    }
+}
+default_layout "compact"
+
 theme "catppuccin-macchiato"
 show_startup_tips false
 
