@@ -358,6 +358,7 @@
             cursor-line = "hint";
             other-lines = "disable";
           };
+          rainbow-brackets = true;
         };
       };
     };
