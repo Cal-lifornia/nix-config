@@ -8,10 +8,10 @@
       enableNushellIntegration = true;
     };
   };
-  catppuccin = {
-    yazi = {
-      enable = true;
-      flavor = "macchiato";
-    };
-  };
+  # catppuccin = {
+  #   yazi = {
+  #     enable = true;
+  #     flavor = "macchiato";
+  #   };
+  # };
 }

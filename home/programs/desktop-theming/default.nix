@@ -1,21 +1,7 @@
 {
   pkgs,
-  cosmic,
   ...
 }:
-let
-  catppuccin-gtk = pkgs.catppuccin-gtk.overrideAttrs {
-    src = pkgs.fetchFromGitHub {
-      owner = "catppuccin";
-      repo = "gtk";
-      rev = "v1.0.3";
-      fetchSubmodules = true;
-      hash = "sha256-q5/VcFsm3vNEw55zq/vcM11eo456SYE5TQA3g2VQjGc=";
-    };
-
-    postUnpack = "";
-  };
-in
 {
   imports = [
     ./environment.nix

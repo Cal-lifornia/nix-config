@@ -24,6 +24,9 @@
     #   enable = true;
     #   flavor = "macchiato";
     # };
+    vivid = {
+      enable = false;
+    };
   };
   home.shellAliases = {
     cat = "bat --paging=never";
