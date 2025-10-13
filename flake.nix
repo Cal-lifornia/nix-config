@@ -42,11 +42,6 @@
       ...
     }@inputs:
     let
-      pkgs = import nixpkgs {
-        config.allowUnfree = true;
-      };
-
-      lib = nixpkgs.lib;
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -122,6 +117,11 @@
         "whobson@variks" = mkHome "vm-home" {
           system = "x86_64-linux";
           username = "whobson";
+        };
+        "whobson@hyperion" = mkHome "desktop-home" {
+          system = "x86_64-linux";
+          username = "whobson";
+          desktop = true;
         };
       };
     };
