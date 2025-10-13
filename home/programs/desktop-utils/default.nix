@@ -8,9 +8,9 @@
   ];
 
   home.packages = with pkgs; [
-    appimage-run
-    xflux
-    catimg
+    #appimage-run
+    #xflux
+    #catimg
     remmina
     sticky-notes
   ];

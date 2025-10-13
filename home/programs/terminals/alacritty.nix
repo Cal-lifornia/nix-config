@@ -2,7 +2,7 @@
 {
   programs = {
     alacritty = {
-      enable = true;
+      enable = false;
       settings = {
         import = [
           "~/.config/themes/alacritty/catppuccin-macchiato.toml"
