@@ -19,7 +19,7 @@ in
     ./yazi.nix
     ./git.nix
     ./media.nix
-    ./browsers.nix
+    # ./browsers.nix
     ./virtualistion.nix
   ]
   ++ (lib.optionals isDesktop [
@@ -99,6 +99,7 @@ in
       mpc-cli
       tty-clock
       gearlever
+      gtk3
 
       parsec-bin
       zenity

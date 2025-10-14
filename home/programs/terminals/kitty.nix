@@ -1,6 +1,8 @@
 {
   lib,
   pkgs,
+  pkgs-stable,
+  isLinuxDesktop,
   ...
 }:
 
@@ -15,11 +17,9 @@
 #
 ###########################################################
 {
-  home.packages = with pkgs; [
-    kitty
-  ];
   programs.kitty = {
     enable = true;
+    package = pkgs-stable.kitty;
     # kitty has catppuccin theme built-in,
     # all the built-in themes are packaged into an extra package named `kitty-themes`
     # and it's installed by home-manager if `theme` is specified.
@@ -28,7 +28,8 @@
       name = "JetBrainsMono Nerd Font Mono";
       # use different font size on macOS
       size = if pkgs.stdenv.isDarwin then 14 else 13;
-    };
+    }
+    // (if isLinuxDesktop then { package = pkgs.nerd-fonts.jetbrains-mono; } else { });
 
     # consistent with wezterm
     keybindings = {
