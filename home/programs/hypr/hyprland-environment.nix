@@ -21,7 +21,7 @@
       # QT_QPA_PLATFORM = "wayland-egl";
       # QT_QPA_PLATFORM_THEME = "qt6ct";
       # QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      GRIMBLAST_EDITOR = "gimp";
+      # GRIMBLAST_EDITOR = "gimp";
     };
   };
 }

@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    ./environment.nix
+    # ./environment.nix
     #./stylix.nix
   ];
   home = {

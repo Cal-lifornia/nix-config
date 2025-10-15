@@ -20,3 +20,4 @@ default_layout "compact"
 theme "catppuccin-macchiato"
 show_startup_tips false
 
+default_shell "zsh"
