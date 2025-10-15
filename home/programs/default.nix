@@ -15,7 +15,7 @@ in
     ./shells
     ./dev
     ./multiplexers
-    ./gaming.nix
+    # ./gaming.nix
     ./yazi.nix
     ./git.nix
     ./media.nix
@@ -26,9 +26,9 @@ in
     ./terminals
   ])
   ++ (lib.optionals isLinuxDesktop [
-    ./hypr
-    ./desktop-utils
-    ./desktop-theming
+    # ./hypr
+    # ./desktop-utils
+    # ./desktop-theming
   ])
   ++ (lib.optionals isMac [
     ./mac.nix
@@ -106,14 +106,14 @@ in
       lollypop
       lutris
       openrgb
-      nwg-look
+      # nwg-look
       zoom-us
 
       #misc
       nano
       nitch
-      grim
-      slurp
+      # grim
+      # slurp
       pamixer
       mpc-cli
       tty-clock
