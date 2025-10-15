@@ -17,12 +17,14 @@ let
 
   catppuccin = inputs.catppuccin;
   helix-master = inputs.helix-master;
+  stylix = inputs.stylix;
   pkgs = import nixpkgs {
     config.allowUnfree = true;
     system = "${system}";
   };
 
   specialArgs = {
+    inherit stylix;
     inherit username;
     inherit pkgs-stable;
     inherit catppuccin;
@@ -43,5 +45,6 @@ inputs.home-manager.lib.homeManagerConfiguration {
     (import homeConfig {
       inputs = inputs;
     })
+    (if isLinuxDesktop then stylix.homeModules.stylix else { })
   ];
 }

@@ -5,7 +5,7 @@
 {
   imports = [
     # ./environment.nix
-    #./stylix.nix
+    # ./stylix.nix
   ];
   home = {
     packages = with pkgs; [
