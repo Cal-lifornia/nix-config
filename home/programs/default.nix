@@ -26,13 +26,26 @@ in
     ./terminals
   ])
   ++ (lib.optionals isLinuxDesktop [
-    ./hypr
+    # ./hypr
     ./desktop-utils
     ./desktop-theming
   ])
   ++ (lib.optionals isMac [
     ./mac.nix
   ]);
+  home.sessionVariables = {
+
+  }
+  // (
+    if isLinuxDesktop then
+      {
+        BROWSER = "firefox";
+        TERM = "alacritty";
+        QT_QPA_PLATFORMTHEME = "qt5ct";
+      }
+    else
+      { }
+  );
 
   home.file = {
     ".config/themes".source = "${configDir}/themes";
@@ -44,15 +57,15 @@ in
     if isLinuxDesktop then
       {
         ".config/alacritty".source = "${configDir}/alacritty";
-        ".config/hypr".source = "${configDir}/hypr";
-        ".config/wlogout".source = "${configDir}/wlogout";
-        ".config/wofi".source = "${configDir}/wofi";
-        ".config/waybar".source = "${configDir}/waybar";
-        ".config/satty".source = "${configDir}/satty";
-        ".config/swww/swww_randomize_multi.sh" = {
-          source = "${configDir}/swww/swww_randomize_multi.sh";
-          executable = true;
-        };
+        # ".config/hypr".source = "${configDir}/hypr";
+        # ".config/wlogout".source = "${configDir}/wlogout";
+        # ".config/wofi".source = "${configDir}/wofi";
+        # ".config/waybar".source = "${configDir}/waybar";
+        # ".config/satty".source = "${configDir}/satty";
+        # ".config/swww/swww_randomize_multi.sh" = {
+        #   source = "${configDir}/swww/swww_randomize_multi.sh";
+        #   executable = true;
+        # };
       }
     else
       { }

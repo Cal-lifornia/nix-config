@@ -16,5 +16,14 @@
   home.packages = with pkgs; [
     swappy
     swww
+    waybar
+    qt5.qtwayland
+    qt6.qtwayland
+    swayidle
+    swaylock-effects
+    grimblast
+    hyprcursor
+    wlogout
+    hyprpaper
   ];
 }

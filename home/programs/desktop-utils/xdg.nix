@@ -121,10 +121,10 @@ in
   xdg = {
     enable = true;
 
-    mimeApps = {
-      enable = true;
-      defaultApplications = associations;
-    };
+    # mimeApps = {
+    #   enable = true;
+    #   defaultApplications = associations;
+    # };
 
     cacheHome = config.home.homeDirectory + "/.cache";
     configHome = config.home.homeDirectory + "/.config";

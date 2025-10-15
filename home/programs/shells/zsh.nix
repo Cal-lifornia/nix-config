@@ -24,6 +24,7 @@
             # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
             ${if isMac then "export PATH=$PATH:/opt/homebrew/bin" else ""}
             ${if isLinux && !isDesktop then "export COLORTERM=truecolor" else ""}
+            fastfetch
           '';
         in
         lib.mkMerge [
