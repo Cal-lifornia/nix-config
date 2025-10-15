@@ -27,7 +27,7 @@ in
   ])
   ++ (lib.optionals isLinuxDesktop [
     # ./hypr
-    # ./desktop-utils
+    ./desktop-utils
     # ./desktop-theming
   ])
   ++ (lib.optionals isMac [
@@ -101,6 +101,7 @@ in
       tailscale
     ])
     ++ (lib.optionals isLinuxDesktop [
+
       #User Apps
       vesktop
       lollypop
