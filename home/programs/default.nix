@@ -41,7 +41,7 @@ in
       {
         BROWSER = "firefox";
         TERM = "alacritty";
-        QT_QPA_PLATFORMTHEME = "qt5ct";
+        # QT_QPA_PLATFORMTHEME = "qt5ct";
       }
     else
       { }
