@@ -1,6 +1,7 @@
 {
   pkgs,
   helix-master,
+  isLinuxDesktop,
   lib,
   ...
 }:
@@ -15,6 +16,12 @@
       enable = true;
       defaultEditor = true;
       package = helix-master.packages.${pkgs.system}.default;
+      themes = {
+        catppuccin_transparent = {
+          inherits = "catppuccin_macchiato";
+          "ui.background" = { };
+        };
+      };
       languages = {
         grammar = [
           {
@@ -304,7 +311,7 @@
 
       };
       settings = {
-        theme = "catppuccin_macchiato";
+        theme = if isLinuxDesktop then "catppuccin_transparent" else "catppuccin_macchiato";
         keys = {
           normal = {
             # Shift + left/right arrow to move buffers

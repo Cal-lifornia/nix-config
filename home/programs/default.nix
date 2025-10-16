@@ -119,10 +119,13 @@ in
       mpc-cli
       tty-clock
       gearlever
-      # gtk3
+      gtk3
 
       zenity
       eog
+
+      # Touchpad Gestures
+      fusuma
     ]);
 
   # catppuccin = {

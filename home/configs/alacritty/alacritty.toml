@@ -7,9 +7,9 @@ shell = { program = "/usr/bin/env", args = ["zsh", "-l"] }
 
 [window]
 dynamic_padding = true
-decorations = "full"
+decorations = "none"
 title = "Alacritty@CachyOS"
-opacity = 0.8
+opacity = 0.9
 decorations_theme_variant = "Dark"
 
 [window.dimensions]
@@ -52,7 +52,7 @@ cyan = "0x8FBCBB"
 white = "0xECEFF4"
 
 [font]
-size = 13
+size = 12
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"
