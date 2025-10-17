@@ -3,9 +3,10 @@ gpu="0000:03:000.0"
 aud="0000:03:000.1"
 
 
+gpu_vd="$(cat /sys/bus/pci/devices/$gpu/vendor) $(cat /sys/bus/pci/devices/$gpu/device)"
+aud_vd="$(cat /sys/bus/pci/devices/$aud/vendor) $(cat /sys/bus/pci/devices/$aud/device)"
+
 function bind_vfio {
-  gpu_vd="$(cat /sys/bus/pci/devices/$gpu/vendor) $(cat /sys/bus/pci/devices/$gpu/device)"
-  aud_vd="$(cat /sys/bus/pci/devices/$aud/vendor) $(cat /sys/bus/pci/devices/$aud/device)"
 
   echo $gpu > /sys/bus/pci/drivers/amdgpu/unbind
   echo $aud > /sys/bus/pci/drivers/amdgpu/unbind
