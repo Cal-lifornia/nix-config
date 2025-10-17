@@ -21,7 +21,7 @@
     if isLinuxDesktop then
       {
         ".local/scripts/vfio-binds" = {
-          source = "./scripts/vfio-binds.sh";
+          source = ./scripts/vfio-binds.sh;
           executable = true;
         };
 
