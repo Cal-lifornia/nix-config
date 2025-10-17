@@ -32,7 +32,7 @@
   home.shellAliases =
     if isLinuxDesktop then
       {
-        vfio_binds = "~/.local/scripts/vfio-binds.sh";
+        vfio-binds = "~/.local/scripts/vfio-binds";
       }
     else
       { };
