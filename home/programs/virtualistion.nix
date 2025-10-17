@@ -20,8 +20,8 @@
   home.file =
     if isLinuxDesktop then
       {
-        ".local/scripts/vfio_binds" = {
-          source = "./scripts/vfio_binds";
+        ".local/scripts/vfio-binds" = {
+          source = ./scripts/vfio-binds.sh;
           executable = true;
         };
 
@@ -32,7 +32,7 @@
   home.shellAliases =
     if isLinuxDesktop then
       {
-        vfio_binds = "~/.local/scripts/vfio_binds";
+        vfio_binds = "~/.local/scripts/vfio-binds.sh";
       }
     else
       { };
