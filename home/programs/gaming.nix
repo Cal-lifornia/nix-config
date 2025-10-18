@@ -7,7 +7,7 @@
     ++ (lib.optionals isLinuxDesktop [
       steam
       steam-run
-      lutris
+      # lutris
       # xorg.xandr
     ]);
 }

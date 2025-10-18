@@ -94,6 +94,7 @@ in
       gifski
     ])
     ++ (lib.optionals isLinux [
+      dua
       gnumake
       nano
       wget
@@ -103,9 +104,9 @@ in
     ++ (lib.optionals isLinuxDesktop [
 
       #User Apps
-      vesktop
+      # vesktop
       lollypop
-      lutris
+      # lutris
       openrgb
       # nwg-look
       zoom-us
@@ -125,7 +126,7 @@ in
       eog
 
       # Touchpad Gestures
-      fusuma
+      # fusuma
     ]);
 
   # catppuccin = {
