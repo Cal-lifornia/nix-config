@@ -10,6 +10,7 @@
     nnn
     curl
     bash
+    fastfetch
   ];
   catppuccin = {
     bat = {
