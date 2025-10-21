@@ -88,13 +88,13 @@ in
       lazygit
       tldr
       sd
+      dua
     ]
     ++ (lib.optionals isDesktop [
       obsidian
       gifski
     ])
     ++ (lib.optionals isLinux [
-      dua
       gnumake
       nano
       wget
