@@ -88,7 +88,6 @@ in
       lazygit
       tldr
       sd
-      dua
     ]
     ++ (lib.optionals isDesktop [
       obsidian
@@ -100,6 +99,7 @@ in
       wget
       sysz
       tailscale
+      dua
     ])
     ++ (lib.optionals isLinuxDesktop [
 
