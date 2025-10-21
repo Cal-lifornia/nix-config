@@ -121,6 +121,8 @@ in
       tty-clock
       gearlever
       gtk3
+      blender
+      unityhub
 
       zenity
       eog
