@@ -95,12 +95,12 @@ in
       gifski
     ])
     ++ (lib.optionals isLinux [
-      dua
       gnumake
       nano
       wget
       sysz
       tailscale
+      dua
     ])
     ++ (lib.optionals isLinuxDesktop [
 
