@@ -15,6 +15,7 @@ let
   homeConfig = ../home/home-manager.nix;
   pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
 
+  nixgl = inputs.nixgl;
   catppuccin = inputs.catppuccin;
   helix-master = inputs.helix-master;
   stylix = inputs.stylix;
@@ -33,6 +34,7 @@ let
     inherit isLinux;
     inherit isLinuxDesktop;
     inherit isDesktop;
+    inherit nixgl;
   };
 
 in

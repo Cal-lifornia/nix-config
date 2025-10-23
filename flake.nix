@@ -18,6 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    nixgl.url = "github:nix-community/nixGl";
     stylix = {
       url = "github:danth/stylix";
       inputs = {
@@ -39,6 +40,7 @@
       nixos-generators,
       nixos-wsl,
       stylix,
+      nixgl,
       ...
     }@inputs:
     let
@@ -49,7 +51,16 @@
         "aarch64-darwin"
       ];
       forEachSupportedSystem =
-        f: nixpkgs.lib.genAttrs supportedSystems (system: f { pkgs = import nixpkgs { inherit system; }; });
+        f:
+        nixpkgs.lib.genAttrs supportedSystems (
+          system:
+          f {
+            pkgs = import nixpkgs {
+              inherit system;
+              overlays = [ nixgl.overlay ];
+            };
+          }
+        );
       mkSystem = import ./lib/mksystem.nix {
         inherit nixpkgs inputs;
       };

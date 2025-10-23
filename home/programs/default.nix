@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   isDesktop,
   isMac,
   isLinux,
@@ -109,7 +110,7 @@ in
       # lutris
       openrgb
       # nwg-look
-      zoom-us
+      (config.lib.nixGL.wrap zoom-us)
 
       #misc
       nano
@@ -121,7 +122,7 @@ in
       tty-clock
       gearlever
       gtk3
-      blender
+      (config.lib.nixGL.wrap blender)
       unityhub
 
       zenity
