@@ -8,6 +8,10 @@ keybinds {//unbind "Alt h" "Alt j" "Alt k" "Alt l"
             SwitchToMode "Search"
         }
     }
+    tab {
+        bind "Ctrl h" { MoveTab "Left"; }
+        bind "Ctrl l" { MoveTab "Right"; }
+    }
 }
 
 plugins {
