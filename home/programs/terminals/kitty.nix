@@ -27,7 +27,7 @@
     font = {
       name = "JetBrainsMono Nerd Font Mono";
       # use different font size on macOS
-      size = if pkgs.stdenv.isDarwin then 14 else 13;
+      size = if pkgs.stdenv.isDarwin then 14 else 12;
     }
     // (if isLinuxDesktop then { package = pkgs.nerd-fonts.jetbrains-mono; } else { });
 

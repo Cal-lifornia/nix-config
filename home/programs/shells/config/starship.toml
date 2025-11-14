@@ -23,7 +23,6 @@ $java\
 $kotlin\
 $haskell\
 $python\
-$package\
 $docker_context\
 $kubernetes\
 $shell\
@@ -38,6 +37,8 @@ $status\
 $line_break\
 $character\
 """
+# Removed from format
+# $package\
 
 palette = 'default'
 
