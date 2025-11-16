@@ -7,8 +7,6 @@
   programs = {
     git = {
       enable = true;
-      userEmail = "willhobson@live.com.au";
-      userName = "William Hobson";
       ignores = [
         ".direnv/"
         "*.swp"
@@ -20,7 +18,11 @@
         key = null;
         signByDefault = true;
       };
-      extraConfig = {
+      settings = {
+        user = {
+          email = "willhobson@live.com.au";
+          name = "William Hobson";
+        };
         gpg = {
           format = "ssh";
           ssh.allowedSignersFile = "~/.ssh/allowed_signers";
