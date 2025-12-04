@@ -111,6 +111,7 @@ in
       openrgb
       # nwg-look
       (config.lib.nixGL.wrap zoom-us)
+      (config.lib.nixGL.wrap read-edid)
 
       #misc
       nano
@@ -118,11 +119,12 @@ in
       # grim
       # slurp
       pamixer
-      mpc-cli
+      mpc
       tty-clock
       gearlever
       gtk3
       (config.lib.nixGL.wrap blender)
+      (config.lib.nixGL.wrap kdePackages.ark)
       unityhub
 
       zenity
