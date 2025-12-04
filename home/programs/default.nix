@@ -16,7 +16,7 @@ in
     ./shells
     ./dev
     ./multiplexers
-    # ./gaming.nix
+    ./gaming.nix
     ./yazi.nix
     ./git.nix
     ./media.nix
@@ -131,17 +131,25 @@ in
       # Touchpad Gestures
       # fusuma
     ]);
+  programs.keychain = {
+    enable = if isLinux then true else false;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+    keys = [
+      "~/.ssh/github-key"
+    ];
+  };
 
   # catppuccin = {
   #   enable = true;
   #   flavor = "mocha";
   # };
-  services = {
-    gpg-agent = {
-      enable = true;
-      enableZshIntegration = true;
-      enableSshSupport = true;
-      enableNushellIntegration = true;
-    };
-  };
+  # services = {
+  #   gpg-agent = {
+  #     enable = true;
+  #     enableZshIntegration = true;
+  #     enableSshSupport = true;
+  #     enableNushellIntegration = true;
+  #   };
+  # };
 }

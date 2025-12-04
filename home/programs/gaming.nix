@@ -5,8 +5,9 @@
     [
     ]
     ++ (lib.optionals isLinuxDesktop [
-      steam
-      steam-run
+      gamma-launcher
+      # steam
+      # steam-run
       # lutris
       # xorg.xandr
     ]);
