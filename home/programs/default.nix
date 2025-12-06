@@ -40,8 +40,8 @@ in
   // (
     if isLinuxDesktop then
       {
-        BROWSER = "firefox";
-        TERM = "alacritty";
+        BROWSER = "zen-browser";
+        TERM = "kitty";
         # QT_QPA_PLATFORMTHEME = "qt5ct";
       }
     else
