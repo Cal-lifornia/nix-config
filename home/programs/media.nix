@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   isLinuxDesktop,
   isDesktop,
   ...
@@ -27,6 +28,7 @@
       spotifywm
       pavucontrol
       gimp
+      (config.lib.nixGL.wrap sabnzbd)
 
       # # music
       # cider-2

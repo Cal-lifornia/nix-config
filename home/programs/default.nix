@@ -125,6 +125,7 @@ in
       gtk3
       (config.lib.nixGL.wrap blender)
       (config.lib.nixGL.wrap kdePackages.ark)
+      (config.lib.nixGL.wrap harmonoid)
       unityhub
 
       zenity
