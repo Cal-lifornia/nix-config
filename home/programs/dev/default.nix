@@ -49,7 +49,7 @@
       tailwindcss-language-server
 
       # formatters
-      nixfmt-rfc-style
+      nixfmt
       mdformat
       black
     ]

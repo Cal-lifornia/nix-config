@@ -13,12 +13,7 @@
       autosuggestion.enable = true;
       initContent =
         let
-          confExtraFirst = lib.mkBefore ''
-            # source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-          '';
           confExtra = ''
-            # source ~/.config/themes/p10k.zsh
-
             export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
             export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
             export PATH=$PATH:~/.local/scripts
@@ -30,7 +25,6 @@
         in
         lib.mkMerge [
           confExtra
-          confExtraFirst
         ];
       oh-my-zsh = {
         enable = true;

@@ -15,7 +15,7 @@
     helix = {
       enable = true;
       defaultEditor = true;
-      package = helix-master.packages.${pkgs.system}.default;
+      package = helix-master.packages.${pkgs.stdenv.hostPlatform.system}.default;
       themes = {
         catppuccin_transparent = {
           inherits = "catppuccin_macchiato";
