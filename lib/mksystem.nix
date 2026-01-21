@@ -7,13 +7,11 @@ name:
   system,
   username,
   darwin ? false,
-  wsl ? false,
   desktop ? false,
   generator ? false,
   cosmic ? true,
 }:
 let
-  isWSL = wsl;
   isDesktop = desktop;
   isMac = darwin;
   isLinux = !darwin;
@@ -54,7 +52,6 @@ systemFunc rec {
   modules = [
     { nixpkgs.config.allowUnfree = true; }
 
-    (if isWSL then inputs.nixos-wsl.nixosModules.default else { })
     (if generator then inputs.self.nixosModules.myFormats else { })
     (if isLinuxDesktop then stylix.nixosModules.stylix else { })
 

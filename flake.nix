@@ -17,7 +17,6 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixgl.url = "github:nix-community/nixGl";
     stylix = {
       url = "github:danth/stylix";
@@ -38,7 +37,6 @@
       catppuccin,
       helix-master,
       nixos-generators,
-      nixos-wsl,
       stylix,
       nixgl,
       ...
@@ -102,11 +100,6 @@
           system = "x86_64-linux";
           username = "whobson";
           desktop = true;
-        };
-        wslnix = mkSystem "wsl-nix" {
-          username = "whobson";
-          system = "x86_64-linux";
-          wsl = true;
         };
         proxmoxlxc = mkSystem "vm-nixos" {
           username = "whobson";
