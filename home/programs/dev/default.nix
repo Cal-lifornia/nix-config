@@ -1,7 +1,9 @@
 {
   pkgs,
   isLinuxDesktop,
+  isMac,
   pkgs-stable,
+  config,
   ...
 }:
 # let
@@ -21,6 +23,8 @@
       sqlite
       just # replacement for GNU Make
       neovim
+      caddy
+      xcaddy
       # xmake # Alternative to Cmake
 
       #languages
@@ -59,6 +63,10 @@
       vscode
       ldtk
       libresprite
+      (config.lib.nixGL.wrap hoppscotch)
+    ])
+    ++ (lib.optionals isMac [
+      hoppscotch
     ])
     ++ (with pkgs-stable; [
       bash-language-server
