@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs = {
     yazi = {
@@ -6,6 +6,7 @@
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
+      shellWrapperName = "y";
     };
   };
   # catppuccin = {
