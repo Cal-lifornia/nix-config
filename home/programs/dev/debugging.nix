@@ -12,6 +12,7 @@
       fq
       binsider
       lldb
+      termshark
     ]
     ++ (lib.optionals isDesktop [
       imhex

@@ -20,16 +20,13 @@ in
     ./yazi.nix
     ./git.nix
     ./media.nix
-    # ./browsers.nix
     ./virtualistion.nix
   ]
   ++ (lib.optionals isDesktop [
     ./terminals
   ])
   ++ (lib.optionals isLinuxDesktop [
-    # ./hypr
     ./desktop-utils
-    # ./desktop-theming
   ])
   ++ (lib.optionals isMac [
     ./mac.nix
@@ -58,21 +55,6 @@ in
     if isLinuxDesktop then
       {
         ".config/alacritty".source = "${configDir}/alacritty";
-        # ".config/hypr".source = "${configDir}/hypr";
-        # ".config/wlogout".source = "${configDir}/wlogout";
-        # ".config/wofi".source = "${configDir}/wofi";
-        # ".config/waybar".source = "${configDir}/waybar";
-        # ".config/satty".source = "${configDir}/satty";
-        # ".config/swaylock".source = "${configDir}/swaylock";
-        # ".config/mako".source = "${configDir}/mako";
-        # ".config/Kvuntum".source = "${configDir}/Kvantum";
-        # ".config/gtk-3.0".source = "${configDir}/gtk-3.0";
-        # ".config/gtk-4.0".source = "${configDir}/gtk-4.0";
-        # ".config/qtc5t".source = "${configDir}/qt5ct";
-        # ".config/swww/swww_randomize_multi.sh" = {
-        #   source = "${configDir}/swww/swww_randomize_multi.sh";
-        #   executable = true;
-        # };
       }
     else
       { }
@@ -89,6 +71,7 @@ in
       lazygit
       tldr
       sd
+      sshfs
     ]
     ++ (lib.optionals isDesktop [
       obsidian
