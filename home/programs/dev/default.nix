@@ -34,6 +34,7 @@
       deno
 
       # language servers
+      jq-lsp
       nil
       yaml-language-server
       taplo
