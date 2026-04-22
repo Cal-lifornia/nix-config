@@ -17,16 +17,17 @@
       signing = {
         key = null;
         signByDefault = true;
+        format = "ssh";
       };
       settings = {
         user = {
           email = "willhobson@live.com.au";
           name = "William Hobson";
         };
-        gpg = {
-          format = "ssh";
-          ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-        };
+        # gpg = {
+        #   format = "ssh";
+        #   ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+        # };
         user = {
           signingkey = "~/.ssh/github-key";
         };

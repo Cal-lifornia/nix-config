@@ -2,7 +2,6 @@
   pkgs,
   helix-master,
   isLinuxDesktop,
-  lib,
   ...
 }:
 {
@@ -322,7 +321,14 @@
 
             "C-s" = ":w"; # Ctrl + s to save file
             "C-S-s" = ":wa"; # Ctrl + Shift + s to save all buffers
-            "C-y" = {
+            "C-y" = [
+              ":sh rm -f /tmp/unique-ca1ea106"
+              ":insert-output yazi \"%{buffer_name}\" --chooser-file=/tmp/unique-ca1ea106"
+              ":sh printf \"\x1b[?1049h\x1b[?2004h\" > /dev/tty"
+              ":open %sh{cat /tmp/unique-ca1ea106}"
+              ":redraw"
+              ":set mouse false"
+              ":set mouse true"
               # "y" =
               #   ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker open %{buffer_name}";
               # # Open the file(s) in a vertical pane
@@ -331,14 +337,10 @@
               # # Open the file(s) in a horizontal pane
               # "h" =
               #   ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker hsplit %{buffer_name}";
-              "y" = [
-                ":sh rm -f /tmp/unique-ca1ea106"
-                ":insert-output yazi \"%{buffer_name}\" --chooser-file=/tmp/unique-ca1ea106"
-                ":sh printf \"\x1b[?1049h\x1b[?2004h\" > /dev/tty"
-                ":open %sh{cat /tmp/unique-ca1ea106}"
-              ];
+              # "y" = [
+              # ];
 
-            };
+            ];
           };
         };
         editor = {

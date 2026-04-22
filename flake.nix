@@ -31,13 +31,12 @@
     {
       self,
       nixpkgs,
+      stylix,
       nixpkgs-stable,
       home-manager,
-      hyprland,
       catppuccin,
       helix-master,
       nixos-generators,
-      stylix,
       nixgl,
       ...
     }@inputs:
@@ -59,9 +58,9 @@
             };
           }
         );
-      mkSystem = import ./lib/mksystem.nix {
-        inherit nixpkgs inputs;
-      };
+      # mkSystem = import ./lib/mksystem.nix {
+      #   inherit nixpkgs inputs;
+      # };
       mkHome = import ./lib/mkhome.nix {
         inherit nixpkgs inputs;
       };
@@ -86,7 +85,7 @@
       );
 
       nixosModules.myFormats =
-        { config, ... }:
+        { ... }:
         {
           imports = [
             nixos-generators.nixosModules.all-formats
@@ -95,18 +94,6 @@
           nixpkgs.hostPlatform = "x86_64-linux";
         };
 
-      nixosConfigurations = {
-        desktop = mkSystem "desktop-nixos" {
-          system = "x86_64-linux";
-          username = "whobson";
-          desktop = true;
-        };
-        proxmoxlxc = mkSystem "vm-nixos" {
-          username = "whobson";
-          system = "x86_64-linux";
-          generator = true;
-        };
-      };
       homeConfigurations = {
         "whobson@traveler" = mkHome "macbook-pro-m2" {
           system = "aarch64-darwin";

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 {
   imports = [
     ./zsh.nix
@@ -47,6 +47,7 @@
     bash.enable = true;
     nushell = {
       enable = true;
+      package = pkgs-stable.nushell;
     };
     ripgrep.enable = true;
     fd.enable = true;
