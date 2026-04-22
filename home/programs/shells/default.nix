@@ -42,7 +42,7 @@
       icons = "auto";
       enableBashIntegration = true;
       enableZshIntegration = true;
-      enableNushellIntegration = true;
+      # enableNushellIntegration = true;
     };
     bash.enable = true;
     nushell = {

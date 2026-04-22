@@ -17,6 +17,10 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    yazelix-hm = {
+      url = "github:luccahuguet/yazelix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixgl.url = "github:nix-community/nixGl";
     stylix = {
       url = "github:danth/stylix";
@@ -36,6 +40,7 @@
       home-manager,
       catppuccin,
       helix-master,
+      yazelix-hm,
       nixos-generators,
       nixgl,
       ...

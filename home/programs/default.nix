@@ -47,7 +47,7 @@ in
 
   home.file = {
     ".config/themes".source = "${configDir}/themes";
-    ".config/nvim".source = "${configDir}/nvim";
+    # ".config/nvim".source = "${configDir}/nvim";
     ".config/zellij".source = "${configDir}/zellij";
     ".config/eza/theme.yml".source = "${configDir}/eza/theme.yml";
   }

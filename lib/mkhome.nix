@@ -19,6 +19,7 @@ let
   catppuccin = inputs.catppuccin;
   helix-master = inputs.helix-master;
   stylix = inputs.stylix;
+  # yazelix = inputs.yazelix-hm;
   pkgs = import nixpkgs {
     config.allowUnfree = true;
     system = "${system}";
@@ -34,6 +35,7 @@ let
     inherit isLinux;
     inherit isLinuxDesktop;
     inherit isDesktop;
+    # inherit yazelix;
     inherit nixgl;
   };
 
@@ -47,6 +49,7 @@ inputs.home-manager.lib.homeManagerConfiguration {
     (import homeConfig {
       inputs = inputs;
     })
+    # (yazelix.homeManagerModules.default)
     (if isLinuxDesktop then stylix.homeModules.stylix else { })
   ];
 }

@@ -31,14 +31,12 @@ session_name=$(basename "$selected_path" | tr . _)
 
 # We're outside of zellij, so lets create a new session or attach to a new one.
 if [[ -z $ZELLIJ ]]; then
-	cd $selected_path
+	cd "$selected_path"
   
   # -c will make zellij to either create a new session or to attach into an existing one
-	zellij attach $session_name -c
+	zellij attach "$session_name" -c
 	exit 0
 fi
 
-cd $selected_path
-
 # -c will make zellij to either create a new session or to attach into an existing one
-zellij attach $session_name -c
+zellij action switch-session "$session_name" -c "$selected_path"

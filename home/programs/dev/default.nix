@@ -16,6 +16,9 @@
     ./helix.nix
     ./debugging.nix
   ];
+  # programs.yazelix = {
+  #   enable = true;
+  # };
   home.packages =
     with pkgs;
     [
