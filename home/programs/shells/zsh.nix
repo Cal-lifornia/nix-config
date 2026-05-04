@@ -1,5 +1,4 @@
 {
-  pkgs,
   isMac,
   isLinux,
   isDesktop,
@@ -7,6 +6,19 @@
   ...
 }:
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      zsh = prev.zsh.overrideAttrs (
+        old:
+        prev.lib.optionalAttrs prev.stdenv.isDarwin {
+          preConfigure = (old.preConfigure or "") + ''
+            export zsh_cv_sys_sigsuspend=yes
+          '';
+        }
+      );
+    })
+
+  ];
   programs = {
     zsh = {
       enable = true;
@@ -18,7 +30,6 @@
             export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
             export PATH=$PATH:~/.local/scripts
             # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-            ${if isMac then "export PATH=$PATH:/opt/homebrew/bin" else ""}
             ${if isLinux && !isDesktop then "export COLORTERM=truecolor" else ""}
             fastfetch
           '';

@@ -31,6 +31,7 @@
             };
           }
           {
+
             name = "asm";
             source = {
               git = "https://github.com/SethBarberee/tree-sitter-asm";
@@ -323,22 +324,22 @@
             "C-S-s" = ":wa"; # Ctrl + Shift + s to save all buffers
             "C-y" = {
               "y" =
-                ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- >> /dev/null ~/.local/scripts/yazi-picker open %{buffer_name}";
+                ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker open %{buffer_name}";
               # Open the file(s) in a vertical pane
               "v" =
                 ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker vsplit %{buffer_name}";
               # Open the file(s) in a horizontal pane
               "h" =
                 ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker hsplit %{buffer_name}";
-              "c" = [
-                ":sh rm -f /tmp/unique-ca1ea106"
-                '':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-ca1ea106''
-                '':sh /usr/bin/printf "\x1b[?1049h\x1b[?2004h" > /dev/tty''
-                ":open %sh{cat /tmp/unique-ca1ea106}"
-                ":redraw"
-                ":set mouse false"
-                ":set mouse true"
-              ];
+              # "c" = [
+              #   ":sh rm -f /tmp/unique-ca1ea106"
+              #   '':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-ca1ea106''
+              #   '':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty''
+              #   ":open %sh{/bin/cat /tmp/unique-ca1ea106}"
+              #   ":redraw"
+              #   ":set-option mouse false"
+              #   ":set-option mouse true"
+              # ];
             };
           };
         };

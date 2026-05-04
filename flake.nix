@@ -10,24 +10,13 @@
 
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
     catppuccin.url = "github:catppuccin/nix";
     helix-master.url = "github:helix-editor/helix";
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    yazelix-hm = {
-      url = "github:luccahuguet/yazelix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixgl.url = "github:nix-community/nixGl";
-    stylix = {
-      url = "github:danth/stylix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
 
   };
 
@@ -35,12 +24,10 @@
     {
       self,
       nixpkgs,
-      stylix,
       nixpkgs-stable,
       home-manager,
       catppuccin,
       helix-master,
-      yazelix-hm,
       nixos-generators,
       nixgl,
       ...
