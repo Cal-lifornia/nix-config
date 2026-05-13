@@ -45,12 +45,12 @@ in
         ]
       '';
     };
-    ".local/bin/txde" = {
+    ".local/scripts/txde" = {
       enable = true;
       executable = true;
       source = "${bin_files}/txde.sh";
     };
-    ".local/bin/theylix" = {
+    ".local/scripts/theylix" = {
       enable = true;
       executable = true;
       source = "${bin_files}/theylix.sh";
