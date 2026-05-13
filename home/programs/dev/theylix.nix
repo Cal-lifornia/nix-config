@@ -10,7 +10,6 @@ in
   ];
   home.file = {
     ".config/yazi/theylix/yazi.toml" = {
-      enable = true;
       text = ''
         [opener]
         text = [
@@ -36,7 +35,6 @@ in
       '';
     };
     ".config/yazi/theylix/keymap.toml" = {
-      enable = true;
       text = ''
         [mgr]
         prepend_keymap = [
@@ -46,12 +44,10 @@ in
       '';
     };
     ".local/scripts/txde" = {
-      enable = true;
       executable = true;
       source = "${bin_files}/txde.sh";
     };
     ".local/scripts/theylix" = {
-      enable = true;
       executable = true;
       source = "${bin_files}/theylix.sh";
     };

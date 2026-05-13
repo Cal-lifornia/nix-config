@@ -15,6 +15,7 @@
   imports = [
     ./helix.nix
     ./debugging.nix
+    ./theylix.nix
   ];
   # programs.yazelix = {
   #   enable = true;

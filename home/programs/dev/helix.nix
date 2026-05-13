@@ -326,14 +326,14 @@
             "C-y" = {
               "y" =
                 ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker open %{buffer_name}";
-              # Open the file(s) in a vertical pane
-              "space" = {
-                ";" = ":sh txde filetree '%{buffer_name}'";
-                "v" = {
-                  "b" = ":sh txde blame '%{buffer_name}' '%{cursor_line}'";
-                  "x" = ":sh txde regex";
-                  "g" = ":sh txde git '%{buffer_name}'";
-                };
+              "c" = ":sh txde filetree '%{buffer_name}'";
+            };
+            "space" = {
+              ";" = ":sh txde filetree '%{buffer_name}'";
+              "v" = {
+                "b" = ":sh txde blame '%{buffer_name}' '%{cursor_line}'";
+                "x" = ":sh txde regex";
+                "g" = ":sh txde git '%{buffer_name}'";
               };
             };
           };
