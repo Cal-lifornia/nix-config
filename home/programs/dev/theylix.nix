@@ -50,5 +50,10 @@ in
       executable = true;
       source = "${bin_files}/txde.sh";
     };
+    ".local/bin/theylix" = {
+      enable = true;
+      executable = true;
+      source = "${bin_files}/theylix.sh";
+    };
   };
 }
