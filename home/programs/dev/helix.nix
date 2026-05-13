@@ -38,7 +38,7 @@
             "C-y" = {
               "y" =
                 ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ~/.local/scripts/yazi-picker open %{buffer_name}";
-              "c" = ":sh txde filetree '%{buffer_name}'";
+              "c" = ":open %sh{yazi-picker '%{buffer_name}' }";
               "v" = [
                 ":sh rm -f /tmp/unique-ca1ea106"
                 '':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-ca1ea106''

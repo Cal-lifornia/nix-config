@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 paths=$(yazi "$2" --chooser-file=/dev/stdout)
 

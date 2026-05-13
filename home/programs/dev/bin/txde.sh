@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ $1 == "filetree" ]]; then
-  zellij run -c -f --x 10% --y 10% --width 80% --height 80% -- env "YAZI_CONFIG_HOME=~/.config/yazi/theylix" yazi $2
+  zellij run -c -f --x 10% --y 10% --width 80% --height 80% -- env "YAZI_CONFIG_HOME=~/.config/yazi/theylix" yazi $2 --chooser-file=/dev/stdout
   zellij action rename-pane "File Manager"
 elif [[ $1 == "git" ]]; then
   zellij run -c -f --x 10% --y 10% --width 80% --height 80% -n Git -- lazygit -p $(git -C $(dirname ${2/\~/$HOME}) rev-parse --show-toplevel)
