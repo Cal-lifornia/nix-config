@@ -25,3 +25,5 @@ theme "catppuccin-macchiato"
 show_startup_tips false
 
 default_shell "zsh"
+
+support_kitty_keyboard_protocol true

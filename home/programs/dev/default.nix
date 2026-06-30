@@ -15,7 +15,6 @@
   imports = [
     ./helix.nix
     ./debugging.nix
-    ./theylix.nix
   ];
   # programs.yazelix = {
   #   enable = true;
@@ -29,6 +28,8 @@
       neovim
       caddy
       xcaddy
+      devenv
+
       # xmake # Alternative to Cmake
 
       #languages
