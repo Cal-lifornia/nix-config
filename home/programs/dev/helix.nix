@@ -16,12 +16,12 @@
       enable = true;
       defaultEditor = true;
       package = helix-master.packages.${pkgs.stdenv.hostPlatform.system}.default;
-      themes = {
-        catppuccin_transparent = {
-          inherits = "catppuccin_macchiato";
-          "ui.background" = { };
-        };
-      };
+      # themes = {
+      #   catppuccin_transparent = {
+      #     inherits = "catppuccin_macchiato";
+      #     "ui.background" = { };
+      #   };
+      # };
       settings = {
         theme = if isLinuxDesktop then "catppuccin_transparent" else "catppuccin_macchiato";
         keys = {
