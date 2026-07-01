@@ -55,9 +55,11 @@
       {
         name = "nix";
         auto-format = true;
-        formatter = {
-          command = "nixfmt";
-        };
+        language-servers = [
+          "devenv_lsp"
+          "nil"
+          "nixd"
+        ];
       }
       {
         name = "go";
@@ -253,6 +255,11 @@
     language-server = {
       rust-analyzer.config.check = {
         command = "clippy";
+      };
+      devenv_lsp = {
+        command = "devenv";
+        args = [ "lsp" ];
+        required_root_patterns = [ "devenv.nix" ];
       };
       deno-lsp = {
         command = "deno";

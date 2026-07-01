@@ -9,9 +9,9 @@
     with pkgs;
     [
       lazydocker
-      podman
-      podman-tui
-      podman-compose
+      # podman
+      # podman-tui
+      # podman-compose
     ]
     ++ (lib.optionals isLinuxDesktop [
       # dnsmasq
