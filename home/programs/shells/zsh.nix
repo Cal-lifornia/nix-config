@@ -31,6 +31,7 @@
             export PATH=$PATH:~/.local/scripts
             # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
             ${if isLinux && !isDesktop then "export COLORTERM=truecolor" else ""}
+            ${if isMac then "export PATH=$PATH:/opt/homebrew/bin" else ""}
             fastfetch
           '';
         in
