@@ -57,6 +57,7 @@
       vscode-langservers-extracted
       superhtml
       tailwindcss-language-server
+      just-lsp
 
       # formatters
       nixfmt
