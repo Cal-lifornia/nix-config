@@ -40,6 +40,7 @@
 
       # language servers
       jq-lsp
+      docker-language-server
       nil
       yaml-language-server
       taplo
@@ -63,6 +64,7 @@
       nixfmt
       mdformat
       black
+      dockerfmt
     ]
     ++ (lib.optionals isLinuxDesktop [
       podman-desktop
