@@ -41,6 +41,7 @@
       # language servers
       jq-lsp
       docker-language-server
+      dockerfile-language-server
       nil
       yaml-language-server
       taplo
