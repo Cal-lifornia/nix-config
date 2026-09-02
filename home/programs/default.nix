@@ -37,8 +37,7 @@ in
   // (
     if isLinuxDesktop then
       {
-        BROWSER = "zen-browser";
-        TERM = "kitty";
+        BROWSER = null;
         # QT_QPA_PLATFORMTHEME = "qt5ct";
       }
     else
@@ -71,6 +70,7 @@ in
       lazygit
       tldr
       sd
+      yq
       sshfs
     ]
     ++ (lib.optionals isDesktop [

@@ -1,7 +1,6 @@
 {
   pkgs,
   helix-master,
-  isLinuxDesktop,
   ...
 }:
 {
@@ -23,7 +22,7 @@
       #   };
       # };
       settings = {
-        theme = if isLinuxDesktop then "catppuccin_transparent" else "catppuccin_macchiato";
+        theme = "catppuccin_macchiato";
         keys = {
           normal = {
             # Shift + left/right arrow to move buffers
