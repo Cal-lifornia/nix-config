@@ -40,6 +40,8 @@
 
       # language servers
       jq-lsp
+      docker-language-server
+      dockerfile-language-server
       nil
       yaml-language-server
       taplo
@@ -57,11 +59,13 @@
       vscode-langservers-extracted
       superhtml
       tailwindcss-language-server
+      just-lsp
 
       # formatters
       nixfmt
       mdformat
       black
+      dockerfmt
     ]
     ++ (lib.optionals isLinuxDesktop [
       podman-desktop
