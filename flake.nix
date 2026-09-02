@@ -11,7 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    helix-master.url = "github:helix-editor/helix";
+    helix-master.url = "github:helix-editor/helix?rev=72d583700adf1f0e4e79356662b563cd3a76ab88";
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
