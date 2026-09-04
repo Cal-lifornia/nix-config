@@ -42,7 +42,6 @@
       #scripts = [pkgs.mpvScripts.mpris];
     };
 
-    obs-studio.enable = if isLinuxDesktop then true else false;
   };
 
   services = {
