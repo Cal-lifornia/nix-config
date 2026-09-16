@@ -29,6 +29,9 @@
       caddy
       xcaddy
       devenv
+      tig
+      serpl
+      regex-tui
 
       # xmake # Alternative to Cmake
 

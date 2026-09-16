@@ -12,23 +12,16 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     helix-master.url = "github:helix-editor/helix?rev=72d583700adf1f0e4e79356662b563cd3a76ab88";
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixgl.url = "github:nix-community/nixGl";
-
+    nixvim = {
+      url = "github:nix-community/nixvim";
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
-      home-manager,
-      catppuccin,
-      helix-master,
-      nixos-generators,
       nixgl,
       ...
     }@inputs:
@@ -75,16 +68,6 @@
           };
         }
       );
-
-      nixosModules.myFormats =
-        { ... }:
-        {
-          imports = [
-            nixos-generators.nixosModules.all-formats
-          ];
-
-          nixpkgs.hostPlatform = "x86_64-linux";
-        };
 
       homeConfigurations = {
         "whobson@traveler" = mkHome "macbook-pro-m2" {

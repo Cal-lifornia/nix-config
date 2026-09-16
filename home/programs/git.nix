@@ -13,6 +13,7 @@
         ".env"
         ".envrc"
         ".venv"
+        ".DS_Store"
       ];
       signing = {
         key = null;

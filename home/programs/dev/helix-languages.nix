@@ -1,4 +1,15 @@
-{ ... }:
+{ isMac, isLinuxDesktop, ... }:
+
+let
+  homeName =
+    if isMac then
+      "whobson@traveler"
+    else if isLinuxDesktop then
+      "whobson@hyperion"
+    else
+      "";
+in
+
 {
   programs.helix.languages = {
     grammar = [
@@ -57,8 +68,8 @@
         auto-format = true;
         language-servers = [
           "devenv_lsp"
-          "nil"
           "nixd"
+          "nil"
         ];
       }
       {
@@ -260,6 +271,9 @@
         command = "devenv";
         args = [ "lsp" ];
         required_root_patterns = [ "devenv.nix" ];
+      };
+      nixd.config.nixd.options.home-manager = {
+        expr = "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.\"${homeName}\".options";
       };
       deno-lsp = {
         command = "deno";

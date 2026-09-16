@@ -18,6 +18,7 @@ let
   nixgl = inputs.nixgl;
   catppuccin = inputs.catppuccin;
   helix-master = inputs.helix-master;
+  nixvim = inputs.nixvim;
   pkgs = import nixpkgs {
     config.allowUnfree = true;
     system = "${system}";
@@ -28,6 +29,7 @@ let
     inherit pkgs-stable;
     inherit catppuccin;
     inherit helix-master;
+    inherit nixvim;
     inherit isMac;
     inherit isLinux;
     inherit isLinuxDesktop;

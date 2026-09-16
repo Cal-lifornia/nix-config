@@ -1,5 +1,5 @@
 keybinds {//unbind "Alt h" "Alt j" "Alt k" "Alt l"
-    unbind "Alt Left" "Alt Down" "Alt Up" "Alt Right"
+    unbind "Alt Left" "Alt Down" "Alt Up" "Alt Right" "Alt f"
     normal {
         unbind "Ctrl s"
     }
