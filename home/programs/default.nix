@@ -37,7 +37,6 @@ in
   // (
     if isLinuxDesktop then
       {
-        BROWSER = null;
         # QT_QPA_PLATFORMTHEME = "qt5ct";
       }
     else
@@ -97,7 +96,6 @@ in
       (config.lib.nixGL.wrap read-edid)
 
       #misc
-      nano
       nitch
       # grim
       # slurp
@@ -118,7 +116,7 @@ in
       # fusuma
     ]);
   programs.keychain = {
-    enable = if isLinux then true else false;
+    enable = isLinux;
     enableZshIntegration = true;
     enableNushellIntegration = true;
     keys = [

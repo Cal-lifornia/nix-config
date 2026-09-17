@@ -15,10 +15,12 @@
   imports = [
     ./helix.nix
     ./debugging.nix
+    ./nixvim.nix
   ];
   # programs.yazelix = {
   #   enable = true;
   # };
+
   home.packages =
     with pkgs;
     [
@@ -29,6 +31,7 @@
       caddy
       xcaddy
       devenv
+      claude-code
       tig
       serpl
       regex-tui

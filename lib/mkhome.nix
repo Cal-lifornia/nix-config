@@ -47,7 +47,5 @@ inputs.home-manager.lib.homeManagerConfiguration {
     (import homeConfig {
       inputs = inputs;
     })
-    # (yazelix.homeManagerModules.default)
-    # (if isLinuxDesktop then stylix.homeModules.stylix else { })
   ];
 }

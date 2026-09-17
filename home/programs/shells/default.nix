@@ -6,7 +6,6 @@
   ];
 
   home.packages = with pkgs; [
-    zsh-powerlevel10k
     nnn
     curl
     bash
