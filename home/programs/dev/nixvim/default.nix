@@ -1,12 +1,17 @@
-{ lib, ... }:
+{ ... }:
 {
-  imports = [ ./mini.nix ];
+  imports = [
+    ./mini.nix
+    ./keybinds.nix
+  ];
   programs.nixvim = {
     enable = true;
-
     opts = {
       number = true;
       relativenumber = true;
+    };
+    globals = {
+      mapleader = " ";
     };
     keymaps = [
       {
@@ -15,6 +20,5 @@
         mode = "n";
       }
     ];
-    extraConfigVim = builtins.readFile ./helix.vim;
   };
 }

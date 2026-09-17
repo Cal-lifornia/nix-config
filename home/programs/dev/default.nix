@@ -24,6 +24,9 @@
   home.packages =
     with pkgs;
     [
+      # Ide
+      (config.lib.nixGL.wrap zed-editor)
+
       # utils
       sqlite
       just # replacement for GNU Make
