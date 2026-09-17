@@ -11,6 +11,22 @@ let
 in
 
 {
+  xdg.configFile."helix/runtime/queries/nix/injections.scm".text = ''
+    ; extends
+
+    ((binding
+      attrpath: (attrpath
+        (identifier) @_attr)
+      (#any-of? @_attr "luaConfig" "extraConfigLua" "extraConfigLuaPre" "extraConfigLuaPost")
+      expression: [
+        (string_expression
+          (string_fragment) @injection.content)
+        (indented_string_expression
+          (string_fragment) @injection.content)
+      ])
+     (#set! injection.language "lua"))
+  '';
+
   programs.helix.languages = {
     grammar = [
       {

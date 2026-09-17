@@ -1,10 +1,8 @@
 { lib, ... }:
 {
+  imports = [ ./mini.nix ];
   programs.nixvim = {
-
     enable = true;
-
-    colorschemes.catppuccin.enable = true;
 
     opts = {
       number = true;
@@ -12,11 +10,11 @@
     };
     keymaps = [
       {
-        key = "C-S";
-        actions = ":update";
+        key = "<C-S>";
+        action = ":w<CR>";
         mode = "n";
       }
     ];
-    extraConfigVim = builtins.readFile "./files/helix.vim";
+    extraConfigVim = builtins.readFile ./helix.vim;
   };
 }

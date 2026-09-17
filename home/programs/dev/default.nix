@@ -15,7 +15,7 @@
   imports = [
     ./helix.nix
     ./debugging.nix
-    ./nixvim.nix
+    ./nixvim
   ];
   # programs.yazelix = {
   #   enable = true;
@@ -27,7 +27,6 @@
       # utils
       sqlite
       just # replacement for GNU Make
-      neovim
       caddy
       xcaddy
       devenv

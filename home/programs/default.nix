@@ -124,10 +124,10 @@ in
     ];
   };
 
-  # catppuccin = {
-  #   enable = true;
-  #   flavor = "mocha";
-  # };
+  catppuccin = {
+    enable = true;
+    autoEnable = false;
+  };
   # services = {
   #   gpg-agent = {
   #     enable = true;

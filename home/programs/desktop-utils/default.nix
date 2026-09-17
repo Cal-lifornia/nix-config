@@ -1,7 +1,6 @@
 { nixgl, pkgs, ... }:
 {
   imports = [
-    ./rofi.nix
   ];
 
   qt.enable = true;
