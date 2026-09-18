@@ -10,14 +10,22 @@
     enable = true;
     settings = {
       multilines.enabled = true;
-      options.use_icons_from_diagnostic = true;
+      options = {
+        use_icons_from_diagnostic = true;
+        add_messages = {
+          display_count = true;
+        };
+      };
     };
   };
   plugins.conform-nvim = {
     enable = true;
     settings = {
-      format_on_save = true;
-
+      formatters_by_ft = {
+        nix = [
+          "nixfmt"
+        ];
+      };
     };
   };
 

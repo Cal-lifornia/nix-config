@@ -2,7 +2,6 @@ _: {
   imports = [
 
     # Core Functionality
-    ./plugins/code/snippets.nix
     ./plugins/mini.nix
     ./plugins/yazi.nix
 
