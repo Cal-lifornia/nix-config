@@ -3,6 +3,7 @@
   imports = [
     ./mini.nix
     ./keybinds.nix
+    ./plugins.nix
   ];
   programs.nixvim = {
     enable = true;

@@ -11,20 +11,20 @@
     bash
     fastfetch
   ];
-  catppuccin = {
-    bat = {
-      enable = true;
-      flavor = "macchiato";
-    };
-    nushell = {
-      enable = true;
-      flavor = "macchiato";
-    };
-    # atuin = {
-    #   enable = true;
-    #   flavor = "macchiato";
-    # };
-  };
+  # catppuccin = {
+  #   bat = {
+  #     enable = true;
+  #     flavor = "macchiato";
+  #   };
+  #   nushell = {
+  #     enable = true;
+  #     flavor = "macchiato";
+  #   };
+  # atuin = {
+  #   enable = true;
+  #   flavor = "macchiato";
+  # };
+  # };
   home.shellAliases = {
     cat = "bat --paging=never";
     zs = "~/.local/scripts/zellij-sessioniser";

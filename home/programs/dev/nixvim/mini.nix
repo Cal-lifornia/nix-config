@@ -6,6 +6,12 @@
       mockDevIcons = true;
       modules = {
         icons = { };
+        snippets = {
+          snippets = [
+            { __raw = "require('mini.snippets').gen_loader.from_lang()"; }
+          ];
+        };
+        completion = { };
         clue = {
           window = {
             delay = 200;
