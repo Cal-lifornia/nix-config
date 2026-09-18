@@ -1,13 +1,8 @@
 { lib, ... }:
 {
-  # Reference-only translation of the hand-authored keymaps in ./helix.vim into
-  # nixvim's `keymaps` schema, annotated with descriptions.
-  #
-  # This module is NOT imported anywhere. ./helix.vim (loaded via
-  # `extraConfigVim` in ./default.nix) remains the sole source of truth for the
-  # actual editor behavior, including `set` options (notimeout, gdefault,
-  # whichwrap, ...) that have no equivalent in `keymaps`. Wiring this in
-  # alongside helix.vim would double-define the same keys from two sources.
+  # Helix-style keymaps for nixvim, originally translated from the
+  # hand-authored keymaps in ./helix.vim (kept alongside this file for
+  # historical reference only; it is no longer loaded via `extraConfigVim`).
   #
   # Scope: only the semantically distinct, hand-authored bindings are listed.
   # Omitted as auto-generated boilerplate (see the "compiled by
@@ -24,57 +19,6 @@
   #     `ms<c>` surround binds -- these are implementation plumbing for the
   #     user-facing binds listed here, not distinct binds themselves.
   programs.nixvim.keymaps = [
-    ############################
-    # Movement
-    ############################
-    {
-      mode = "x";
-      key = "h";
-      action = "<Esc>h";
-      options.desc = "Exit selection and move left";
-    }
-    {
-      mode = "x";
-      key = "<Left>";
-      action = "<Esc>h";
-      options.desc = "Exit selection and move left";
-    }
-    {
-      mode = "x";
-      key = "l";
-      action = "<Esc>l";
-      options.desc = "Exit selection and move right";
-    }
-    {
-      mode = "x";
-      key = "<Right>";
-      action = "<Esc>l";
-      options.desc = "Exit selection and move right";
-    }
-    {
-      mode = "x";
-      key = "j";
-      action = "<Esc>gj";
-      options.desc = "Exit selection and move down (display line)";
-    }
-    {
-      mode = "x";
-      key = "<Down>";
-      action = "<Esc>gj";
-      options.desc = "Exit selection and move down (display line)";
-    }
-    {
-      mode = "x";
-      key = "k";
-      action = "<Esc>gk";
-      options.desc = "Exit selection and move up (display line)";
-    }
-    {
-      mode = "x";
-      key = "<Up>";
-      action = "<Esc>gk";
-      options.desc = "Exit selection and move up (display line)";
-    }
     {
       mode = [
         "n"
@@ -82,8 +26,8 @@
         "o"
       ];
       key = "e";
-      action = "<Esc>maembviwovbviwvlmc`blmbhvl[`o";
-      options.desc = "Helix-style: select to end of word";
+      action = "e";
+      options.desc = "Move to end of word (native)";
     }
     {
       mode = [
@@ -92,8 +36,8 @@
         "o"
       ];
       key = "E";
-      action = "<Esc>maEmbviWovBviWvlmc`blmbhvl[`o";
-      options.desc = "Helix-style: select to end of WORD";
+      action = "E";
+      options.desc = "Move to end of WORD (native)";
     }
     {
       mode = [
@@ -102,8 +46,8 @@
         "o"
       ];
       key = "w";
-      action = "<Esc>malwhmb`aeviwovmc`blmbhvl[`o";
-      options.desc = "Helix-style: select to start of next word";
+      action = "w";
+      options.desc = "Move to start of next word (native)";
     }
     {
       mode = [
@@ -112,8 +56,8 @@
         "o"
       ];
       key = "W";
-      action = "<Esc>malWhmb`aEviWovmc`blmbhvl[`o";
-      options.desc = "Helix-style: select to start of next WORD";
+      action = "W";
+      options.desc = "Move to start of next WORD (native)";
     }
     {
       mode = [
@@ -122,8 +66,8 @@
         "o"
       ];
       key = "b";
-      action = "<Esc>mabmbviwveviwovhmc`bhmblvh]`o";
-      options.desc = "Helix-style: select to start of previous word";
+      action = "b";
+      options.desc = "Move to start of previous word (native)";
     }
     {
       mode = [
@@ -132,8 +76,8 @@
         "o"
       ];
       key = "B";
-      action = "<Esc>maBmbviWovEviWvhmc`bhmblvh]`o";
-      options.desc = "Helix-style: select to start of previous WORD";
+      action = "B";
+      options.desc = "Move to start of previous WORD (native)";
     }
     {
       mode = [
@@ -312,21 +256,14 @@
     {
       mode = "n";
       key = "R";
-      action = "vR";
+      action = "\"_xP";
       options.desc = "Replace char under cursor with unnamed register contents";
-      options.remap = true;
     }
     {
       mode = "x";
       key = "~";
       action = "~gv";
       options.desc = "Toggle case of selection, keep selecting";
-    }
-    {
-      mode = "n";
-      key = "~";
-      action = "v~";
-      options.desc = "Toggle case of character under cursor";
     }
     {
       mode = "x";
@@ -337,7 +274,7 @@
     {
       mode = "n";
       key = "`";
-      action = "vu";
+      action = "gul";
       options.desc = "Lowercase character under cursor";
     }
     {
@@ -349,7 +286,7 @@
     {
       mode = "n";
       key = "<A-`>";
-      action = "vU";
+      action = "gUl";
       options.desc = "Uppercase character under cursor";
     }
     {
@@ -433,7 +370,7 @@
     {
       mode = "n";
       key = "y";
-      action = "vy";
+      action = "yl";
       options.desc = "Yank character under cursor";
     }
     {
@@ -452,12 +389,6 @@
       mode = "x";
       key = "\"";
       action = "\"";
-      options.desc = "Access a named register";
-    }
-    {
-      mode = "n";
-      key = "\"";
-      action = "v\"";
       options.desc = "Access a named register";
     }
     {
@@ -499,7 +430,7 @@
     {
       mode = "n";
       key = "d";
-      action = "vd";
+      action = "x";
       options.desc = "Delete character under cursor";
     }
     {
@@ -511,7 +442,7 @@
     {
       mode = "n";
       key = "<A-d>";
-      action = "v\"_d";
+      action = "\"_x";
       options.desc = "Delete character under cursor without yanking";
     }
     {
@@ -523,7 +454,7 @@
     {
       mode = "n";
       key = "c";
-      action = "vc";
+      action = "s";
       options.desc = "Change character under cursor";
     }
     {
@@ -1546,19 +1477,19 @@
     {
       mode = "n";
       key = "<Space>y";
-      action = "v\"*y";
+      action = "\"*yl";
       options.desc = "Yank character under cursor to system clipboard";
     }
     {
       mode = "n";
       key = "<Space>Y";
-      action = "v\"*y";
+      action = "\"*yl";
       options.desc = "Yank character under cursor to system clipboard";
     }
     {
       mode = "n";
       key = "<Space>R";
-      action = "v\"*pv";
+      action = "\"_x\"*P";
       options.desc = "Replace character under cursor with system clipboard contents";
     }
 
@@ -1637,13 +1568,13 @@
     ############################
     # Select / extend mode toggle
     ############################
-    {
-      mode = "n";
-      key = "v";
-      action = "vv";
-      options.desc = "Enter extend (select) mode";
-      options.remap = true;
-    }
+    # {
+    #   mode = "n";
+    #   key = "v";
+    #   action = "vv";
+    #   options.desc = "Enter extend (select) mode";
+    #   options.remap = true;
+    # }
     {
       mode = "n";
       key = "ZV";

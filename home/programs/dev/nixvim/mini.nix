@@ -6,12 +6,34 @@
       mockDevIcons = true;
       modules = {
         icons = { };
+        pairs = { };
+        pick = { };
+        git = { };
+        ai = { };
+        align = { };
+        statusline = { };
+        hipatterns = { };
+        tabline = { };
+        extra = { };
+        fuzzy = { };
+        comment = {
+          mappings = {
+            comment_line = "<space>c";
+          };
+        };
+
+        indentscope = { };
+        operators = {
+          evaluate = {
+            prefix = "<space>e";
+          };
+        };
         snippets = {
           snippets = [
             { __raw = "require('mini.snippets').gen_loader.from_lang()"; }
           ];
         };
-        completion = { };
+        # completion = { };
         clue = {
           window = {
             delay = 200;
@@ -36,6 +58,14 @@
             {
               mode = "v";
               keys = "<Leader>";
+            }
+            {
+              mode = "n";
+              keys = "<space>";
+            }
+            {
+              mode = "v";
+              keys = "<space>";
             }
             {
               mode = "n";
