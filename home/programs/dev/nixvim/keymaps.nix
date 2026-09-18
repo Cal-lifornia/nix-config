@@ -1,5 +1,31 @@
 _: {
   keymaps = [
+    # Change buffers left and right
+    {
+      mode = [
+        "n"
+      ];
+      key = "<S-Left>";
+      action = "<cmd>:bp<cr>";
+      options.desc = "Previous buffer";
+    }
+    {
+      mode = [
+        "n"
+      ];
+      key = "<S-Right>";
+      action = "<cmd>:bn<cr>";
+      options.desc = "Next buffer";
+    }
+    # Ctrl + S Save
+    {
+      mode = [
+        "n"
+      ];
+      key = "<C-s>";
+      action = "<cmd>:w<cr>";
+      options.desc = "Save";
+    }
     # Better escape
     {
       mode = [

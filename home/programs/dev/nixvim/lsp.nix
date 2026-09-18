@@ -60,7 +60,7 @@ _: {
     };
     keymaps = [
       {
-        key = "<localleader>a";
+        key = "<leader>k";
         action = "<CMD>Lspsaga code_action<Enter>";
         options = {
           silent = true;

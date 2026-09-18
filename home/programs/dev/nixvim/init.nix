@@ -7,15 +7,11 @@ _: {
     ./plugins/yazi.nix
 
     # Code/LSP integration
-    ./plugins/code/cmp.nix
-    ./plugins/code/schemastore.nix
-    ./plugins/code/treesitter.nix
-    ./plugins/code/lsp_qol.nix
+    ./plugins/code
 
     # UX improvements
     ./plugins/ux/noice.nix
     ./plugins/ux/toggleterm.nix
-    ./plugins/ux/undotree.nix
     ./plugins/ux/cutlass.nix
 
     # Git integration
