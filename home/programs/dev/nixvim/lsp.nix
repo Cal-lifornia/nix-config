@@ -1,57 +1,152 @@
-{ ... }:
-{
-  programs.nixvim.plugins = {
-    # lsp-lines.enable = true;
-    lsp-progress.enable = true;
-    lsp-format.enable = true;
-    lsp = {
-      servers = {
-        nixd.enable = true;
-        nil_ls.enable = true;
-        rust_analyzer = {
-          enable = true;
-          installCargo = false;
-          installRustc = false;
-          installRustfmt = false;
+_: {
+  plugins.lspconfig.enable = true;
+  plugins.lsp-lines.enable = false;
+  plugins.lsp-progress.enable = true;
+  plugins.lsp-format.enable = true;
+  lsp = {
+    codelens.enable = true;
+    inlayHints.enable = false;
+    servers = {
+      # structured langs
+      jsonls.enable = true;
+      taplo.enable = true;
+      yamlls = {
+        enable = true;
+        config = {
+          yaml.schemas = {
+            "http://json.schemastore.org/github-workflow" = ".github/workflows/*";
+            "http://json.schemastore.org/github-action" = ".github/action.{yml,yaml}";
+            "https://json.schemastore.org/dependabot-v2" = ".github/dependabot.{yml,yaml}";
+            "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json" =
+              ".gitlab-ci.yml";
+          };
         };
-        just.enable = true;
-        jqls.enable = true;
-        lua_ls.enable = true;
-        marksman.enable = true;
-        taplo.enable = true;
-        docker_language_server.enable = true;
-        docker_compose_language_service.enable = true;
+      };
+      # nix
+      nil_ls.enable = true;
+      # python
+      ruff.enable = true;
+      ty.enable = true;
+      # bash
+      bashls.enable = true;
+      # Docker
+      dockerls.enable = true;
+      # text
+      marksman.enable = true;
+      harper_ls = {
+        enable = true;
+        config = {
+          filetypes = [
+            "markdown"
+            "rst"
+          ];
+          settings = {
+            "harper-ls" = {
+              linters = {
+                boring_words = true;
+                linking_verbs = true;
+                # Rarely useful with coding
+                sentence_capitalization = false;
+                spell_check = false;
+              };
+              codeActions = {
+                forceStable = true;
+              };
+              dialect = "British";
+            };
+          };
+        };
       };
     };
-    lspconfig.enable = true;
-
-    lspkind.enable = true; # for symbols
-    lspsaga = {
-      enable = true;
-      settings = {
-        symbol_in_winbar.enable = true;
-        beacon.enable = true;
-        callhierarchy = false;
-        code_action.enable = true;
-        definition.enable = true;
-        diagnostic = {
-          enable = true;
-          diagnostic_only_current = true;
+    keymaps = [
+      {
+        key = "<localleader>a";
+        action = "<CMD>Lspsaga code_action<Enter>";
+        options = {
+          silent = true;
+          desc = "Code Actions";
         };
-        finder.enable = false;
-        hover.enable = true;
-        implement.enable = true;
-        lightbulb = {
-          enable = true;
-          sign = false;
+      }
+      {
+        key = "<localleader>d";
+        action = "<CMD>Lspsaga peek_definition<Enter>";
+        options = {
+          silent = true;
+          desc = "Peek definition";
         };
-        outline = {
-          enable = true;
-          auto_preview = false;
-          close_after_jump = true;
+      }
+      {
+        key = "<localleader>t";
+        action = "<CMD>Lspsaga peek_type_definition<Enter>";
+        options = {
+          silent = true;
+          desc = "Peek type definition";
         };
-        rename.enable = true;
-      };
-    };
+      }
+      {
+        key = "<localleader>h";
+        action = "<CMD>Lspsaga hover_doc<Enter>";
+        options = {
+          silent = true;
+          desc = "Hover";
+        };
+      }
+      {
+        key = "<localleader>e";
+        action = "<CMD>Lspsaga outline<Enter>";
+        options = {
+          silent = true;
+          desc = "Outline";
+        };
+      }
+      {
+        key = "<localleader>r";
+        action = "<CMD>Lspsaga rename<Enter>";
+        options = {
+          silent = true;
+          desc = "Rename";
+        };
+      }
+      {
+        action = "<CMD>Lspsaga diagnostic_jump_next<Enter>";
+        key = "]d";
+        options = {
+          silent = true;
+          desc = "Next Diagnostic";
+        };
+      }
+      {
+        action = "<CMD>Lspsaga diagnostic_jump_prev<Enter>";
+        key = "[d";
+        options = {
+          silent = true;
+          desc = "Prev. Diagnostic";
+        };
+      }
+      {
+        action = ":LspStop<Enter>";
+        key = "<leader>lx";
+        options = {
+          silent = true;
+          desc = "Stop LS";
+        };
+      }
+      {
+        action = ":LspStart<Enter>";
+        key = "<leader>ls";
+        options = {
+          silent = true;
+          desc = "Start LS";
+        };
+      }
+      {
+        action = ":LspRestart<Enter>";
+        key = "<leader>lr";
+        options = {
+          silent = true;
+          desc = "Re-start LS";
+        };
+      }
+    ];
   };
 }
