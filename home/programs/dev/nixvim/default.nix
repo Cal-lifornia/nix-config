@@ -17,6 +17,9 @@
     opts = {
       number = true;
       relativenumber = true;
+      smarttab = true;
+      smartcase = true;
+      smartindent = true;
     };
     keymaps = [
       {
