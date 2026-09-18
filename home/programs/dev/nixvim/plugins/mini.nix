@@ -63,6 +63,10 @@ _: {
             mode = "n";
             keys = "'";
           }
+          {
+            mode = "n";
+            keys = "<C-y>";
+          }
         ];
       };
       comment = {
@@ -112,17 +116,17 @@ _: {
   };
 
   keymaps = [
+    # {
+    #   mode = "n";
+    #   key = "<leader>ff";
+    #   action = "<cmd>Pick git_files<CR>";
+    #   options = {
+    #     desc = "Find Files (git)";
+    #   };
+    # }
     {
       mode = "n";
-      key = "<leader>ff";
-      action = "<cmd>Pick git_files<CR>";
-      options = {
-        desc = "Find Files (git)";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>fF";
+      key = "<leader>f";
       action = "<cmd>Pick files<CR>";
       options = {
         desc = "Find Files (all)";
@@ -130,7 +134,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<leader>fg";
+      key = "<leader>/";
       action = "<cmd>Pick grep_live<CR>";
       options = {
         desc = "Find grep";
@@ -138,7 +142,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<leader>f?";
+      key = "<leader>?";
       action = "<cmd>Pick help<CR>";
       options = {
         desc = "Find help";
@@ -146,7 +150,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<leader>fb";
+      key = "<leader>Fb";
       action = "<cmd>Pick buffers<CR>";
       options = {
         desc = "Find buffer";
@@ -154,7 +158,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<leader>fh";
+      key = "<leader>Fh";
       action = "<cmd>Pick history<CR>";
       options = {
         desc = "Find history";
@@ -162,7 +166,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<leader>fc";
+      key = "<leader>Fc";
       action = "<cmd>Pick commands<CR>";
       options = {
         desc = "Find command";
@@ -170,7 +174,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<leader>fm";
+      key = "<leader>Fm";
       action = "<cmd>Pick marks<CR>";
       options = {
         desc = "Find marks";
@@ -178,7 +182,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<localleader>fd";
+      key = "<leader>d";
       action = "<cmd>Pick diagnostic scope='current'<CR>";
       options = {
         desc = "Find diagnostic";
@@ -186,7 +190,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<localleader>fs";
+      key = "<leader>s";
       action = "<cmd>Pick lsp scope='document_symbol'<CR>";
       options = {
         desc = "Find symbol";
@@ -194,7 +198,7 @@ _: {
     }
     {
       mode = "n";
-      key = "<localleader>fr";
+      key = "<leader>r";
       action = "<cmd>Pick lsp scope='references'<CR>";
       options = {
         desc = "Find references";

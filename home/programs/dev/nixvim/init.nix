@@ -4,6 +4,7 @@ _: {
     # Core Functionality
     ./plugins/code/snippets.nix
     ./plugins/mini.nix
+    ./plugins/yazi.nix
 
     # Code/LSP integration
     ./plugins/code/cmp.nix

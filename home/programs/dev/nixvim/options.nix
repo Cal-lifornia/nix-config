@@ -44,7 +44,7 @@
     timeoutlen = 300;
     undodir = ".nvim-undodir";
     undofile = true;
-    winborder = "rounded";
+    # winborder = "rounded";
   };
   globals.mapleader = " ";
   globals.maplocalleader = ",";
