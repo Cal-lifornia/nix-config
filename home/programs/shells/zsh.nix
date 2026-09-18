@@ -6,23 +6,12 @@
   ...
 }:
 {
-  nixpkgs.overlays = [
-    (final: prev: {
-      zsh = prev.zsh.overrideAttrs (
-        old:
-        prev.lib.optionalAttrs prev.stdenv.hostPlatform.isDarwin {
-          preConfigure = (old.preConfigure or "") + ''
-            export zsh_cv_sys_sigsuspend=yes
-          '';
-        }
-      );
-    })
-
-  ];
   programs = {
     zsh = {
       enable = true;
       autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      enableCompletion = true;
       initContent =
         let
           confExtra = ''
@@ -48,9 +37,7 @@
       antidote = {
         enable = true;
         plugins = [
-          "zsh-users/zsh-autosuggestions"
           "MichaelAquilina/zsh-you-should-use"
-          "zsh-users/zsh-syntax-highlighting"
         ];
       };
     };

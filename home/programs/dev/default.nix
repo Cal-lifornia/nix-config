@@ -17,15 +17,10 @@
     ./debugging.nix
     ./nixvim
   ];
-  # programs.yazelix = {
-  #   enable = true;
-  # };
 
   home.packages =
     with pkgs;
     [
-      # Ide
-      (config.lib.nixGL.wrap zed-editor)
 
       # utils
       sqlite
