@@ -1,12 +1,14 @@
 { ... }:
 {
   plugins.yazi.enable = true;
-  programs.nixvim.keymaps = [
+  keymaps = [
     {
       key = "<C-y>y";
       mode = "n";
       action = "<cmd>Yazi<cr>";
-      desc = "Open Yazi";
+      options = {
+        desc = "Open Yazi";
+      };
     }
   ];
 }
