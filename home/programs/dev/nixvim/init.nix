@@ -1,8 +1,7 @@
-_: {
+{ ... }: {
   imports = [
     # Core Functionality
-    ./plugins/mini.nix
-    ./plugins/yazi.nix
+    ./plugins
 
     # Settings
     ./lsp.nix

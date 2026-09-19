@@ -13,8 +13,11 @@
   plugins.tiny-inline-diagnostic = {
     enable = true;
     settings = {
-      multilines.enabled = true;
       options = {
+        multilines = {
+          enabled = true;
+          always_show = true;
+        };
         use_icons_from_diagnostic = true;
         add_messages = {
           display_count = true;

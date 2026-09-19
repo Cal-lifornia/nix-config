@@ -11,7 +11,7 @@
             }
           end
         '';
-        flavour = "mocha";
+        flavour = "macchiato";
         transparent_background = true;
         integrations = {
           mini = {

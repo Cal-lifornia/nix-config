@@ -60,11 +60,19 @@ _: {
     };
     keymaps = [
       {
-        key = "<leader>k";
+        key = "<leader>a";
         action = "<CMD>Lspsaga code_action<Enter>";
         options = {
           silent = true;
           desc = "Code Actions";
+        };
+      }
+      {
+        key = "<leader>k";
+        action = "<CMD>Lspsaga hover_doc<Enter>";
+        options = {
+          silent = true;
+          desc = "Hover";
         };
       }
       {

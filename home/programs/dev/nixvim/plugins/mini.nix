@@ -33,11 +33,11 @@ _: {
           }
           {
             mode = "n";
-            keys = "s";
+            keys = "m";
           }
           {
             mode = "v";
-            keys = "s";
+            keys = "m";
           }
           {
             mode = "n";
@@ -71,6 +71,11 @@ _: {
       };
       comment = {
         options.ignore_blank_line = true;
+        settings = {
+          comment = "<leader>v";
+          comment_visual = "<leader>v";
+          comment_line = "<leader>v";
+        };
       };
       cursorword = { };
       diff = { };
@@ -96,16 +101,18 @@ _: {
       };
       move = { };
       pairs = { };
-      pick = {
-        options = {
-          content_from_bottom = true;
-        };
-      };
+      pick = { };
       starter = { };
       statusline = { };
       surround = {
         highlight_duration = 1000;
         search_method = "cover";
+        mappings = {
+          add = "ms";
+          delete = "md";
+          highlight = "ma";
+          replace = "mr";
+        };
       };
       tabline = { };
     };
@@ -186,6 +193,14 @@ _: {
       action = "<cmd>Pick diagnostic scope='current'<CR>";
       options = {
         desc = "Find diagnostic";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>D";
+      action = "<cmd>Pick diagnostic scope='all'<CR>";
+      options = {
+        desc = "Find diagnostic (all)";
       };
     }
     {

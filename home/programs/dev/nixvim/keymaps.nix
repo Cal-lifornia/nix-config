@@ -17,6 +17,28 @@ _: {
       action = "<cmd>:bn<cr>";
       options.desc = "Next buffer";
     }
+    # C to delete then enter
+    {
+      mode = [
+        "n"
+        "v"
+        "x"
+      ];
+      key = "c";
+      action = "xi";
+      options = {
+        desc = "Remove then enter insert";
+        silent = true;
+        remap = true;
+      };
+    }
+    # Redo with "U"
+    {
+      mode = [ "n" ];
+      key = "U";
+      action= "<C-r>";
+      options.silent = true;
+    }
     # Ctrl + S Save
     {
       mode = [

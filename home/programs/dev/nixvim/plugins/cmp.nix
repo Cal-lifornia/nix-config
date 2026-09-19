@@ -7,7 +7,18 @@
         completion.documentation.auto_show = false;
         completion.list.selection.preselect = false;
         signature.enabled = true;
-        keymap.preset = "super-tab";
+        keymap = {
+          preset = "enter";
+          "<C-u>" = [
+            "scroll_documentation_up"
+            "fallback"
+          ];
+          "<C-d>" = [
+            "scroll_documentation_down"
+            "fallback"
+          ];
+        };
+        documentation.auto_show = true;
         sources = {
           default = [
             "lsp"
