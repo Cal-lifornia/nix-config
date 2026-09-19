@@ -4,6 +4,10 @@
     ./lsp_qol.nix
     ./schemastore.nix
     ./treesitter.nix
+    ./mini.nix
+    ./yazi.nix
+    ./git
+    ./ux
   ];
   plugins.friendly-snippets.enable = true;
   plugins.tiny-inline-diagnostic = {
