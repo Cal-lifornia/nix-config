@@ -4,8 +4,13 @@
     blink-cmp = {
       enable = true;
       settings = {
-        completion.documentation.auto_show = false;
-        completion.list.selection.preselect = false;
+        completion.documentation.auto_show = true;
+        completion.menu.auto_show = true;
+        completion.list.selection = {
+          preselect = false;
+          auto_insert = false;
+        };
+        completion.ghost_text_enabled = true;
         signature.enabled = true;
         keymap = {
           preset = "enter";
@@ -18,7 +23,6 @@
             "fallback"
           ];
         };
-        documentation.auto_show = true;
         sources = {
           default = [
             "lsp"

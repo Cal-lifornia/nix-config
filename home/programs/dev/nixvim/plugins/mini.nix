@@ -69,14 +69,14 @@ _: {
           }
         ];
       };
-      comment = {
-        options.ignore_blank_line = true;
-        settings = {
-          comment = "<leader>v";
-          comment_visual = "<leader>v";
-          comment_line = "<leader>v";
-        };
-      };
+      # comment = {
+      # options.ignore_blank_line = true;
+      # mappings = {
+      # comment = "";
+      # comment_visual = "gc";
+      # comment_line = "<leader>C";
+      # };
+      # };
       cursorword = { };
       diff = { };
       extra = { };
@@ -114,7 +114,7 @@ _: {
           replace = "mr";
         };
       };
-      tabline = { };
+      # tabline = { };
     };
 
     luaConfig.post = ''

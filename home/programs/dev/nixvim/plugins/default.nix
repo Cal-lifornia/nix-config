@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./cmp.nix
     ./lsp_qol.nix
@@ -10,6 +10,18 @@
     ./ux
   ];
   plugins.friendly-snippets.enable = true;
+  plugins.bufferline.enable = true;
+  plugins.comment = {
+    enable = true;
+    settings = {
+      mappings = {
+        extra = false;
+      };
+      toggler = {
+        line = "<leader>C";
+      };
+    };
+  };
   plugins.tiny-inline-diagnostic = {
     enable = true;
     settings = {
@@ -31,6 +43,9 @@
       formatters_by_ft = {
         nix = [
           "nixfmt"
+        ];
+        rust = [
+          "rust-analyzer"
         ];
       };
     };

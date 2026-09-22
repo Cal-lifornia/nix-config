@@ -21,22 +21,45 @@ _: {
     {
       mode = [
         "n"
-        "v"
-        "x"
       ];
       key = "c";
-      action = "xi";
+      action = "vc";
       options = {
-        desc = "Remove then enter insert";
+        desc = "Remove then enter append";
         silent = true;
         remap = true;
       };
+    }
+    # C to delete then enter
+    # {
+    #   mode = [
+    #     "n"
+    #     "v"
+    #     "x"
+    #   ];
+    #   key = "c";
+    #   action = "xi";
+    #   options = {
+    #     desc = "Remove then enter append";
+    #     silent = true;
+    #     remap = true;
+    #   };
+    # }
+    {
+      mode = [
+        "n"
+        "v"
+        "x"
+      ];
+      key = "C";
+      action = "<NOP>";
+      options.remap = true;
     }
     # Redo with "U"
     {
       mode = [ "n" ];
       key = "U";
-      action= "<C-r>";
+      action = "<C-r>";
       options.silent = true;
     }
     # Ctrl + S Save

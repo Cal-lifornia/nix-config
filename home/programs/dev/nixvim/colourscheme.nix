@@ -13,6 +13,7 @@
         '';
         flavour = "macchiato";
         transparent_background = true;
+        term_colours = true;
         integrations = {
           mini = {
             enabled = true;
