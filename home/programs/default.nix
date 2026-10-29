@@ -26,22 +26,14 @@ in
     ./terminals
   ])
   ++ (lib.optionals isLinuxDesktop [
-    ./desktop-utils
+    ./desktop
   ])
   ++ (lib.optionals isMac [
     ./mac.nix
   ]);
   home.sessionVariables = {
 
-  }
-  // (
-    if isLinuxDesktop then
-      {
-        # QT_QPA_PLATFORMTHEME = "qt5ct";
-      }
-    else
-      { }
-  );
+  };
 
   home.file = {
     ".config/themes".source = "${configDir}/themes";

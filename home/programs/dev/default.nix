@@ -69,6 +69,7 @@
       mdformat
       black
       dockerfmt
+      kdlfmt
     ]
     ++ (lib.optionals isLinuxDesktop [
       podman-desktop
