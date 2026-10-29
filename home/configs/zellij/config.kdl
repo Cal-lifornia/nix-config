@@ -23,6 +23,8 @@ default_layout "compact"
 
 theme "catppuccin-macchiato"
 show_startup_tips false
+scroll_mode_sync false
+stacked_pane_list false
 
 default_shell "zsh"
 
