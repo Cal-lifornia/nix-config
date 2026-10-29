@@ -1,12 +1,12 @@
 { ... }:
 {
-  programs.noctalia = {
-    enable = true;
-    systemd.enable = true;
-    settings = {
-      shell = {
-        polkit_agent = true;
-      };
-    };
-  };
+  # programs.noctalia = {
+  #   enable = true;
+  #   systemd.enable = true;
+  #   settings = {
+  #     shell = {
+  #       polkit_agent = true;
+  #     };
+  #   };
+  # };
 }

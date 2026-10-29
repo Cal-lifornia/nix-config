@@ -1,14 +1,14 @@
-    window-rule {
-        geometry-corner-radius 20 // Set every window radius to 20
-        clip-to-geometry true
-    }
+    // window-rule {
+    //     geometry-corner-radius 20 // Set every window radius to 20
+    //     clip-to-geometry true
+    // }
 
-    window-rule {
-        background-effect {
-          blur true
-          xray false
-        }
-    }
+    // window-rule {
+    //     background-effect {
+    //       blur true
+    //       xray false
+    //     }
+    // }
 
     // Floating Noctalia settings window.
     window-rule {
