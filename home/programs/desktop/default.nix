@@ -1,6 +1,8 @@
 { nixgl, pkgs, ... }:
 {
   imports = [
+    ./noctalia.nix
+    ./niri.nix
   ];
 
   qt.enable = true;
