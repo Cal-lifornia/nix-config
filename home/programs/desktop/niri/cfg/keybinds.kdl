@@ -47,9 +47,9 @@ binds {
     Mod+H                               { focus-column-left; }
     Mod+Right                           { focus-column-right; }
     Mod+L                               { focus-column-right; }
-    Mod+Up                              { focus-window-up; }
+    // Mod+Up                              { focus-window-up; }
     Mod+K                               { focus-window-up; }
-    Mod+Down                            { focus-window-down; }
+    // Mod+Down                            { focus-window-down; }
     Mod+J                               { focus-window-down; }
 
     Mod+CTRL+Left                       { move-column-left; }
@@ -91,8 +91,8 @@ binds {
 
 
     // ─── Workspace Switching ───
-    Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }
+    Mod+Down                            cooldown-ms=150 { focus-workspace-down; }
+    Mod+UP                              cooldown-ms=150 { focus-workspace-up; }
     Mod+CTRL+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }
     Mod+CTRL+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }
 
@@ -146,6 +146,7 @@ binds {
     Mod+M                               { maximize-window-to-edges; }
 
     // ─── Screenshots ───
+    Print                               { screenshot; }
     CTRL+Shift+1                        { screenshot; }
     CTRL+Shift+2                        { screenshot-screen; }
     CTRL+Shift+3                        { screenshot-window; }

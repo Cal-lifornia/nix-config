@@ -9,7 +9,23 @@
     //       xray false
     //     }
     // }
+    
+    // Custom workspaces
+    workspace "browser" {
+        open-on-output "DP-2"
+    }
+    workspace "media" {
+        open-on-output "DP-2"
+    }
 
+    workspace "dev" {
+        open-on-output "DP-1"
+    }
+
+    workspace "steam" {
+        open-on-output "DP-1"
+    }
+    
     // Floating Noctalia settings window.
     window-rule {
         match app-id="dev.noctalia.Noctalia"
@@ -18,12 +34,40 @@
         default-window-height { fixed 920; }
     }
 
+    // Maximised windows
+    window-rule {
+        match app-id="kitty"
+        match app-id="helium"
+        match app-id="discord"
+        open-maximized-to-edges true
+    }
+
+    // Open on workspace rules
+    window-rule {
+        match at-startup app-id="kitty"
+        open-on-workspace "dev"
+    }
+
+    window-rule {
+        match app-id="steam"
+        open-on-workspace "steam"
+    }
+    window-rule {
+        match at-startup app-id="helium"
+        open-on-workspace "browser"
+    }
+    window-rule {
+        match at-startup app-id="discord"
+        open-on-workspace "media"
+    }
+
     // if you use steam you will probably like these
     window-rule {
         match app-id="steam"
         exclude title=r#"^[Ss]team$"#
         open-floating true
     }
+
 
     window-rule {
        match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
