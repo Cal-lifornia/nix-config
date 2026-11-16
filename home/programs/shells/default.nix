@@ -46,6 +46,7 @@
     bash.enable = true;
     nushell = {
       enable = true;
+      loadSessionVariables = true;
       package = pkgs-stable.nushell;
     };
     ripgrep.enable = true;
