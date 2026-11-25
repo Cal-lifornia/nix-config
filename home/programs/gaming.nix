@@ -1,14 +1,17 @@
-{ pkgs, isLinuxDesktop, ... }:
+{
+  pkgs,
+  lib,
+  isLinuxDesktop,
+  ...
+}:
 {
   home.packages =
     with pkgs;
-    [
-    ]
-    ++ (lib.optionals isLinuxDesktop [
+    lib.optionals isLinuxDesktop [
       gamma-launcher
       # steam
       # steam-run
       # lutris
       # xorg.xandr
-    ]);
+    ];
 }

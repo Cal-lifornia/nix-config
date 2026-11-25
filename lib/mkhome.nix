@@ -1,4 +1,5 @@
 { nixpkgs, inputs }:
+# name is the homeConfigurations key, e.g. "whobson@traveler"
 name:
 {
   system,
@@ -12,40 +13,32 @@ let
   isLinux = !darwin;
   isLinuxDesktop = isLinux && isDesktop;
 
-  homeConfig = ../home/home-manager.nix;
-  pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
-
-  nixgl = inputs.nixgl;
-  catppuccin = inputs.catppuccin;
-  helix-master = inputs.helix-master;
-  nixvim = inputs.nixvim;
   pkgs = import nixpkgs {
+    inherit system;
     config.allowUnfree = true;
-    system = "${system}";
   };
 
   specialArgs = {
-    inherit username;
-    inherit pkgs-stable;
-    inherit catppuccin;
-    inherit helix-master;
-    inherit nixvim;
-    inherit isMac;
-    inherit isLinux;
-    inherit isLinuxDesktop;
-    inherit isDesktop;
-    inherit nixgl;
+    inherit
+      inputs
+      username
+      isMac
+      isLinux
+      isLinuxDesktop
+      isDesktop
+      ;
+    homeConfigName = name;
+    pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+    inherit (inputs)
+      catppuccin
+      helix-master
+      nixvim
+      nixgl
+      ;
   };
-
 in
 inputs.home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
-
-  extraSpecialArgs = inputs // specialArgs;
-
-  modules = [
-    (import homeConfig {
-      inputs = inputs;
-    })
-  ];
+  extraSpecialArgs = specialArgs;
+  modules = [ ../home/home-manager.nix ];
 }

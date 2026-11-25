@@ -31,24 +31,12 @@ in
   ++ (lib.optionals isMac [
     ./mac.nix
   ]);
-  home.sessionVariables = {
-
-  };
 
   home.file = {
-    ".config/themes".source = "${configDir}/themes";
     # ".config/nvim".source = "${configDir}/nvim";
     ".config/zellij".source = "${configDir}/zellij";
     ".config/eza/theme.yml".source = "${configDir}/eza/theme.yml";
-  }
-  // (
-    if isLinuxDesktop then
-      {
-        ".config/alacritty".source = "${configDir}/alacritty";
-      }
-    else
-      { }
-  );
+  };
   home.packages =
     with pkgs;
     [

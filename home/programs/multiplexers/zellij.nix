@@ -1,15 +1,6 @@
-{ pkgs, ... }:
 {
+  programs.zellij.enable = true;
 
-  home.packages = with pkgs; [
-    zellij
-  ];
-
-  programs = {
-    zellij = {
-      enable = true;
-    };
-  };
   home.file = {
     ".local/scripts/zellij-sessioniser" = {
       source = ./scripts/zellij-sessioniser.sh;
@@ -20,5 +11,4 @@
       executable = true;
     };
   };
-
 }

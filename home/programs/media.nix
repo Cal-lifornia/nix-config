@@ -1,24 +1,15 @@
 {
   pkgs,
+  lib,
   config,
   isLinuxDesktop,
-  isDesktop,
   ...
 }:
 # media - control and enjoy audio/video
 {
-  # imports = [
-  # ];
-
   home.packages =
     with pkgs;
-    [
-
-    ]
-    ++ (lib.optionals isDesktop [
-      # spotify
-    ])
-    ++ (lib.optionals isLinuxDesktop [
+    lib.optionals isLinuxDesktop [
       # audio control
       pavucontrol
       playerctl
@@ -26,25 +17,23 @@
       # images
       imv
       spotifywm
-      pavucontrol
       gimp
       (config.lib.nixGL.wrap sabnzbd)
 
       # # music
       # cider-2
-
-    ]);
+      # spotify
+    ];
 
   programs = {
     mpv = {
-      enable = if isLinuxDesktop then true else false;
+      enable = isLinuxDesktop;
       defaultProfiles = [ "gpu-hq" ];
       #scripts = [pkgs.mpvScripts.mpris];
     };
-
   };
 
   services = {
-    playerctld.enable = if isLinuxDesktop then true else false;
+    playerctld.enable = isLinuxDesktop;
   };
 }

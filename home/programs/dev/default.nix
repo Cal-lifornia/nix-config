@@ -6,11 +6,6 @@
   config,
   ...
 }:
-# let
-#   wgsl-analyzer = import ./wgslanalyzer.nix {
-#     inherit pkgs-stable;
-#   };
-# in
 {
   imports = [
     ./helix.nix
@@ -53,10 +48,15 @@
       ruff
       marksman
       terraform-ls
-      python313Packages.python-lsp-server
-      python313Packages.python-lsp-ruff
+      # plugins must share pylsp's python env to be loaded
+      (python3.withPackages (ps: [
+        ps.python-lsp-server
+        ps.python-lsp-ruff
+        ps.black
+      ]))
       gopls
-      # wgsl-analyzer
+      wgsl-analyzer # also provides wgslfmt
+      svelte-language-server
       glsl_analyzer
       nixd
       vscode-langservers-extracted
@@ -67,9 +67,11 @@
       # formatters
       nixfmt
       mdformat
-      black
       dockerfmt
       kdlfmt
+      clang-tools # clang-format
+      gotools # goimports
+      prettier # svelte formatting; prettier-plugin-svelte comes from the project's node_modules
     ]
     ++ (lib.optionals isLinuxDesktop [
       podman-desktop

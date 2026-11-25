@@ -1,15 +1,4 @@
-{ isMac, isLinuxDesktop, ... }:
-
-let
-  homeName =
-    if isMac then
-      "whobson@traveler"
-    else if isLinuxDesktop then
-      "whobson@hyperion"
-    else
-      "";
-in
-
+{ homeConfigName, ... }:
 {
   xdg.configFile."helix/runtime/queries/nix/injections.scm".text = ''
     ; extends
@@ -144,7 +133,7 @@ in
       {
         name = "svelte";
         language-servers = [
-          "svelte-server"
+          "svelteserver"
           "tailwindcss-ls"
         ];
         auto-format = true;
@@ -153,7 +142,7 @@ in
           args = [
             "--plugin"
             "prettier-plugin-svelte"
-            "parser"
+            "--parser"
             "svelte"
           ];
         };
@@ -279,7 +268,7 @@ in
         required_root_patterns = [ "devenv.nix" ];
       };
       nixd.config.nixd.options.home-manager = {
-        expr = "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.\"${homeName}\".options";
+        expr = "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.\"${homeConfigName}\".options";
       };
       deno-lsp = {
         command = "deno";

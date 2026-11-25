@@ -1,7 +1,5 @@
-{ inputs, ... }:
 {
-  pkgs,
-  lib,
+  inputs,
   username,
   isLinux,
   ...

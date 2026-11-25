@@ -1,7 +1,6 @@
-{ nixgl, pkgs, ... }:
+{ nixgl, ... }:
 {
   imports = [
-    ./noctalia.nix
     ./niri.nix
   ];
 

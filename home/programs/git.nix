@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   home.file.".ssh/allowed_signers" = {
     enable = true;
@@ -16,7 +16,7 @@
         ".DS_Store"
       ];
       signing = {
-        key = null;
+        key = "~/.ssh/github-key";
         signByDefault = true;
         format = "ssh";
       };
@@ -25,13 +25,7 @@
           email = "willhobson@live.com.au";
           name = "William Hobson";
         };
-        # gpg = {
-        #   format = "ssh";
-        #   ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-        # };
-        user = {
-          signingkey = "~/.ssh/github-key";
-        };
+        gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
       };
     };
   };

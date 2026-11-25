@@ -7,7 +7,6 @@
 
   home.packages = with pkgs; [
     nnn
-    curl
     bash
     fastfetch
   ];

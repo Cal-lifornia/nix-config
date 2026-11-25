@@ -5,11 +5,6 @@
 }:
 {
   imports = [ ./helix-languages.nix ];
-  nixpkgs = {
-    overlays = [
-      helix-master.overlays.default
-    ];
-  };
   programs = {
     helix = {
       enable = true;

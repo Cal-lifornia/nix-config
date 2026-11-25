@@ -6,7 +6,7 @@
 {
   programs = {
     firefox = {
-      enable = if isLinuxDesktop then true else false;
+      enable = isLinuxDesktop;
       profiles.${username} = {
         isDefault = true;
       };
