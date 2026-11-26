@@ -44,7 +44,7 @@
 
     // Open on workspace rules
     window-rule {
-        match at-startup app-id="kitty"
+        match at-startup=true app-id="kitty"
         open-on-workspace "dev"
     }
 
@@ -53,11 +53,12 @@
         open-on-workspace "steam"
     }
     window-rule {
-        match at-startup app-id="helium"
+        match at-startup=true app-id="helium"
         open-on-workspace "browser"
     }
     window-rule {
-        match at-startup app-id="discord"
+        match at-startup=true app-id="discord"
+        match at-startup=true app-id="sidra"
         open-on-workspace "media"
     }
 
